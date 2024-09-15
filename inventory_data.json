@@ -1,5 +1,5 @@
 {
-    "last_updated": "2024-09-15 21:58:13",
+    "last_updated": "2024-09-15 23:01:53",
     "inventory": [
         {
             "Item": "edel+white Intensive Flosserbrush",
@@ -9832,7 +9832,7 @@
         {
             "Item": "Plackers Flosser Micro Mint (36 pcs)",
             "SKU": "PPLFL_MI36",
-            "Qty": 62.0,
+            "Qty": 60.0,
             "Branch": "On Time"
         },
         {
@@ -10264,7 +10264,7 @@
         {
             "Item": "Plackers Flosser Micro Mint Travel",
             "SKU": "PPLFL_TR",
-            "Qty": 28.0,
+            "Qty": 27.0,
             "Branch": "On Time"
         },
         {
@@ -10696,7 +10696,7 @@
         {
             "Item": "drTung's Copper Tongue Cleaner",
             "SKU": "DTCT",
-            "Qty": 56.0,
+            "Qty": 55.0,
             "Branch": "On Time"
         },
         {
@@ -10720,7 +10720,7 @@
         {
             "Item": "drTung's Smart Floss",
             "SKU": "PDTFS",
-            "Qty": 595.0,
+            "Qty": 593.0,
             "Branch": "On Time"
         },
         {
@@ -10732,7 +10732,7 @@
         {
             "Item": "drTung's Tongue Cleaner | Pink",
             "SKU": "DRTO_PI",
-            "Qty": 46.0,
+            "Qty": 45.0,
             "Branch": "On Time"
         },
         {
@@ -10948,7 +10948,7 @@
         {
             "Item": "CURAPROX Velvet | E2 - Blue/Pink",
             "SKU": "V14",
-            "Qty": 25.0,
+            "Qty": 24.0,
             "Branch": "On Time"
         },
         {
@@ -10996,7 +10996,7 @@
         {
             "Item": "CURAPROX Velvet | B3 - Yellow/Red",
             "SKU": "V06",
-            "Qty": 21.0,
+            "Qty": 20.0,
             "Branch": "On Time"
         },
         {
@@ -11452,7 +11452,7 @@
         {
             "Item": "CURAPROX CS Ortho | P1 - Green/Yellow",
             "SKU": "ORTH_P1",
-            "Qty": 14.0,
+            "Qty": 13.0,
             "Branch": "On Time"
         },
         {
@@ -11656,7 +11656,7 @@
         {
             "Item": "CURAPROX CS 5460 | D1 - Blue Sky/Green",
             "SKU": "5460_D1",
-            "Qty": 50.0,
+            "Qty": 49.0,
             "Branch": "On Time"
         },
         {
@@ -11668,7 +11668,7 @@
         {
             "Item": "CURAPROX CS 5460 | C2 - Turquoise/Orange",
             "SKU": "5460_C2",
-            "Qty": 26.0,
+            "Qty": 25.0,
             "Branch": "On Time"
         },
         {
@@ -11770,7 +11770,7 @@
         {
             "Item": "CURAPROX CS 5460 | C2 - Turquoise/Orange",
             "SKU": "5460_C2",
-            "Qty": 26.0,
+            "Qty": 25.0,
             "Branch": "Total"
         },
         {
@@ -11782,7 +11782,7 @@
         {
             "Item": "CURAPROX CS 5460 | D1 - Blue Sky/Green",
             "SKU": "5460_D1",
-            "Qty": 50.0,
+            "Qty": 49.0,
             "Branch": "Total"
         },
         {
@@ -12040,7 +12040,7 @@
         {
             "Item": "drTung's Tongue Cleaner | Pink",
             "SKU": "DRTO_PI",
-            "Qty": 46.0,
+            "Qty": 45.0,
             "Branch": "Total"
         },
         {
@@ -12058,7 +12058,7 @@
         {
             "Item": "drTung's Copper Tongue Cleaner",
             "SKU": "DTCT",
-            "Qty": 165.0,
+            "Qty": 164.0,
             "Branch": "Total"
         },
         {
@@ -12394,7 +12394,7 @@
         {
             "Item": "CURAPROX CS Ortho | P1 - Green/Yellow",
             "SKU": "ORTH_P1",
-            "Qty": 14.0,
+            "Qty": 13.0,
             "Branch": "Total"
         },
         {
@@ -12766,7 +12766,7 @@
         {
             "Item": "drTung's Smart Floss",
             "SKU": "PDTFS",
-            "Qty": 1136.0,
+            "Qty": 1134.0,
             "Branch": "Total"
         },
         {
@@ -12958,7 +12958,7 @@
         {
             "Item": "Plackers Flosser Micro Mint (36 pcs)",
             "SKU": "PPLFL_MI36",
-            "Qty": 121.0,
+            "Qty": 119.0,
             "Branch": "Total"
         },
         {
@@ -12970,7 +12970,7 @@
         {
             "Item": "Plackers Flosser Micro Mint Travel",
             "SKU": "PPLFL_TR",
-            "Qty": 114.0,
+            "Qty": 113.0,
             "Branch": "Total"
         },
         {
@@ -13768,7 +13768,7 @@
         {
             "Item": "CURAPROX Velvet | B3 - Yellow/Red",
             "SKU": "V06",
-            "Qty": 21.0,
+            "Qty": 20.0,
             "Branch": "Total"
         },
         {
@@ -13816,7 +13816,7 @@
         {
             "Item": "CURAPROX Velvet | E2 - Blue/Pink",
             "SKU": "V14",
-            "Qty": 25.0,
+            "Qty": 24.0,
             "Branch": "Total"
         },
         {
