@@ -155,10 +155,10 @@ if not total_inventory.empty:
     current_time = datetime.now().strftime("%y%m%d_%H%M")
     
     # Export data to Excel
-    output_filename = f'inventory_report_{current_time}.xlsx'
-    total_inventory.to_excel(output_filename, index=False)
+    # output_filename = f'inventory_report_{current_time}.xlsx'
+    # total_inventory.to_excel(output_filename, index=False)
     
-    print(f"Inventory data exported to {output_filename}")
+    # print(f"Inventory data exported to {output_filename}")
 
     # Get the current timestamp for the last updated date
     last_updated = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -179,7 +179,9 @@ if not total_inventory.empty:
         commit_message = f"Update inventory data - Last updated: {last_updated}"
         subprocess.run(['git', 'add', '.'], check=True)
         subprocess.run(['git', 'commit', '-m', commit_message], check=True)
-        subprocess.run(['git', 'push'], check=True)
+    
+    # Set the upstream branch and push
+        subprocess.run(['git', 'push', '--set-upstream', 'origin', 'main'], check=True)
         print("Changes pushed to Git repository.")
     except subprocess.CalledProcessError as e:
         print(f"Error during Git operation: {e}")
