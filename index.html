@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DragCura Inventory</title>
+
+    <!-- DataTables CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"
+    />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <!-- xlsx library for exporting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      #branchFilter,
+      #exportButton {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DragCura Inventory</h1>
+    <h5 id="lastUpdated">Last Updated at:</h5>
+
+    <!-- Dropdown for filtering branches -->
+    <label for="branchFilter">Select Branch:</label>
+    <select id="branchFilter">
+      <!-- Options will be populated dynamically -->
+    </select>
+
+    <!-- Export to Excel Button -->
+    <button id="exportButton">Export to Excel</button>
+
+    <!-- Table for DataTables -->
+    <table id="inventoryTable" class="display">
+      <thead>
+        <tr>
+          <th>SKU</th>
+          <th>Item</th>
+          <th>Branch</th>
+          <th>Available Qty.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be dynamically loaded here -->
+      </tbody>
+    </table>
+
+    <script>
+      $(document).ready(function () {
+        // Initialize DataTable
+        var table = $("#inventoryTable").DataTable({
+          ajax: {
+            url: "inventory_data.json", // Ensure this URL is correct
+            dataSrc: "inventory", // Adjusted to match the JSON structure
+          },
+          columns: [
+            { data: "SKU" },
+            { data: "Item" },
+            { data: "Branch" },
+            { data: "Qty" },
+          ],
+          pageLength: 25, // Set a high default entries per page
+          lengthMenu: [
+            [25, 50, 100, -1],
+            [25, 50, 100, "All"],
+          ], // Allow 'All' option
+          paging: true, // Enable pagination
+          dom: "<'top'lf>rt<'bottom'i<'clear'>p>", // Add information display
+        });
+
+        // Populate last updated information
+        $.getJSON("inventory_data.json", function (data) {
+          $("#lastUpdated").text("Last Updated at: " + data.last_updated);
+        });
+
+        // Populate branch filter options on data load
+        table.on("xhr", function () {
+          var json = table.ajax.json();
+          var branches = [
+            ...new Set(json.inventory.map((item) => item.Branch)),
+          ];
+
+          branches.forEach((branch) => {
+            $("#branchFilter").append(new Option(branch, branch));
+          });
+
+          // Set default branch to "Total" and filter the table
+          var defaultBranch = "Total";
+          $("#branchFilter").val(defaultBranch).change(); // Select default branch
+        });
+
+        // Filter by selected branch
+        $("#branchFilter").on("change", function () {
+          var selectedBranch = $(this).val();
+          table
+            .column(2)
+            .search(
+              selectedBranch ? "^" + selectedBranch + "$" : "",
+              true,
+              false
+            )
+            .draw();
+        });
+
+        // Export to Excel
+        $("#exportButton").on("click", function () {
+          var ws = XLSX.utils.table_to_sheet(
+            document.getElementById("inventoryTable")
+          );
+          var wb = XLSX.utils.book_new();
+          XLSX.utils.book_append_sheet(wb, ws, "InventoryData");
+          XLSX.writeFile(wb, "inventory_data.xlsx");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+# .gitignore
+.env
+inventory_data.json
+stock_report_api.py
+stock_report.py
+.venv/
+Git Update.bat
