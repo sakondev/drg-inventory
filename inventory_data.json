@@ -1,5 +1,5 @@
 {
-    "last_updated": "2024-09-16 11:20:22",
+    "last_updated": "2024-09-16 11:23:19",
     "inventory": [
         {
             "Item": "edel+white Intensive Flosserbrush",
@@ -8356,7 +8356,7 @@
         {
             "Item": "edel+white Intensive Flosserbrush",
             "SKU": "P_EW-INT",
-            "Qty": 48.0,
+            "Qty": 47.0,
             "Branch": "The EmQuartier"
         },
         {
@@ -8458,7 +8458,7 @@
         {
             "Item": "DragCura Bag",
             "SKU": "DRG_Bag01",
-            "Qty": 108.0,
+            "Qty": 107.0,
             "Branch": "The EmQuartier"
         },
         {
@@ -8590,7 +8590,7 @@
         {
             "Item": "Curaprox Kids Strawberry - Fluoride 950 ppm",
             "SKU": "P_CK- ST-950",
-            "Qty": 7.0,
+            "Qty": 6.0,
             "Branch": "The EmQuartier"
         },
         {
@@ -8740,13 +8740,13 @@
         {
             "Item": "edel+white Anti Plaque + Whitening",
             "SKU": "P_EW-TW75",
-            "Qty": 13.0,
+            "Qty": 12.0,
             "Branch": "The EmQuartier"
         },
         {
             "Item": "edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
-            "Qty": 47.0,
+            "Qty": 46.0,
             "Branch": "The EmQuartier"
         },
         {
@@ -12016,7 +12016,7 @@
         {
             "Item": "DragCura Bag",
             "SKU": "DRG_Bag01",
-            "Qty": 1382.0,
+            "Qty": 1381.0,
             "Branch": "Total"
         },
         {
@@ -13126,7 +13126,7 @@
         {
             "Item": "Curaprox Kids Strawberry - Fluoride 950 ppm",
             "SKU": "P_CK- ST-950",
-            "Qty": 78.0,
+            "Qty": 77.0,
             "Branch": "Total"
         },
         {
@@ -13186,7 +13186,7 @@
         {
             "Item": "edel+white Intensive Flosserbrush",
             "SKU": "P_EW-INT",
-            "Qty": 476.0,
+            "Qty": 475.0,
             "Branch": "Total"
         },
         {
@@ -13246,13 +13246,13 @@
         {
             "Item": "edel+white Anti Plaque + Whitening",
             "SKU": "P_EW-TW75",
-            "Qty": 166.0,
+            "Qty": 165.0,
             "Branch": "Total"
         },
         {
             "Item": "edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
-            "Qty": 773.0,
+            "Qty": 772.0,
             "Branch": "Total"
         },
         {
