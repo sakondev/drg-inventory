@@ -1,5 +1,5 @@
 {
-    "last_updated": "2024-09-16 11:23:19",
+    "last_updated": "2024-09-17 06:50:15",
     "inventory": [
         {
             "Item": "edel+white Intensive Flosserbrush",
@@ -46,7 +46,7 @@
         {
             "Item": "Radius Brush Replacement Head (For Big Brush & Tour Travel) Soft (2 pcs.)",
             "SKU": "_T_S_RE",
-            "Qty": 3.0,
+            "Qty": 2.0,
             "Branch": "Samyan"
         },
         {
@@ -82,7 +82,7 @@
         {
             "Item": "BE YOU 60 ml.| Peach",
             "SKU": "PBYOU60_PE",
-            "Qty": 9.0,
+            "Qty": 8.0,
             "Branch": "Samyan"
         },
         {
@@ -106,7 +106,7 @@
         {
             "Item": "DragCura Bag",
             "SKU": "DRG_Bag01",
-            "Qty": 204.0,
+            "Qty": 191.0,
             "Branch": "Samyan"
         },
         {
@@ -388,13 +388,13 @@
         {
             "Item": "edel+white Anti Plaque + Whitening",
             "SKU": "P_EW-TW75",
-            "Qty": 16.0,
+            "Qty": 15.0,
             "Branch": "Samyan"
         },
         {
             "Item": "edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
-            "Qty": 83.0,
+            "Qty": 81.0,
             "Branch": "Samyan"
         },
         {
@@ -442,7 +442,7 @@
         {
             "Item": "Gentles Tots | Plus",
             "SKU": "P_GT_360P",
-            "Qty": 4.0,
+            "Qty": 3.0,
             "Branch": "Samyan"
         },
         {
@@ -478,7 +478,7 @@
         {
             "Item": "Gentles Tots Kids | Strawberry Yugurt",
             "SKU": "P_GT_TPSY",
-            "Qty": 3.0,
+            "Qty": 2.0,
             "Branch": "Samyan"
         },
         {
@@ -634,7 +634,7 @@
         {
             "Item": "Marvis Classic Strong Mint 85ML",
             "SKU": "MV_CSM",
-            "Qty": 1.0,
+            "Qty": 0.0,
             "Branch": "Samyan"
         },
         {
@@ -712,19 +712,19 @@
         {
             "Item": "TwiGo Adults-Mustard Yellow & Olive Green",
             "SKU": "P_TWG YG",
-            "Qty": 3.0,
+            "Qty": 2.0,
             "Branch": "Samyan"
         },
         {
             "Item": "TwiGo 365 / 4 Seasons + 1 New Me Collection",
             "SKU": "TWG_365",
-            "Qty": 1.0,
+            "Qty": 0.0,
             "Branch": "Samyan"
         },
         {
             "Item": "CURAPROX Velvet",
             "SKU": "P_Velvet",
-            "Qty": 112.0,
+            "Qty": 109.0,
             "Branch": "Samyan"
         },
         {
@@ -736,13 +736,13 @@
         {
             "Item": "CURAPROX CS 5460 (Pack 3)",
             "SKU": "P02_54P3",
-            "Qty": 2.0,
+            "Qty": 14.0,
             "Branch": "Samyan"
         },
         {
             "Item": "CURAPROX Black Is White Toothbrushes Duo",
             "SKU": "P02_BIWDU",
-            "Qty": 7.0,
+            "Qty": 5.0,
             "Branch": "Samyan"
         },
         {
@@ -790,7 +790,7 @@
         {
             "Item": "CURAPROX Travel Set Green Box",
             "SKU": "P29_CTSG",
-            "Qty": 3.0,
+            "Qty": 2.0,
             "Branch": "Samyan"
         },
         {
@@ -820,7 +820,7 @@
         {
             "Item": "CURAPROX CS 5460",
             "SKU": "P5460",
-            "Qty": 285.0,
+            "Qty": 241.0,
             "Branch": "Samyan"
         },
         {
@@ -958,7 +958,7 @@
         {
             "Item": "CURAPROX KIDS",
             "SKU": "PCPKID",
-            "Qty": 80.0,
+            "Qty": 79.0,
             "Branch": "Samyan"
         },
         {
@@ -1012,7 +1012,7 @@
         {
             "Item": "drTung's Smart Floss",
             "SKU": "PDTFS",
-            "Qty": 93.0,
+            "Qty": 91.0,
             "Branch": "Samyan"
         },
         {
@@ -1030,7 +1030,7 @@
         {
             "Item": "drTung's Tongue Cleaner",
             "SKU": "PDTTC",
-            "Qty": 16.0,
+            "Qty": 14.0,
             "Branch": "Samyan"
         },
         {
@@ -1078,7 +1078,7 @@
         {
             "Item": "Flipper Animal Giraffe",
             "SKU": "PFGIR",
-            "Qty": 3.0,
+            "Qty": 2.0,
             "Branch": "Samyan"
         },
         {
@@ -1108,7 +1108,7 @@
         {
             "Item": "Flipper Animal Piggy",
             "SKU": "PFPIG",
-            "Qty": 7.0,
+            "Qty": 6.0,
             "Branch": "Samyan"
         },
         {
@@ -1198,7 +1198,7 @@
         {
             "Item": "Plackers Flosser Micro Mint (36 pcs)",
             "SKU": "PPLFL_MI36",
-            "Qty": 13.0,
+            "Qty": 12.0,
             "Branch": "Samyan"
         },
         {
@@ -1210,19 +1210,19 @@
         {
             "Item": "Plackers Flosser Micro Mint Travel",
             "SKU": "PPLFL_TR",
-            "Qty": 13.0,
+            "Qty": 11.0,
             "Branch": "Samyan"
         },
         {
             "Item": "Plackers Flosser Twin Line",
             "SKU": "PPLFL_TW",
-            "Qty": 7.0,
+            "Qty": 6.0,
             "Branch": "Samyan"
         },
         {
             "Item": "Plackers Grind No More",
             "SKU": "PPLGR_NM",
-            "Qty": 2.0,
+            "Qty": 1.0,
             "Branch": "Samyan"
         },
         {
@@ -1258,7 +1258,7 @@
         {
             "Item": "Radius Source Brush with Replaceable Head Color_US Currency",
             "SKU": "PRAD_SOURCE",
-            "Qty": 2.0,
+            "Qty": 1.0,
             "Branch": "Samyan"
         },
         {
@@ -1306,13 +1306,13 @@
         {
             "Item": "CURAPROX CS 1006",
             "SKU": "PSIN06",
-            "Qty": 17.0,
+            "Qty": 16.0,
             "Branch": "Samyan"
         },
         {
             "Item": "CURAPROX CS 1009",
             "SKU": "PSIN09",
-            "Qty": 9.0,
+            "Qty": 8.0,
             "Branch": "Samyan"
         },
         {
@@ -1342,7 +1342,7 @@
         {
             "Item": "TheraBreath Fresh Breath (Mild Mint)",
             "SKU": "PTBMM",
-            "Qty": 5.0,
+            "Qty": 2.0,
             "Branch": "Samyan"
         },
         {
@@ -1408,7 +1408,7 @@
         {
             "Item": "edel+white Intensive Flosserbrush",
             "SKU": "P_EW-INT",
-            "Qty": 51.0,
+            "Qty": 48.0,
             "Branch": "The Circle"
         },
         {
@@ -1468,7 +1468,7 @@
         {
             "Item": "BE YOU 60 ml.| Blackberry",
             "SKU": "PBYOU60_BB",
-            "Qty": 8.0,
+            "Qty": 7.0,
             "Branch": "The Circle"
         },
         {
@@ -1492,7 +1492,7 @@
         {
             "Item": "BE YOU 60 ml.| Watermelon",
             "SKU": "PBYOU60_WM",
-            "Qty": 5.0,
+            "Qty": 4.0,
             "Branch": "The Circle"
         },
         {
@@ -1510,7 +1510,7 @@
         {
             "Item": "DragCura Bag",
             "SKU": "DRG_Bag01",
-            "Qty": 292.0,
+            "Qty": 284.0,
             "Branch": "The Circle"
         },
         {
@@ -1528,7 +1528,7 @@
         {
             "Item": "[Redeem] edel+white UltraSoft Flosserbrush (Foil)",
             "SKU": "EW-USF",
-            "Qty": 12.0,
+            "Qty": 11.0,
             "Branch": "The Circle"
         },
         {
@@ -1684,7 +1684,7 @@
         {
             "Item": "Dr.Mark\u2019s HyGenie",
             "SKU": "P_drmarkhy",
-            "Qty": 4.0,
+            "Qty": 3.0,
             "Branch": "The Circle"
         },
         {
@@ -1726,7 +1726,7 @@
         {
             "Item": "edel+white Care Forte",
             "SKU": "P_EW-GUM75",
-            "Qty": 10.0,
+            "Qty": 8.0,
             "Branch": "The Circle"
         },
         {
@@ -1762,7 +1762,7 @@
         {
             "Item": "edel+white Stain Eraser",
             "SKU": "P_EW-SE",
-            "Qty": 5.0,
+            "Qty": 4.0,
             "Branch": "The Circle"
         },
         {
@@ -1792,13 +1792,13 @@
         {
             "Item": "edel+white Anti Plaque + Whitening",
             "SKU": "P_EW-TW75",
-            "Qty": 15.0,
+            "Qty": 14.0,
             "Branch": "The Circle"
         },
         {
             "Item": "edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
-            "Qty": 62.0,
+            "Qty": 60.0,
             "Branch": "The Circle"
         },
         {
@@ -1846,7 +1846,7 @@
         {
             "Item": "Gentles Tots | Plus",
             "SKU": "P_GT_360P",
-            "Qty": 5.0,
+            "Qty": 3.0,
             "Branch": "The Circle"
         },
         {
@@ -2038,7 +2038,7 @@
         {
             "Item": "Marvis Jasmin Mint 85ML",
             "SKU": "MV_JM",
-            "Qty": 3.0,
+            "Qty": 2.0,
             "Branch": "The Circle"
         },
         {
@@ -2050,7 +2050,7 @@
         {
             "Item": "Marvis Smokers Whitening Mint 85ML",
             "SKU": "MV_SWM",
-            "Qty": 2.0,
+            "Qty": 1.0,
             "Branch": "The Circle"
         },
         {
@@ -2092,7 +2092,7 @@
         {
             "Item": "GinkGo-ICY BLUE",
             "SKU": "P_TWG TB",
-            "Qty": 5.0,
+            "Qty": 3.0,
             "Branch": "The Circle"
         },
         {
@@ -2218,7 +2218,7 @@
         {
             "Item": "CURAPROX CS 5460",
             "SKU": "P5460",
-            "Qty": 287.0,
+            "Qty": 284.0,
             "Branch": "The Circle"
         },
         {
@@ -2392,7 +2392,7 @@
         {
             "Item": "Curaprox Baby Toothbrush",
             "SKU": "PCUBY",
-            "Qty": 35.0,
+            "Qty": 34.0,
             "Branch": "The Circle"
         },
         {
@@ -2404,7 +2404,7 @@
         {
             "Item": "drTung's Smart Floss",
             "SKU": "PDTFS",
-            "Qty": 73.0,
+            "Qty": 72.0,
             "Branch": "The Circle"
         },
         {
@@ -2434,7 +2434,7 @@
         {
             "Item": "Enzycal 950",
             "SKU": "PEN95",
-            "Qty": 11.0,
+            "Qty": 10.0,
             "Branch": "The Circle"
         },
         {
@@ -2548,7 +2548,7 @@
         {
             "Item": "CURAPROX CS Ortho",
             "SKU": "PORTH",
-            "Qty": 59.0,
+            "Qty": 58.0,
             "Branch": "The Circle"
         },
         {
@@ -2734,7 +2734,7 @@
         {
             "Item": "TheraBreath Fresh Breath (Mild Mint)",
             "SKU": "PTBMM",
-            "Qty": 5.0,
+            "Qty": 4.0,
             "Branch": "The Circle"
         },
         {
@@ -2854,7 +2854,7 @@
         {
             "Item": "BE YOU 60 ml.| Apple",
             "SKU": "PBYOU60_AP",
-            "Qty": 7.0,
+            "Qty": 6.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -2902,7 +2902,7 @@
         {
             "Item": "DragCura Bag",
             "SKU": "DRG_Bag01",
-            "Qty": 293.0,
+            "Qty": 286.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -3100,7 +3100,7 @@
         {
             "Item": "Enzycal 1450",
             "SKU": "P_EN1450",
-            "Qty": 12.0,
+            "Qty": 11.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -3118,7 +3118,7 @@
         {
             "Item": "edel+white Care Forte",
             "SKU": "P_EW-GUM75",
-            "Qty": 30.0,
+            "Qty": 28.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -3190,7 +3190,7 @@
         {
             "Item": "edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
-            "Qty": 75.0,
+            "Qty": 74.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -3478,7 +3478,7 @@
         {
             "Item": "CURAPROX Velvet",
             "SKU": "P_Velvet",
-            "Qty": 96.0,
+            "Qty": 90.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -3574,7 +3574,7 @@
         {
             "Item": "CURAPROX CS 5460",
             "SKU": "P5460",
-            "Qty": 216.0,
+            "Qty": 213.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -3724,7 +3724,7 @@
         {
             "Item": "CURAPROX CPS Prime refill x8 | Size: 07",
             "SKU": "PCPSx8_07",
-            "Qty": 2.0,
+            "Qty": 1.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -3754,7 +3754,7 @@
         {
             "Item": "Curaprox Baby Toothbrush",
             "SKU": "PCUBY",
-            "Qty": 40.0,
+            "Qty": 37.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -3766,7 +3766,7 @@
         {
             "Item": "drTung's Smart Floss",
             "SKU": "PDTFS",
-            "Qty": 65.0,
+            "Qty": 64.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -3784,7 +3784,7 @@
         {
             "Item": "drTung's Tongue Cleaner",
             "SKU": "PDTTC",
-            "Qty": 21.0,
+            "Qty": 20.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -3970,7 +3970,7 @@
         {
             "Item": "Plackers Flosser Twin Line",
             "SKU": "PPLFL_TW",
-            "Qty": 16.0,
+            "Qty": 15.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -3994,7 +3994,7 @@
         {
             "Item": "Flipper Pororo Pororo",
             "SKU": "PPORO",
-            "Qty": 5.0,
+            "Qty": 4.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -4096,7 +4096,7 @@
         {
             "Item": "TheraBreath Fresh Breath (Mild Mint)",
             "SKU": "PTBMM",
-            "Qty": 11.0,
+            "Qty": 10.0,
             "Branch": "Central Rama 9"
         },
         {
@@ -4162,7 +4162,7 @@
         {
             "Item": "edel+white Intensive Flosserbrush",
             "SKU": "P_EW-INT",
-            "Qty": 74.0,
+            "Qty": 72.0,
             "Branch": "Central Eastville"
         },
         {
@@ -4264,7 +4264,7 @@
         {
             "Item": "DragCura Bag",
             "SKU": "DRG_Bag01",
-            "Qty": 239.0,
+            "Qty": 236.0,
             "Branch": "Central Eastville"
         },
         {
@@ -4462,7 +4462,7 @@
         {
             "Item": "Enzycal 1450",
             "SKU": "P_EN1450",
-            "Qty": 9.0,
+            "Qty": 8.0,
             "Branch": "Central Eastville"
         },
         {
@@ -4552,7 +4552,7 @@
         {
             "Item": "edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
-            "Qty": 60.0,
+            "Qty": 51.0,
             "Branch": "Central Eastville"
         },
         {
@@ -4786,7 +4786,7 @@
         {
             "Item": "Marvis Classic Strong Mint 85ML",
             "SKU": "MV_CSM",
-            "Qty": 2.0,
+            "Qty": 1.0,
             "Branch": "Central Eastville"
         },
         {
@@ -4798,7 +4798,7 @@
         {
             "Item": "Marvis Sensitive Gums Mint 75ML",
             "SKU": "MV_SG",
-            "Qty": 3.0,
+            "Qty": 2.0,
             "Branch": "Central Eastville"
         },
         {
@@ -4810,7 +4810,7 @@
         {
             "Item": "Marvis Whitening Mint 85ML",
             "SKU": "MV_WM",
-            "Qty": 2.0,
+            "Qty": 1.0,
             "Branch": "Central Eastville"
         },
         {
@@ -4942,7 +4942,7 @@
         {
             "Item": "CURAPROX Travel Set Green Box",
             "SKU": "P29_CTSG",
-            "Qty": 6.0,
+            "Qty": 5.0,
             "Branch": "Central Eastville"
         },
         {
@@ -4972,7 +4972,7 @@
         {
             "Item": "CURAPROX CS 5460",
             "SKU": "P5460",
-            "Qty": 225.0,
+            "Qty": 223.0,
             "Branch": "Central Eastville"
         },
         {
@@ -5008,7 +5008,7 @@
         {
             "Item": "Black Is White Travel Box",
             "SKU": "PBIW_TB",
-            "Qty": 8.0,
+            "Qty": 7.0,
             "Branch": "Central Eastville"
         },
         {
@@ -5020,7 +5020,7 @@
         {
             "Item": "Black Is White Set",
             "SKU": "PBIWS",
-            "Qty": 7.0,
+            "Qty": 6.0,
             "Branch": "Central Eastville"
         },
         {
@@ -5032,7 +5032,7 @@
         {
             "Item": "Black Is White 10 ml.",
             "SKU": "PBIWT10",
-            "Qty": 3.0,
+            "Qty": 2.0,
             "Branch": "Central Eastville"
         },
         {
@@ -5068,13 +5068,13 @@
         {
             "Item": "BE YOU 10 ml. Daydreamer",
             "SKU": "PBYDB10",
-            "Qty": 1.0,
+            "Qty": 0.0,
             "Branch": "Central Eastville"
         },
         {
             "Item": "BE YOU 10 ml. Explorer",
             "SKU": "PBYEG10",
-            "Qty": 1.0,
+            "Qty": 0.0,
             "Branch": "Central Eastville"
         },
         {
@@ -5086,7 +5086,7 @@
         {
             "Item": "BE YOU 10 ml. Rising Star",
             "SKU": "PBYRY10",
-            "Qty": 1.0,
+            "Qty": 0.0,
             "Branch": "Central Eastville"
         },
         {
@@ -5140,7 +5140,7 @@
         {
             "Item": "Curaprox Baby Toothbrush",
             "SKU": "PCUBY",
-            "Qty": 41.0,
+            "Qty": 40.0,
             "Branch": "Central Eastville"
         },
         {
@@ -5446,13 +5446,13 @@
         {
             "Item": "CURAPROX CS 1006",
             "SKU": "PSIN06",
-            "Qty": 16.0,
+            "Qty": 15.0,
             "Branch": "Central Eastville"
         },
         {
             "Item": "CURAPROX CS 1009",
             "SKU": "PSIN09",
-            "Qty": 12.0,
+            "Qty": 11.0,
             "Branch": "Central Eastville"
         },
         {
@@ -5548,7 +5548,7 @@
         {
             "Item": "edel+white Intensive Flosserbrush",
             "SKU": "P_EW-INT",
-            "Qty": 21.0,
+            "Qty": 20.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -5602,7 +5602,7 @@
         {
             "Item": "BE YOU 60 ml.| Apple",
             "SKU": "PBYOU60_AP",
-            "Qty": 6.0,
+            "Qty": 4.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -5650,7 +5650,7 @@
         {
             "Item": "DragCura Bag",
             "SKU": "DRG_Bag01",
-            "Qty": 195.0,
+            "Qty": 187.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -5866,7 +5866,7 @@
         {
             "Item": "edel+white Care Forte",
             "SKU": "P_EW-GUM75",
-            "Qty": 17.0,
+            "Qty": 15.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -5902,7 +5902,7 @@
         {
             "Item": "edel+white Stain Eraser",
             "SKU": "P_EW-SE",
-            "Qty": 2.0,
+            "Qty": 0.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -5938,7 +5938,7 @@
         {
             "Item": "edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
-            "Qty": 79.0,
+            "Qty": 73.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -6172,7 +6172,7 @@
         {
             "Item": "Marvis Aquatic Mint 85ML",
             "SKU": "MV_AM",
-            "Qty": 5.0,
+            "Qty": 4.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -6202,7 +6202,7 @@
         {
             "Item": "Marvis Whitening Mint 85ML",
             "SKU": "MV_WM",
-            "Qty": 2.0,
+            "Qty": 1.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -6364,7 +6364,7 @@
         {
             "Item": "CURAPROX CS 5460",
             "SKU": "P5460",
-            "Qty": 232.0,
+            "Qty": 228.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -6412,7 +6412,7 @@
         {
             "Item": "Black Is White Travel Box",
             "SKU": "PBIW_TB",
-            "Qty": 7.0,
+            "Qty": 6.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -6502,7 +6502,7 @@
         {
             "Item": "CURAPROX KIDS",
             "SKU": "PCPKID",
-            "Qty": 37.0,
+            "Qty": 36.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -6544,7 +6544,7 @@
         {
             "Item": "Curaprox Baby Toothbrush",
             "SKU": "PCUBY",
-            "Qty": 31.0,
+            "Qty": 30.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -6556,7 +6556,7 @@
         {
             "Item": "drTung's Smart Floss",
             "SKU": "PDTFS",
-            "Qty": 84.0,
+            "Qty": 77.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -6574,7 +6574,7 @@
         {
             "Item": "drTung's Tongue Cleaner",
             "SKU": "PDTTC",
-            "Qty": 21.0,
+            "Qty": 20.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -6604,7 +6604,7 @@
         {
             "Item": "Flipper Animal Beagle",
             "SKU": "PFBEA",
-            "Qty": 2.0,
+            "Qty": 1.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -6664,7 +6664,7 @@
         {
             "Item": "Flipper Toothpaste Squirter Pink",
             "SKU": "PFSQP",
-            "Qty": 2.0,
+            "Qty": 1.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -6700,7 +6700,7 @@
         {
             "Item": "CURAPROX CS Ortho",
             "SKU": "PORTH",
-            "Qty": 23.0,
+            "Qty": 22.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -6712,7 +6712,7 @@
         {
             "Item": "Flipper Owl Earthy",
             "SKU": "POWLG",
-            "Qty": 3.0,
+            "Qty": 2.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -6748,7 +6748,7 @@
         {
             "Item": "Plackers Orthopick Flossors",
             "SKU": "PPLFL_OR",
-            "Qty": 5.0,
+            "Qty": 4.0,
             "Branch": "Mega Bangna"
         },
         {
@@ -7030,7 +7030,7 @@
         {
             "Item": "BE YOU 60 ml.| Watermelon",
             "SKU": "PBYOU60_WM",
-            "Qty": 12.0,
+            "Qty": 11.0,
             "Branch": "Central Embassy"
         },
         {
@@ -7048,7 +7048,7 @@
         {
             "Item": "DragCura Bag",
             "SKU": "DRG_Bag01",
-            "Qty": 51.0,
+            "Qty": 50.0,
             "Branch": "Central Embassy"
         },
         {
@@ -7426,7 +7426,7 @@
         {
             "Item": "Gentles Tots Kids | Strawberry Yugurt",
             "SKU": "P_GT_TPSY",
-            "Qty": 6.0,
+            "Qty": 5.0,
             "Branch": "Central Embassy"
         },
         {
@@ -7768,7 +7768,7 @@
         {
             "Item": "CURAPROX CS 5460",
             "SKU": "P5460",
-            "Qty": 336.0,
+            "Qty": 333.0,
             "Branch": "Central Embassy"
         },
         {
@@ -7960,7 +7960,7 @@
         {
             "Item": "drTung's Smart Floss",
             "SKU": "PDTFS",
-            "Qty": 91.0,
+            "Qty": 90.0,
             "Branch": "Central Embassy"
         },
         {
@@ -8134,7 +8134,7 @@
         {
             "Item": "Plackers Flosser Kids Dual Gripz",
             "SKU": "PPLFL_KI",
-            "Qty": 5.0,
+            "Qty": 2.0,
             "Branch": "Central Embassy"
         },
         {
@@ -8158,7 +8158,7 @@
         {
             "Item": "Plackers Flosser Micro Mint Travel",
             "SKU": "PPLFL_TR",
-            "Qty": 31.0,
+            "Qty": 30.0,
             "Branch": "Central Embassy"
         },
         {
@@ -8188,7 +8188,7 @@
         {
             "Item": "Flipper Pororo Pororo",
             "SKU": "PPORO",
-            "Qty": 8.0,
+            "Qty": 7.0,
             "Branch": "Central Embassy"
         },
         {
@@ -8356,7 +8356,7 @@
         {
             "Item": "edel+white Intensive Flosserbrush",
             "SKU": "P_EW-INT",
-            "Qty": 47.0,
+            "Qty": 46.0,
             "Branch": "The EmQuartier"
         },
         {
@@ -8458,7 +8458,7 @@
         {
             "Item": "DragCura Bag",
             "SKU": "DRG_Bag01",
-            "Qty": 107.0,
+            "Qty": 104.0,
             "Branch": "The EmQuartier"
         },
         {
@@ -8656,7 +8656,7 @@
         {
             "Item": "Enzycal 1450",
             "SKU": "P_EN1450",
-            "Qty": 9.0,
+            "Qty": 8.0,
             "Branch": "The EmQuartier"
         },
         {
@@ -8746,7 +8746,7 @@
         {
             "Item": "edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
-            "Qty": 46.0,
+            "Qty": 45.0,
             "Branch": "The EmQuartier"
         },
         {
@@ -9034,7 +9034,7 @@
         {
             "Item": "CURAPROX Velvet",
             "SKU": "P_Velvet",
-            "Qty": 52.0,
+            "Qty": 51.0,
             "Branch": "The EmQuartier"
         },
         {
@@ -9394,7 +9394,7 @@
         {
             "Item": "Flipper Animal Kitten Siamese",
             "SKU": "PFKIT",
-            "Qty": 3.0,
+            "Qty": 1.0,
             "Branch": "The EmQuartier"
         },
         {
@@ -9460,7 +9460,7 @@
         {
             "Item": "Flipper The Little Bus Lani",
             "SKU": "PLANI",
-            "Qty": 3.0,
+            "Qty": 2.0,
             "Branch": "The EmQuartier"
         },
         {
@@ -9634,7 +9634,7 @@
         {
             "Item": "Flipper The Little Bus Tayo",
             "SKU": "PTAYP",
-            "Qty": 1.0,
+            "Qty": 0.0,
             "Branch": "The EmQuartier"
         },
         {
@@ -9714,6 +9714,18 @@
             "SKU": "T_SS_RE",
             "Qty": 0.0,
             "Branch": "The EmQuartier"
+        },
+        {
+            "Item": "Marvis Mouthwash Anise Mint 120ML",
+            "SKU": "MV_MAM",
+            "Qty": 0.0,
+            "Branch": "On Time"
+        },
+        {
+            "Item": "Marvis Mouthwash Spear Mint 120ML",
+            "SKU": "MV_MSM",
+            "Qty": 0.0,
+            "Branch": "On Time"
         },
         {
             "Item": "edel+white CleanCurl Curved",
@@ -9910,13 +9922,13 @@
         {
             "Item": "GinkGo-SMOKE",
             "SKU": "P_TWG_TSM",
-            "Qty": 14.0,
+            "Qty": 12.0,
             "Branch": "On Time"
         },
         {
             "Item": "GinkGo-ICY BLUE",
             "SKU": "P_TWG_TB",
-            "Qty": 15.0,
+            "Qty": 6.0,
             "Branch": "On Time"
         },
         {
@@ -10240,7 +10252,7 @@
         {
             "Item": "Plackers Grind No More",
             "SKU": "PPLGR_NM",
-            "Qty": 9.0,
+            "Qty": 8.0,
             "Branch": "On Time"
         },
         {
@@ -10258,7 +10270,7 @@
         {
             "Item": "Plackers Flosser Kids Dual Gripz",
             "SKU": "PPLFL_KI",
-            "Qty": 23.0,
+            "Qty": 22.0,
             "Branch": "On Time"
         },
         {
@@ -10306,7 +10318,7 @@
         {
             "Item": "ORALPEACE Clean & Moisture Spray Natural",
             "SKU": "SPG",
-            "Qty": 10.0,
+            "Qty": 9.0,
             "Branch": "On Time"
         },
         {
@@ -10318,7 +10330,7 @@
         {
             "Item": "ORALPEACE Clean & Moisture Orange",
             "SKU": "ORTPO",
-            "Qty": 16.0,
+            "Qty": 15.0,
             "Branch": "On Time"
         },
         {
@@ -10630,7 +10642,7 @@
         {
             "Item": "edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
-            "Qty": 273.0,
+            "Qty": 271.0,
             "Branch": "On Time"
         },
         {
@@ -10696,7 +10708,7 @@
         {
             "Item": "drTung's Copper Tongue Cleaner",
             "SKU": "DTCT",
-            "Qty": 53.0,
+            "Qty": 52.0,
             "Branch": "On Time"
         },
         {
@@ -10714,13 +10726,13 @@
         {
             "Item": "drTung's Snap-On | Blue",
             "SKU": "DRSN_BL",
-            "Qty": 7.0,
+            "Qty": 6.0,
             "Branch": "On Time"
         },
         {
             "Item": "drTung's Smart Floss",
             "SKU": "PDTFS",
-            "Qty": 593.0,
+            "Qty": 586.0,
             "Branch": "On Time"
         },
         {
@@ -10732,7 +10744,7 @@
         {
             "Item": "drTung's Tongue Cleaner | Pink",
             "SKU": "DRTO_PI",
-            "Qty": 44.0,
+            "Qty": 42.0,
             "Branch": "On Time"
         },
         {
@@ -10744,7 +10756,7 @@
         {
             "Item": "drTung's Tongue Cleaner | Ocean Blue",
             "SKU": "DRTO_TU",
-            "Qty": 45.0,
+            "Qty": 44.0,
             "Branch": "On Time"
         },
         {
@@ -10876,7 +10888,7 @@
         {
             "Item": "CURAPROX Velvet | I2 - Mint/Pink",
             "SKU": "V26",
-            "Qty": 16.0,
+            "Qty": 15.0,
             "Branch": "On Time"
         },
         {
@@ -11134,7 +11146,7 @@
         {
             "Item": "Curaprox Kids Watermelon - Floride 1450 ppm",
             "SKU": "P_CK- WM-1450",
-            "Qty": 30.0,
+            "Qty": 28.0,
             "Branch": "On Time"
         },
         {
@@ -11212,13 +11224,13 @@
         {
             "Item": "CURAPROX Baby | Blue/Green",
             "SKU": "CUBY_05",
-            "Qty": 14.0,
+            "Qty": 13.0,
             "Branch": "On Time"
         },
         {
             "Item": "CURAPROX Baby | Green/Pink",
             "SKU": "CUBY_04",
-            "Qty": 20.0,
+            "Qty": 19.0,
             "Branch": "On Time"
         },
         {
@@ -11302,7 +11314,7 @@
         {
             "Item": "CURAPROX Travel Set Blue Box",
             "SKU": "P29_CTSB",
-            "Qty": 30.0,
+            "Qty": 29.0,
             "Branch": "On Time"
         },
         {
@@ -11320,7 +11332,7 @@
         {
             "Item": "BE YOU 10 ml. Challenger",
             "SKU": "PBYCR10",
-            "Qty": 21.0,
+            "Qty": 19.0,
             "Branch": "On Time"
         },
         {
@@ -11374,7 +11386,7 @@
         {
             "Item": "Enzycal 1450",
             "SKU": "P_EN1450",
-            "Qty": 49.0,
+            "Qty": 47.0,
             "Branch": "On Time"
         },
         {
@@ -11386,7 +11398,7 @@
         {
             "Item": "Enzycal 950",
             "SKU": "PEN95",
-            "Qty": 67.0,
+            "Qty": 65.0,
             "Branch": "On Time"
         },
         {
@@ -11404,7 +11416,7 @@
         {
             "Item": "CURAPROX CS 1006",
             "SKU": "PSIN06",
-            "Qty": 118.0,
+            "Qty": 117.0,
             "Branch": "On Time"
         },
         {
@@ -11494,7 +11506,7 @@
         {
             "Item": "CURAPROX CS 5460 (Pack 3)",
             "SKU": "P02_54P3",
-            "Qty": 92.0,
+            "Qty": 90.0,
             "Branch": "On Time"
         },
         {
@@ -11506,7 +11518,7 @@
         {
             "Item": "CURAPROX CS 5460 | L2 - Violet/Pink",
             "SKU": "5460_L2",
-            "Qty": 35.0,
+            "Qty": 34.0,
             "Branch": "On Time"
         },
         {
@@ -11614,7 +11626,7 @@
         {
             "Item": "CURAPROX CS 5460 | F2 - Navy/Yellow",
             "SKU": "5460_F2",
-            "Qty": 36.0,
+            "Qty": 35.0,
             "Branch": "On Time"
         },
         {
@@ -11656,7 +11668,7 @@
         {
             "Item": "CURAPROX CS 5460 | D1 - Blue Sky/Green",
             "SKU": "5460_D1",
-            "Qty": 49.0,
+            "Qty": 48.0,
             "Branch": "On Time"
         },
         {
@@ -11674,7 +11686,7 @@
         {
             "Item": "CURAPROX CS 5460 | C1 - Turquoise/Pink",
             "SKU": "5460_C1",
-            "Qty": 41.0,
+            "Qty": 40.0,
             "Branch": "On Time"
         },
         {
@@ -11704,13 +11716,13 @@
         {
             "Item": "CURAPROX CS 5460 | A2 - White/Orange",
             "SKU": "5460_A2",
-            "Qty": 59.0,
+            "Qty": 58.0,
             "Branch": "On Time"
         },
         {
             "Item": "CURAPROX CS 5460 | A1 - White/Blue",
             "SKU": "5460_A1",
-            "Qty": 28.0,
+            "Qty": 26.0,
             "Branch": "On Time"
         },
         {
@@ -11728,13 +11740,13 @@
         {
             "Item": "CURAPROX CS 5460 | A1 - White/Blue",
             "SKU": "5460_A1",
-            "Qty": 28.0,
+            "Qty": 26.0,
             "Branch": "Total"
         },
         {
             "Item": "CURAPROX CS 5460 | A2 - White/Orange",
             "SKU": "5460_A2",
-            "Qty": 59.0,
+            "Qty": 58.0,
             "Branch": "Total"
         },
         {
@@ -11764,7 +11776,7 @@
         {
             "Item": "CURAPROX CS 5460 | C1 - Turquoise/Pink",
             "SKU": "5460_C1",
-            "Qty": 41.0,
+            "Qty": 40.0,
             "Branch": "Total"
         },
         {
@@ -11782,7 +11794,7 @@
         {
             "Item": "CURAPROX CS 5460 | D1 - Blue Sky/Green",
             "SKU": "5460_D1",
-            "Qty": 49.0,
+            "Qty": 48.0,
             "Branch": "Total"
         },
         {
@@ -11824,7 +11836,7 @@
         {
             "Item": "CURAPROX CS 5460 | F2 - Navy/Yellow",
             "SKU": "5460_F2",
-            "Qty": 36.0,
+            "Qty": 35.0,
             "Branch": "Total"
         },
         {
@@ -11938,7 +11950,7 @@
         {
             "Item": "CURAPROX CS 5460 | L2 - Violet/Pink",
             "SKU": "5460_L2",
-            "Qty": 35.0,
+            "Qty": 34.0,
             "Branch": "Total"
         },
         {
@@ -11968,13 +11980,13 @@
         {
             "Item": "CURAPROX Baby | Green/Pink",
             "SKU": "CUBY_04",
-            "Qty": 20.0,
+            "Qty": 19.0,
             "Branch": "Total"
         },
         {
             "Item": "CURAPROX Baby | Blue/Green",
             "SKU": "CUBY_05",
-            "Qty": 14.0,
+            "Qty": 13.0,
             "Branch": "Total"
         },
         {
@@ -12016,13 +12028,13 @@
         {
             "Item": "DragCura Bag",
             "SKU": "DRG_Bag01",
-            "Qty": 1381.0,
+            "Qty": 1338.0,
             "Branch": "Total"
         },
         {
             "Item": "drTung's Snap-On | Blue",
             "SKU": "DRSN_BL",
-            "Qty": 7.0,
+            "Qty": 6.0,
             "Branch": "Total"
         },
         {
@@ -12040,7 +12052,7 @@
         {
             "Item": "drTung's Tongue Cleaner | Pink",
             "SKU": "DRTO_PI",
-            "Qty": 44.0,
+            "Qty": 42.0,
             "Branch": "Total"
         },
         {
@@ -12052,13 +12064,13 @@
         {
             "Item": "drTung's Tongue Cleaner | Ocean Blue",
             "SKU": "DRTO_TU",
-            "Qty": 45.0,
+            "Qty": 44.0,
             "Branch": "Total"
         },
         {
             "Item": "drTung's Copper Tongue Cleaner",
             "SKU": "DTCT",
-            "Qty": 162.0,
+            "Qty": 161.0,
             "Branch": "Total"
         },
         {
@@ -12094,7 +12106,7 @@
         {
             "Item": "[Redeem] edel+white UltraSoft Flosserbrush (Foil)",
             "SKU": "EW-USF",
-            "Qty": 119.0,
+            "Qty": 118.0,
             "Branch": "Total"
         },
         {
@@ -12280,7 +12292,7 @@
         {
             "Item": "Marvis Aquatic Mint 85ML",
             "SKU": "MV_AM",
-            "Qty": 16.0,
+            "Qty": 15.0,
             "Branch": "Total"
         },
         {
@@ -12292,7 +12304,7 @@
         {
             "Item": "Marvis Classic Strong Mint 85ML",
             "SKU": "MV_CSM",
-            "Qty": 15.0,
+            "Qty": 13.0,
             "Branch": "Total"
         },
         {
@@ -12304,7 +12316,7 @@
         {
             "Item": "Marvis Jasmin Mint 85ML",
             "SKU": "MV_JM",
-            "Qty": 17.0,
+            "Qty": 16.0,
             "Branch": "Total"
         },
         {
@@ -12314,15 +12326,27 @@
             "Branch": "Total"
         },
         {
+            "Item": "Marvis Mouthwash Anise Mint 120ML",
+            "SKU": "MV_MAM",
+            "Qty": 0.0,
+            "Branch": "Total"
+        },
+        {
+            "Item": "Marvis Mouthwash Spear Mint 120ML",
+            "SKU": "MV_MSM",
+            "Qty": 0.0,
+            "Branch": "Total"
+        },
+        {
             "Item": "Marvis Sensitive Gums Mint 75ML",
             "SKU": "MV_SG",
-            "Qty": 15.0,
+            "Qty": 14.0,
             "Branch": "Total"
         },
         {
             "Item": "Marvis Smokers Whitening Mint 85ML",
             "SKU": "MV_SWM",
-            "Qty": 12.0,
+            "Qty": 11.0,
             "Branch": "Total"
         },
         {
@@ -12334,7 +12358,7 @@
         {
             "Item": "Marvis Whitening Mint 85ML",
             "SKU": "MV_WM",
-            "Qty": 5.0,
+            "Qty": 3.0,
             "Branch": "Total"
         },
         {
@@ -12442,19 +12466,19 @@
         {
             "Item": "ORALPEACE Clean & Moisture Orange",
             "SKU": "ORTPO",
-            "Qty": 43.0,
+            "Qty": 42.0,
             "Branch": "Total"
         },
         {
             "Item": "CURAPROX CS 5460 (Pack 3)",
             "SKU": "P02_54P3",
-            "Qty": 131.0,
+            "Qty": 141.0,
             "Branch": "Total"
         },
         {
             "Item": "CURAPROX Black Is White Toothbrushes Duo",
             "SKU": "P02_BIWDU",
-            "Qty": 101.0,
+            "Qty": 99.0,
             "Branch": "Total"
         },
         {
@@ -12496,13 +12520,13 @@
         {
             "Item": "CURAPROX Travel Set Blue Box",
             "SKU": "P29_CTSB",
-            "Qty": 68.0,
+            "Qty": 67.0,
             "Branch": "Total"
         },
         {
             "Item": "CURAPROX Travel Set Green Box",
             "SKU": "P29_CTSG",
-            "Qty": 52.0,
+            "Qty": 50.0,
             "Branch": "Total"
         },
         {
@@ -12532,7 +12556,7 @@
         {
             "Item": "CURAPROX CS 5460",
             "SKU": "P5460",
-            "Qty": 1830.0,
+            "Qty": 1771.0,
             "Branch": "Total"
         },
         {
@@ -12580,7 +12604,7 @@
         {
             "Item": "Black Is White Set",
             "SKU": "PBIWS",
-            "Qty": 89.0,
+            "Qty": 88.0,
             "Branch": "Total"
         },
         {
@@ -12592,7 +12616,7 @@
         {
             "Item": "Black Is White 10 ml.",
             "SKU": "PBIWT10",
-            "Qty": 35.0,
+            "Qty": 34.0,
             "Branch": "Total"
         },
         {
@@ -12604,7 +12628,7 @@
         {
             "Item": "Black Is White Travel Box",
             "SKU": "PBIW_TB",
-            "Qty": 84.0,
+            "Qty": 82.0,
             "Branch": "Total"
         },
         {
@@ -12628,31 +12652,31 @@
         {
             "Item": "BE YOU 10 ml. Challenger",
             "SKU": "PBYCR10",
-            "Qty": 36.0,
+            "Qty": 34.0,
             "Branch": "Total"
         },
         {
             "Item": "BE YOU 10 ml. Daydreamer",
             "SKU": "PBYDB10",
-            "Qty": 4.0,
+            "Qty": 3.0,
             "Branch": "Total"
         },
         {
             "Item": "BE YOU 10 ml. Explorer",
             "SKU": "PBYEG10",
-            "Qty": 4.0,
+            "Qty": 3.0,
             "Branch": "Total"
         },
         {
             "Item": "BE YOU 60 ml.| Apple",
             "SKU": "PBYOU60_AP",
-            "Qty": 64.0,
+            "Qty": 61.0,
             "Branch": "Total"
         },
         {
             "Item": "BE YOU 60 ml.| Blackberry",
             "SKU": "PBYOU60_BB",
-            "Qty": 77.0,
+            "Qty": 76.0,
             "Branch": "Total"
         },
         {
@@ -12670,13 +12694,13 @@
         {
             "Item": "BE YOU 60 ml.| Peach",
             "SKU": "PBYOU60_PE",
-            "Qty": 53.0,
+            "Qty": 52.0,
             "Branch": "Total"
         },
         {
             "Item": "BE YOU 60 ml.| Watermelon",
             "SKU": "PBYOU60_WM",
-            "Qty": 58.0,
+            "Qty": 56.0,
             "Branch": "Total"
         },
         {
@@ -12688,7 +12712,7 @@
         {
             "Item": "BE YOU 10 ml. Rising Star",
             "SKU": "PBYRY10",
-            "Qty": 28.0,
+            "Qty": 27.0,
             "Branch": "Total"
         },
         {
@@ -12712,7 +12736,7 @@
         {
             "Item": "CURAPROX KIDS",
             "SKU": "PCPKID",
-            "Qty": 372.0,
+            "Qty": 370.0,
             "Branch": "Total"
         },
         {
@@ -12724,7 +12748,7 @@
         {
             "Item": "CURAPROX CPS Prime refill x8 | Size: 07",
             "SKU": "PCPSx8_07",
-            "Qty": 26.0,
+            "Qty": 25.0,
             "Branch": "Total"
         },
         {
@@ -12754,7 +12778,7 @@
         {
             "Item": "Curaprox Baby Toothbrush",
             "SKU": "PCUBY",
-            "Qty": 303.0,
+            "Qty": 297.0,
             "Branch": "Total"
         },
         {
@@ -12766,7 +12790,7 @@
         {
             "Item": "drTung's Smart Floss",
             "SKU": "PDTFS",
-            "Qty": 1134.0,
+            "Qty": 1115.0,
             "Branch": "Total"
         },
         {
@@ -12784,7 +12808,7 @@
         {
             "Item": "drTung's Tongue Cleaner",
             "SKU": "PDTTC",
-            "Qty": 140.0,
+            "Qty": 136.0,
             "Branch": "Total"
         },
         {
@@ -12796,7 +12820,7 @@
         {
             "Item": "Enzycal 950",
             "SKU": "PEN95",
-            "Qty": 141.0,
+            "Qty": 138.0,
             "Branch": "Total"
         },
         {
@@ -12820,7 +12844,7 @@
         {
             "Item": "Flipper Animal Beagle",
             "SKU": "PFBEA",
-            "Qty": 75.0,
+            "Qty": 74.0,
             "Branch": "Total"
         },
         {
@@ -12838,13 +12862,13 @@
         {
             "Item": "Flipper Animal Giraffe",
             "SKU": "PFGIR",
-            "Qty": 42.0,
+            "Qty": 41.0,
             "Branch": "Total"
         },
         {
             "Item": "Flipper Animal Kitten Siamese",
             "SKU": "PFKIT",
-            "Qty": 30.0,
+            "Qty": 28.0,
             "Branch": "Total"
         },
         {
@@ -12868,7 +12892,7 @@
         {
             "Item": "Flipper Animal Piggy",
             "SKU": "PFPIG",
-            "Qty": 46.0,
+            "Qty": 45.0,
             "Branch": "Total"
         },
         {
@@ -12880,7 +12904,7 @@
         {
             "Item": "Flipper Toothpaste Squirter Pink",
             "SKU": "PFSQP",
-            "Qty": 27.0,
+            "Qty": 26.0,
             "Branch": "Total"
         },
         {
@@ -12910,13 +12934,13 @@
         {
             "Item": "Flipper The Little Bus Lani",
             "SKU": "PLANI",
-            "Qty": 24.0,
+            "Qty": 23.0,
             "Branch": "Total"
         },
         {
             "Item": "CURAPROX CS Ortho",
             "SKU": "PORTH",
-            "Qty": 329.0,
+            "Qty": 327.0,
             "Branch": "Total"
         },
         {
@@ -12928,7 +12952,7 @@
         {
             "Item": "Flipper Owl Earthy",
             "SKU": "POWLG",
-            "Qty": 30.0,
+            "Qty": 29.0,
             "Branch": "Total"
         },
         {
@@ -12946,7 +12970,7 @@
         {
             "Item": "Plackers Flosser Kids Dual Gripz",
             "SKU": "PPLFL_KI",
-            "Qty": 64.0,
+            "Qty": 60.0,
             "Branch": "Total"
         },
         {
@@ -12958,31 +12982,31 @@
         {
             "Item": "Plackers Flosser Micro Mint (36 pcs)",
             "SKU": "PPLFL_MI36",
-            "Qty": 119.0,
+            "Qty": 118.0,
             "Branch": "Total"
         },
         {
             "Item": "Plackers Orthopick Flossors",
             "SKU": "PPLFL_OR",
-            "Qty": 47.0,
+            "Qty": 46.0,
             "Branch": "Total"
         },
         {
             "Item": "Plackers Flosser Micro Mint Travel",
             "SKU": "PPLFL_TR",
-            "Qty": 113.0,
+            "Qty": 110.0,
             "Branch": "Total"
         },
         {
             "Item": "Plackers Flosser Twin Line",
             "SKU": "PPLFL_TW",
-            "Qty": 114.0,
+            "Qty": 112.0,
             "Branch": "Total"
         },
         {
             "Item": "Plackers Grind No More",
             "SKU": "PPLGR_NM",
-            "Qty": 23.0,
+            "Qty": 21.0,
             "Branch": "Total"
         },
         {
@@ -13000,7 +13024,7 @@
         {
             "Item": "Flipper Pororo Pororo",
             "SKU": "PPORO",
-            "Qty": 42.0,
+            "Qty": 40.0,
             "Branch": "Total"
         },
         {
@@ -13024,7 +13048,7 @@
         {
             "Item": "Radius Source Brush with Replaceable Head Color_US Currency",
             "SKU": "PRAD_SOURCE",
-            "Qty": 8.0,
+            "Qty": 7.0,
             "Branch": "Total"
         },
         {
@@ -13072,13 +13096,13 @@
         {
             "Item": "CURAPROX CS 1006",
             "SKU": "PSIN06",
-            "Qty": 262.0,
+            "Qty": 259.0,
             "Branch": "Total"
         },
         {
             "Item": "CURAPROX CS 1009",
             "SKU": "PSIN09",
-            "Qty": 130.0,
+            "Qty": 128.0,
             "Branch": "Total"
         },
         {
@@ -13090,7 +13114,7 @@
         {
             "Item": "Flipper The Little Bus Tayo",
             "SKU": "PTAYP",
-            "Qty": 13.0,
+            "Qty": 12.0,
             "Branch": "Total"
         },
         {
@@ -13108,7 +13132,7 @@
         {
             "Item": "TheraBreath Fresh Breath (Mild Mint)",
             "SKU": "PTBMM",
-            "Qty": 35.0,
+            "Qty": 30.0,
             "Branch": "Total"
         },
         {
@@ -13138,7 +13162,7 @@
         {
             "Item": "Curaprox Kids Watermelon - Floride 1450 ppm",
             "SKU": "P_CK- WM-1450",
-            "Qty": 91.0,
+            "Qty": 89.0,
             "Branch": "Total"
         },
         {
@@ -13162,7 +13186,7 @@
         {
             "Item": "Enzycal 1450",
             "SKU": "P_EN1450",
-            "Qty": 126.0,
+            "Qty": 121.0,
             "Branch": "Total"
         },
         {
@@ -13180,13 +13204,13 @@
         {
             "Item": "edel+white Care Forte",
             "SKU": "P_EW-GUM75",
-            "Qty": 158.0,
+            "Qty": 152.0,
             "Branch": "Total"
         },
         {
             "Item": "edel+white Intensive Flosserbrush",
             "SKU": "P_EW-INT",
-            "Qty": 475.0,
+            "Qty": 468.0,
             "Branch": "Total"
         },
         {
@@ -13222,7 +13246,7 @@
         {
             "Item": "edel+white Stain Eraser",
             "SKU": "P_EW-SE",
-            "Qty": 117.0,
+            "Qty": 114.0,
             "Branch": "Total"
         },
         {
@@ -13246,13 +13270,13 @@
         {
             "Item": "edel+white Anti Plaque + Whitening",
             "SKU": "P_EW-TW75",
-            "Qty": 165.0,
+            "Qty": 163.0,
             "Branch": "Total"
         },
         {
             "Item": "edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
-            "Qty": 772.0,
+            "Qty": 749.0,
             "Branch": "Total"
         },
         {
@@ -13294,7 +13318,7 @@
         {
             "Item": "Gentles Tots | Plus",
             "SKU": "P_GT_360P",
-            "Qty": 13.0,
+            "Qty": 10.0,
             "Branch": "Total"
         },
         {
@@ -13336,7 +13360,7 @@
         {
             "Item": "Gentles Tots Kids | Strawberry Yugurt",
             "SKU": "P_GT_TPSY",
-            "Qty": 29.0,
+            "Qty": 27.0,
             "Branch": "Total"
         },
         {
@@ -13516,7 +13540,7 @@
         {
             "Item": "GinkGo-ICY BLUE",
             "SKU": "P_TWG TB",
-            "Qty": 11.0,
+            "Qty": 9.0,
             "Branch": "Total"
         },
         {
@@ -13534,7 +13558,7 @@
         {
             "Item": "TwiGo Adults-Mustard Yellow & Olive Green",
             "SKU": "P_TWG YG",
-            "Qty": 17.0,
+            "Qty": 16.0,
             "Branch": "Total"
         },
         {
@@ -13552,13 +13576,13 @@
         {
             "Item": "GinkGo-ICY BLUE",
             "SKU": "P_TWG_TB",
-            "Qty": 15.0,
+            "Qty": 6.0,
             "Branch": "Total"
         },
         {
             "Item": "GinkGo-SMOKE",
             "SKU": "P_TWG_TSM",
-            "Qty": 14.0,
+            "Qty": 12.0,
             "Branch": "Total"
         },
         {
@@ -13576,7 +13600,7 @@
         {
             "Item": "CURAPROX Velvet",
             "SKU": "P_Velvet",
-            "Qty": 735.0,
+            "Qty": 725.0,
             "Branch": "Total"
         },
         {
@@ -13612,7 +13636,7 @@
         {
             "Item": "Dr.Mark\u2019s HyGenie",
             "SKU": "P_drmarkhy",
-            "Qty": 55.0,
+            "Qty": 54.0,
             "Branch": "Total"
         },
         {
@@ -13654,7 +13678,7 @@
         {
             "Item": "ORALPEACE Clean & Moisture Spray Natural",
             "SKU": "SPG",
-            "Qty": 26.0,
+            "Qty": 25.0,
             "Branch": "Total"
         },
         {
@@ -13702,7 +13726,7 @@
         {
             "Item": "TwiGo 365 / 4 Seasons + 1 New Me Collection",
             "SKU": "TWG_365",
-            "Qty": 44.0,
+            "Qty": 43.0,
             "Branch": "Total"
         },
         {
@@ -13888,7 +13912,7 @@
         {
             "Item": "CURAPROX Velvet | I2 - Mint/Pink",
             "SKU": "V26",
-            "Qty": 16.0,
+            "Qty": 15.0,
             "Branch": "Total"
         },
         {
@@ -13960,7 +13984,7 @@
         {
             "Item": "Radius Brush Replacement Head (For Big Brush & Tour Travel) Soft (2 pcs.)",
             "SKU": "_T_S_RE",
-            "Qty": 8.0,
+            "Qty": 7.0,
             "Branch": "Total"
         }
     ]
