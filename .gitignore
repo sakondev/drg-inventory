@@ -4,3 +4,4 @@ inventory_data.json
 stock_report.py
 .venv/
 run.bat
+log.txt
