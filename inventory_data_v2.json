@@ -1,5 +1,5 @@
 {
-    "last_updated": "2024-09-17 23:34:10",
+    "last_updated": "2024-09-17 23:38:24",
     "inventory": [
         {
             "Item": "edel+white Intensive Flosserbrush",
@@ -2245,7 +2245,7 @@
                 "Mega": 2.0,
                 "Embassy": 4.0,
                 "EmQuartier": 3.0,
-                "On Time": "10"
+                "On Time": "8"
             }
         },
         {
@@ -3563,7 +3563,7 @@
             "Item": "CURAPROX Velvet | I3 - Mint/Red",
             "SKU": "V27",
             "Branch": {
-                "On Time": "26"
+                "On Time": "25"
             }
         },
         {
@@ -3647,7 +3647,7 @@
             "Item": "CURAPROX Velvet | E3 - Blue/Red",
             "SKU": "V15",
             "Branch": {
-                "On Time": "34"
+                "On Time": "33"
             }
         },
         {

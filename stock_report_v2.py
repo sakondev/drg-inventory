@@ -160,7 +160,7 @@ try:
     commit_message = f"Update inventory data - Last updated: {final_result['last_updated']}"
     subprocess.run(['git', 'add', '.'], check=True)
     subprocess.run(['git', 'commit', '-m', commit_message], check=True)
-    subprocess.run(['git', 'push', '--set-upstream', 'origin', 'main'], check=True)
+    subprocess.run(['git', 'push', 'origin', 'main'], check=True)
     print("Changes pushed to Git repository.")
 except subprocess.CalledProcessError as e:
     print(f"Error during Git operation: {e}")
