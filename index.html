@@ -25,23 +25,23 @@
         font-family: Arial, sans-serif;
         margin: 20px;
       }
-
       table {
         width: 100%;
         border-collapse: collapse;
       }
-
       th,
       td {
         padding: 8px;
         text-align: left;
         border-bottom: 1px solid #ddd;
       }
-
       th {
         background-color: #f2f2f2;
       }
-
+      /* Make the Total column bold */
+      #inventoryTable td:nth-child(5) {
+        font-weight: bold;
+      }
       #branchFilter,
       #exportButton {
         margin-bottom: 20px;
@@ -55,6 +55,7 @@
     <!-- Dropdown for filtering branches -->
     <label for="branchFilter">Select Branch:</label>
     <select id="branchFilter">
+      <option value="">All</option>
       <!-- Options will be populated dynamically -->
     </select>
 
@@ -65,10 +66,11 @@
     <table id="inventoryTable" class="display">
       <thead>
         <tr>
-          <th>SKU</th>
-          <th>Item</th>
-          <th>Branch</th>
-          <th>Available Qty.</th>
+          <th style="width: 15%">SKU</th>
+          <th style="width: 40%">Item</th>
+          <th style="width: 15%">Branch</th>
+          <th style="width: 15%">Qty</th>
+          <th style="width: 15%">Total Qty</th>
         </tr>
       </thead>
       <tbody>
@@ -78,60 +80,81 @@
 
     <script>
       $(document).ready(function () {
-        // Initialize DataTable
-        var table = $("#inventoryTable").DataTable({
-          ajax: {
-            url: "inventory_data.json", // Ensure this URL is correct
-            dataSrc: "inventory", // Adjusted to match the JSON structure
-          },
-          columns: [
-            { data: "SKU" },
-            { data: "Item" },
-            { data: "Branch" },
-            { data: "Qty" },
-          ],
-          pageLength: 25, // Set a high default entries per page
-          lengthMenu: [
-            [25, 50, 100, -1],
-            [25, 50, 100, "All"],
-          ], // Allow 'All' option
-          paging: true, // Enable pagination
-          dom: "<'top'lf>rt<'bottom'i<'clear'>p>", // Add information display
-        });
+        $.getJSON("inventory_data.json")
+          .done(function (data) {
+            $("#lastUpdated").text("Last Updated at: " + data.last_updated);
 
-        // Populate last updated information
-        $.getJSON("inventory_data.json", function (data) {
-          $("#lastUpdated").text("Last Updated at: " + data.last_updated);
-        });
+            // Initialize DataTable
+            var table = $("#inventoryTable").DataTable({
+              data: [],
+              columns: [
+                { data: "SKU" },
+                { data: "Item" },
+                { data: "Branch" },
+                { data: "Qty" },
+                { data: "Total" },
+              ],
+              pageLength: 25,
+              lengthMenu: [
+                [25, 50, 100, -1],
+                [25, 50, 100, "All"],
+              ],
+              paging: true,
+              dom: "<'top'lf>rt<'bottom'i<'clear'>p>",
+            });
 
-        // Populate branch filter options on data load
-        table.on("xhr", function () {
-          var json = table.ajax.json();
-          var branches = [
-            ...new Set(json.inventory.map((item) => item.Branch)),
-          ];
+            // Process inventory data
+            var processedData = [];
+            data.inventory.forEach((item) => {
+              var totalQty = 0; // Initialize total quantity for each item
+              var branches = item.Branch;
 
-          branches.forEach((branch) => {
-            $("#branchFilter").append(new Option(branch, branch));
+              // Loop through branches
+              for (var branch in branches) {
+                var qty = parseFloat(branches[branch]);
+                totalQty += qty; // Accumulate total quantity
+
+                processedData.push({
+                  SKU: item.SKU,
+                  Item: item.Item,
+                  Branch: branch,
+                  Qty: qty,
+                  Total: totalQty, // Add total to each entry
+                });
+              }
+            });
+
+            // Add data to DataTable
+            table.clear().rows.add(processedData).draw();
+
+            // Populate branch filter options with unique branch names
+            var branchNames = {};
+            processedData.forEach((item) => {
+              branchNames[item.Branch] = true; // Store unique branch names
+            });
+            Object.keys(branchNames).forEach((branch) => {
+              $("#branchFilter").append(new Option(branch, branch));
+            });
+
+            // Filter by selected branch
+            $("#branchFilter").on("change", function () {
+              var selectedBranch = $(this).val();
+              table
+                .column(2) // Column index for "Branch"
+                .search(
+                  selectedBranch ? "^" + selectedBranch + "$" : "",
+                  true,
+                  false
+                )
+                .draw();
+            });
+          })
+          .fail(function () {
+            console.error("Failed to load JSON data.");
+            alert(
+              "Error loading data. Please check the console for more details."
+            );
           });
-
-          // Set default branch to "Total" and filter the table
-          var defaultBranch = "Total";
-          $("#branchFilter").val(defaultBranch).change(); // Select default branch
-        });
-
-        // Filter by selected branch
-        $("#branchFilter").on("change", function () {
-          var selectedBranch = $(this).val();
-          table
-            .column(2)
-            .search(
-              selectedBranch ? "^" + selectedBranch + "$" : "",
-              true,
-              false
-            )
-            .draw();
-        });
 
         // Export to Excel
         $("#exportButton").on("click", function () {

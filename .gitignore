@@ -5,3 +5,4 @@ stock_report.py
 .venv/
 run.bat
 log.txt
+archive/

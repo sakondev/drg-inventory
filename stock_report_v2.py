@@ -62,18 +62,18 @@ base_url = "https://mychococard.com/CRM/v2/Restaurant/{}/Inventory/DownloadTempl
 # List of branches with their respective identifiers
 branches = {
     "Samyan": (7485, 2209),
-    "The Circle": (7487, 2207),
-    "Central Rama 9": (7484, 2206),
-    "Central Eastville": (7483, 2205),
-    "Mega Bangna": (7482, 2204),
-    "Central Embassy": (7481, 2203),
-    "The EmQuartier": (7480, 2202)
+    "Circle": (7487, 2207),
+    "Rama 9": (7484, 2206),
+    "Eastville": (7483, 2205),
+    "Mega": (7482, 2204),
+    "Embassy": (7481, 2203),
+    "EmQuartier": (7480, 2202)
 }
 
-# Create a DataFrame to collect all data
-total_inventory = pd.DataFrame()
+# Initialize the reorganized inventory dictionary
+reorganized_inventory = {}
 
-# Download data for each branch
+# Download and process data for each branch
 for branch, (id_, template_id) in branches.items():
     url = base_url.format(id_, template_id)
     print(f"Downloading file for: {branch}...")
@@ -92,9 +92,19 @@ for branch, (id_, template_id) in branches.items():
     df = pd.read_excel(downloaded_file, engine='openpyxl')
     df = df[['Item', 'SKU', 'Available Qty.']]
     df.columns = ['Item', 'SKU', 'Qty']
-    df['Branch'] = branch
 
-    total_inventory = pd.concat([total_inventory, df], ignore_index=True)
+    # Directly reorganize the data
+    for _, row in df.iterrows():
+        item = row['Item']
+        sku = row['SKU']
+        qty = row['Qty']
+        
+        if item not in reorganized_inventory:
+            reorganized_inventory[item] = {
+                "SKU": sku,
+                "Branch": {}
+            }
+        reorganized_inventory[item]["Branch"][branch] = qty
 
 # Step 2: Fetch data from the API
 api_url = "https://open-api.zortout.com/v4/Product/GetProducts"
@@ -106,85 +116,54 @@ headers = {
 
 response = requests.get(api_url, headers=headers)
 
-# Check if the response was successful
+# Process API data
 if response.status_code == 200:
     api_data = response.json()
 
-    print(f"Fetching Data From Zort...")
-
-    # Check if 'list' exists in the response
     if 'list' in api_data:
         products = api_data['list']
         
-        # Create a DataFrame from the extracted data
-        if products:
-            api_inventory = pd.DataFrame(products)
-
-            # Select required columns and rename them
-            api_inventory = api_inventory[['name', 'sku', 'availablestock']].rename(columns={
-                'name': 'Item',
-                'sku': 'SKU',
-                'availablestock': 'Qty'
-            })
+        for product in products:
+            item = product['name']
+            sku = product['sku']
+            qty = product['availablestock']
             
-            api_inventory['Branch'] = 'On Time'  # Add branch "On Time" to API data
+            if item not in reorganized_inventory:
+                reorganized_inventory[item] = {
+                    "SKU": sku,
+                    "Branch": {}
+                }
+            reorganized_inventory[item]["Branch"]['On Time'] = qty
 
-            # Combine API data with total inventory
-            total_inventory = pd.concat([total_inventory, api_inventory], ignore_index=True)
-            print(f"Combined Inventory...")
-        else:
-            print("No products found in the API response.")
-    else:
-        print("Expected 'list' not found in the API response.")
-else:
-    print(f"Failed to fetch data from API. Status code: {response.status_code}")
-
-# Ensure that 'Qty' is numeric, converting any non-numeric values to NaN
-total_inventory['Qty'] = pd.to_numeric(total_inventory['Qty'], errors='coerce')
-
-# Create a separate branch for summed quantities
-if not total_inventory.empty:
-    summed_quantities = total_inventory.groupby('SKU', as_index=False).agg({'Qty': 'sum', 'Item': 'first'})
-    summed_quantities['Branch'] = 'Total'  # Add a new branch for summed quantities
-    
-    # Combine the summed quantities back into total_inventory
-    total_inventory = pd.concat([total_inventory, summed_quantities[['Item', 'SKU', 'Qty', 'Branch']]], ignore_index=True)
+# Convert to the desired structure
+result_inventory = []
+for item, details in reorganized_inventory.items():
+    result_inventory.append({
+        "Item": item,
+        "SKU": details["SKU"],
+        "Branch": details["Branch"]
+    })
 
 # Export Inventory Data
-if not total_inventory.empty:
-    current_time = datetime.now().strftime("%y%m%d_%H%M")
-    
-    # Export data to Excel
-    # output_filename = f'inventory_report_{current_time}.xlsx'
-    # total_inventory.to_excel(output_filename, index=False)
-    
-    # print(f"Inventory data exported to {output_filename}")
+json_filename = 'inventory_data_v2.json'
+final_result = {
+    "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    "inventory": result_inventory
+}
+with open(json_filename, 'w', encoding='utf-8') as json_file:
+    json.dump(final_result, json_file, ensure_ascii=False, indent=4)
 
-    # Get the current timestamp for the last updated date
-    last_updated = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+print(f"Inventory data exported to {json_filename}")
 
-    # Export data to JSON, overwriting any existing file
-    json_filename = 'inventory_data.json'
-    json_data = {
-        "last_updated": last_updated,
-        "inventory": total_inventory.to_dict(orient='records')
-    }
-    with open(json_filename, 'w') as json_file:
-        json.dump(json_data, json_file, indent=4)
-    
-    print(f"Inventory data exported to {json_filename}")
-
-    # Git commands to add, commit, and push changes
-    try:
-        commit_message = f"Update inventory data - Last updated: {last_updated}"
-        subprocess.run(['git', 'add', '.'], check=True)
-        subprocess.run(['git', 'commit', '-m', commit_message], check=True)
-    
-    # Set the upstream branch and push
-        subprocess.run(['git', 'push', '--set-upstream', 'origin', 'main'], check=True)
-        print("Changes pushed to Git repository.")
-    except subprocess.CalledProcessError as e:
-        print(f"Error during Git operation: {e}")
+# Git commands to add, commit, and push changes
+try:
+    commit_message = f"Update inventory data - Last updated: {final_result['last_updated']}"
+    subprocess.run(['git', 'add', '.'], check=True)
+    subprocess.run(['git', 'commit', '-m', commit_message], check=True)
+    subprocess.run(['git', 'push', '--set-upstream', 'origin', 'main'], check=True)
+    print("Changes pushed to Git repository.")
+except subprocess.CalledProcessError as e:
+    print(f"Error during Git operation: {e}")
 
 # Cleanup: Delete all files in the specified download folder
 for file in os.listdir(download_folder):
