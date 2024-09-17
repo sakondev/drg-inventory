@@ -145,7 +145,7 @@ for item, details in reorganized_inventory.items():
     })
 
 # Export Inventory Data
-json_filename = 'inventory_data_v2.json'
+json_filename = 'inventory_data.json'
 final_result = {
     "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     "inventory": result_inventory
