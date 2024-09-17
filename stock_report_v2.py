@@ -10,6 +10,7 @@ import time
 import requests
 import json
 import subprocess
+from collections import OrderedDict
 
 # Load environment variables from the .env file
 load_dotenv()
@@ -97,14 +98,20 @@ for branch, (id_, template_id) in branches.items():
     for _, row in df.iterrows():
         item = row['Item']
         sku = row['SKU']
-        qty = row['Qty']
+        qty = float(row['Qty'])  # Ensure quantity is a float
         
         if item not in reorganized_inventory:
             reorganized_inventory[item] = {
                 "SKU": sku,
-                "Branch": {}
+                "Branch": OrderedDict()
             }
         reorganized_inventory[item]["Branch"][branch] = qty
+
+# Sum quantities for all branches and create a "Total" branch
+for item, details in reorganized_inventory.items():
+    total_qty = sum(details["Branch"].values())
+    details["Branch"]["Total"] = total_qty
+    details["Branch"] = OrderedDict(sorted(details["Branch"].items(), key=lambda x: x[0] != "Total"))
 
 # Step 2: Fetch data from the API
 api_url = "https://open-api.zortout.com/v4/Product/GetProducts"
@@ -126,12 +133,12 @@ if response.status_code == 200:
         for product in products:
             item = product['name']
             sku = product['sku']
-            qty = product['availablestock']
+            qty = float(product['availablestock'])  # Ensure quantity is a float
             
             if item not in reorganized_inventory:
                 reorganized_inventory[item] = {
                     "SKU": sku,
-                    "Branch": {}
+                    "Branch": OrderedDict()
                 }
             reorganized_inventory[item]["Branch"]['On Time'] = qty
 
