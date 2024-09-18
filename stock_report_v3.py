@@ -13,7 +13,6 @@ import requests
 import json
 from collections import OrderedDict
 import logging
-import subprocess
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -62,11 +61,21 @@ def wait_for_clickable(by, value, timeout=10):
 def wait_for_element(by, value, timeout=10):
     return WebDriverWait(driver, timeout).until(EC.presence_of_element_located((by, value)))
 
-# Download and process data from ChocoCard
+# Function to clean up a specific file
+def delete_file(file_path):
+    try:
+        if os.path.isfile(file_path):
+            os.remove(file_path)
+            logging.info(f"Deleted file: {file_path}")
+    except Exception as e:
+        logging.error(f"Failed to delete {file_path}. Reason: {e}")
+
+# Download and process data from ChocoCard with retry logic
 def download_chococard_data():
+    max_retries = 3  # Set a maximum number of retries
     try:
         logging.info("Starting ChocoCard data download...")
-        
+
         # Log in to ChocoCard
         driver.get('https://mychococard.com/Account/Login')
         wait_for_element(By.NAME, 'username').send_keys(choco_username)
@@ -93,36 +102,59 @@ def download_chococard_data():
 
         # Download and process data for each branch
         for branch, (id_, template_id) in branches.items():
-            url = base_url.format(id_, template_id)
-            logging.info(f"Downloading file for: {branch}...")
-            driver.get(url)
-            
-            # Wait for download to complete (adjust if necessary)
-            time.sleep(2)
-            
-            # Find the latest downloaded file
-            downloaded_file = max(
-                [os.path.join(download_folder, f) for f in os.listdir(download_folder)],
-                key=os.path.getctime
-            )
+            retry_count = 0
+            download_successful = False
 
-            # Read the downloaded Excel file
-            df = pd.read_excel(downloaded_file, engine='openpyxl')
-            df = df[['Item', 'SKU', 'Available Qty.']]  # Extract necessary columns
-            df.columns = ['Item', 'SKU', 'Qty']  # Rename columns
+            while retry_count < max_retries and not download_successful:
+                try:
+                    url = base_url.format(id_, template_id)
+                    logging.info(f"Downloading file for: {branch}... (Attempt {retry_count + 1})")
+                    driver.get(url)
 
-            # Reorganize data and add it to the inventory
-            for _, row in df.iterrows():
-                item = row['Item']
-                sku = row['SKU']
-                qty = float(row['Qty'])  # Ensure quantity is a float
-                
-                if item not in reorganized_inventory:
-                    reorganized_inventory[item] = {
-                        "SKU": sku,
-                        "Branch": OrderedDict()
-                    }
-                reorganized_inventory[item]["Branch"][branch] = qty
+                    # Wait for download to complete (adjust if necessary)
+                    time.sleep(2)
+
+                    # Find the latest downloaded file
+                    downloaded_file = max(
+                        [os.path.join(download_folder, f) for f in os.listdir(download_folder)],
+                        key=os.path.getctime
+                    )
+
+                    # Check if the file is valid (e.g., check if it's a valid Excel file)
+                    if downloaded_file.endswith('.xlsx'):
+                        # Read the downloaded Excel file
+                        df = pd.read_excel(downloaded_file, engine='openpyxl')
+                        df = df[['Item', 'SKU', 'Available Qty.']]  # Extract necessary columns
+                        df.columns = ['Item', 'SKU', 'Qty']  # Rename columns
+
+                        # Reorganize data and add it to the inventory
+                        for _, row in df.iterrows():
+                            item = row['Item']
+                            sku = row['SKU']
+                            qty = float(row['Qty'])  # Ensure quantity is a float
+
+                            if item not in reorganized_inventory:
+                                reorganized_inventory[item] = {
+                                    "SKU": sku,
+                                    "Branch": OrderedDict()
+                                }
+                            reorganized_inventory[item]["Branch"][branch] = qty
+
+                        logging.info(f"Successfully processed data for: {branch}")
+                        download_successful = True  # Mark download as successful
+                    else:
+                        raise Exception("Downloaded file is not a valid Excel file.")
+
+                except Exception as e:
+                    logging.error(f"Error downloading data for {branch}: {e}")
+                    retry_count += 1
+
+                    # Delete the downloaded file if it exists and is invalid
+                    if 'downloaded_file' in locals() and os.path.exists(downloaded_file):
+                        delete_file(downloaded_file)
+
+                    if retry_count >= max_retries:
+                        logging.error(f"Failed to download file for {branch} after {max_retries} attempts.")
 
         logging.info("ChocoCard data has been processed for all branches.")
         return reorganized_inventory  # Return the organized data
@@ -167,7 +199,7 @@ def download_vending_data():
         wait_for_clickable(By.XPATH, "//button[@onclick='execute_export()']").click()
 
         # Wait for the download to complete (adjust this time if necessary)
-        time.sleep(1)
+        time.sleep(2)
 
         # Find the latest downloaded file
         downloaded_file = max(
@@ -219,11 +251,6 @@ def process_data():
         # Drop the first row (which doesn't contain headers)
         # logging.info(f"Vending Machine DataFrame head before processing:\n{df.head()}")
         df = df.drop(index=0)
-
-        # Now, set the second row as the header and reset the DataFrame
-        df.columns = df.iloc[0]  # Set second row as header
-        df = df.drop(index=1).reset_index(drop=True)  # Drop the old header row
-        # logging.info(f"Vending Machine DataFrame head after setting headers:\n{df.head()}")
 
         # Load SKU mapping CSV (this maps Goods Name to SKU)
         sku_mapping_df = pd.read_csv(sku_mapping_file)
@@ -284,16 +311,6 @@ def process_data():
         json.dump(final_result, json_file, ensure_ascii=False, indent=4)
 
     logging.info(f"Inventory data exported to {json_filename}")
-    
-    # Git commit and push
-    try:
-        commit_message = f"Update inventory data - Last updated: {final_result['last_updated']}"
-        subprocess.run(['git', 'add', '.'], check=True)
-        subprocess.run(['git', 'commit', '-m', commit_message], check=True)
-        subprocess.run(['git', 'push', '--set-upstream', 'origin', 'main'], check=True)
-        print("Changes pushed to Git repository.")
-    except subprocess.CalledProcessError as e:
-        print(f"Error during Git operation: {e}")
 
 # Function to clean up all files in the download folder
 def clean_download_folder(download_folder):

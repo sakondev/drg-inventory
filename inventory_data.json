@@ -1,15 +1,15 @@
 {
-    "last_updated": "2024-09-18 17:59:48",
+    "last_updated": "2024-09-18 21:24:30",
     "inventory": [
         {
             "Item": "edel+white Intensive Flosserbrush",
             "SKU": "P_EW-INT",
             "Branch": {
-                "Total": 453.0,
+                "Total": 452.0,
                 "Samyan": 102.0,
                 "Circle": 48.0,
                 "Rama 9": 53.0,
-                "Eastville": 72.0,
+                "Eastville": 71.0,
                 "Mega": 15.0,
                 "Embassy": 72.0,
                 "EmQuartier": 43.0,
@@ -152,14 +152,14 @@
             "Item": "BE YOU 60 ml.| Blackberry",
             "SKU": "PBYOU60_BB",
             "Branch": {
-                "Total": 76.0,
-                "Samyan": 9.0,
+                "Total": 73.0,
+                "Samyan": 8.0,
                 "Circle": 7.0,
                 "Rama 9": 8.0,
                 "Eastville": 5.0,
-                "Mega": 7.0,
+                "Mega": 6.0,
                 "Embassy": 11.0,
-                "EmQuartier": 3.0,
+                "EmQuartier": 2.0,
                 "On Time": 26.0
             }
         },
@@ -255,26 +255,26 @@
             "Item": "DragCura Bag",
             "SKU": "DRG_Bag01",
             "Branch": {
-                "Total": 1287.0,
-                "Samyan": 183.0,
-                "Circle": 275.0,
-                "Rama 9": 283.0,
-                "Eastville": 234.0,
-                "Mega": 178.0,
-                "Embassy": 36.0,
-                "EmQuartier": 98.0
+                "Total": 1272.0,
+                "Samyan": 180.0,
+                "Circle": 273.0,
+                "Rama 9": 282.0,
+                "Eastville": 233.0,
+                "Mega": 175.0,
+                "Embassy": 34.0,
+                "EmQuartier": 95.0
             }
         },
         {
             "Item": "drTung's Copper Tongue Cleaner",
             "SKU": "DTCT",
             "Branch": {
-                "Total": 154.0,
+                "Total": 153.0,
                 "Samyan": 16.0,
                 "Circle": 14.0,
                 "Rama 9": 11.0,
                 "Eastville": 7.0,
-                "Mega": 4.0,
+                "Mega": 3.0,
                 "Embassy": 39.0,
                 "EmQuartier": 13.0,
                 "On Time": 50.0
@@ -573,10 +573,10 @@
             "Item": "Curaprox Kids Strawberry - Fluoride 950 ppm",
             "SKU": "P_CK- ST-950",
             "Branch": {
-                "Total": 76.0,
+                "Total": 74.0,
                 "Samyan": 11.0,
                 "Circle": 7.0,
-                "Rama 9": 9.0,
+                "Rama 9": 7.0,
                 "Eastville": 4.0,
                 "Mega": 5.0,
                 "Embassy": 15.0,
@@ -602,14 +602,14 @@
             "Item": "Curaprox Kids Watermelon - Floride 1450 ppm",
             "SKU": "P_CK- WM-1450",
             "Branch": {
-                "Total": 85.0,
+                "Total": 83.0,
                 "Samyan": 10.0,
                 "Circle": 8.0,
                 "Rama 9": 11.0,
                 "Eastville": 6.0,
-                "Mega": 7.0,
+                "Mega": 6.0,
                 "Embassy": 10.0,
-                "EmQuartier": 5.0,
+                "EmQuartier": 4.0,
                 "On Time": 28.0
             }
         },
@@ -676,14 +676,14 @@
             "Item": "Dr.Mark’s HyGenie",
             "SKU": "P_drmarkhy",
             "Branch": {
-                "Total": 52.0,
+                "Total": 51.0,
                 "Samyan": 6.0,
                 "Circle": 3.0,
                 "Rama 9": 6.0,
                 "Eastville": 6.0,
                 "Mega": 4.0,
                 "Embassy": 16.0,
-                "EmQuartier": 6.0,
+                "EmQuartier": 5.0,
                 "On Time": 5.0
             }
         },
@@ -691,14 +691,14 @@
             "Item": "Dr.Mark’s HyGenie Replacement Brush",
             "SKU": "P_drmarkhy_re",
             "Branch": {
-                "Total": 30.0,
+                "Total": 29.0,
                 "Samyan": 3.0,
                 "Circle": 0.0,
                 "Rama 9": 3.0,
                 "Eastville": 0.0,
                 "Mega": 0.0,
                 "Embassy": 16.0,
-                "EmQuartier": 2.0,
+                "EmQuartier": 1.0,
                 "On Time": 6.0
             }
         },
@@ -751,11 +751,11 @@
             "Item": "edel+white Easy Tape",
             "SKU": "P_EW-FT70",
             "Branch": {
-                "Total": 64.0,
+                "Total": 63.0,
                 "Samyan": 7.0,
                 "Circle": 5.0,
                 "Rama 9": 5.0,
-                "Eastville": 3.0,
+                "Eastville": 2.0,
                 "Mega": 10.0,
                 "Embassy": 5.0,
                 "EmQuartier": 1.0,
@@ -871,9 +871,9 @@
             "Item": "edel+white Stain Eraser",
             "SKU": "P_EW-SE",
             "Branch": {
-                "Total": 112.0,
-                "Samyan": 16.0,
-                "Circle": 4.0,
+                "Total": 110.0,
+                "Samyan": 15.0,
+                "Circle": 3.0,
                 "Rama 9": 15.0,
                 "Eastville": 15.0,
                 "Mega": 0.0,
@@ -961,15 +961,15 @@
             "Item": "edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
             "Branch": {
-                "Total": 725.0,
+                "Total": 720.0,
                 "Samyan": 79.0,
                 "Circle": 56.0,
-                "Rama 9": 71.0,
+                "Rama 9": 70.0,
                 "Eastville": 51.0,
                 "Mega": 67.0,
-                "Embassy": 87.0,
+                "Embassy": 84.0,
                 "EmQuartier": 43.0,
-                "On Time": 271.0
+                "On Time": 270.0
             }
         },
         {
@@ -1591,10 +1591,10 @@
             "Item": "Marvis Smokers Whitening Mint 85ML",
             "SKU": "MV_SWM",
             "Branch": {
-                "Total": 10.0,
+                "Total": 9.0,
                 "Samyan": 2.0,
                 "Circle": 1.0,
-                "Eastville": 2.0,
+                "Eastville": 1.0,
                 "Mega": 1.0,
                 "Embassy": 0.0,
                 "On Time": 4.0
@@ -1617,14 +1617,14 @@
             "Item": "[Campaign] Oralpeace (Sachet)",
             "SKU": "P_CPB24_OP",
             "Branch": {
-                "Total": 96.0,
+                "Total": 93.0,
                 "Samyan": 19.0,
                 "Circle": 11.0,
                 "Rama 9": 0.0,
                 "Eastville": 10.0,
                 "Mega": 0.0,
                 "Embassy": 2.0,
-                "EmQuartier": 4.0,
+                "EmQuartier": 1.0,
                 "On Time": 50.0
             }
         },
@@ -1736,10 +1736,10 @@
             "Item": "TwiGo Adults-Mustard Yellow & Olive Green",
             "SKU": "P_TWG YG",
             "Branch": {
-                "Total": 33.0,
+                "Total": 32.0,
                 "Samyan": 2.0,
                 "Circle": 3.0,
-                "Rama 9": 3.0,
+                "Rama 9": 2.0,
                 "Eastville": 5.0,
                 "Mega": 3.0,
                 "Embassy": 0.0,
@@ -1765,14 +1765,14 @@
             "Item": "CURAPROX Velvet",
             "SKU": "P_Velvet",
             "Branch": {
-                "Total": 703.0,
+                "Total": 699.0,
                 "Samyan": 104.0,
-                "Circle": 95.0,
-                "Rama 9": 87.0,
+                "Circle": 94.0,
+                "Rama 9": 86.0,
                 "Eastville": 61.0,
                 "Mega": 69.0,
                 "Embassy": 236.0,
-                "EmQuartier": 51.0
+                "EmQuartier": 49.0
             }
         },
         {
@@ -2003,14 +2003,14 @@
             "Item": "CURAPROX CS 5460",
             "SKU": "P5460",
             "Branch": {
-                "Total": 1730.0,
-                "Samyan": 234.0,
+                "Total": 1724.0,
+                "Samyan": 233.0,
                 "Circle": 282.0,
                 "Rama 9": 209.0,
                 "Eastville": 222.0,
-                "Mega": 224.0,
-                "Embassy": 313.0,
-                "EmQuartier": 246.0
+                "Mega": 222.0,
+                "Embassy": 311.0,
+                "EmQuartier": 245.0
             }
         },
         {
@@ -2046,13 +2046,13 @@
             "Item": "Curaprox CS 5460 Duo Fox and Bunny Edition",
             "SKU": "5460_FB",
             "Branch": {
-                "Total": 50.0,
+                "Total": 48.0,
                 "Samyan": 6.0,
                 "Circle": 6.0,
                 "Rama 9": 3.0,
                 "Eastville": 6.0,
-                "Mega": 2.0,
-                "Embassy": 1.0,
+                "Mega": 1.0,
+                "Embassy": 0.0,
                 "EmQuartier": 6.0,
                 "On Time": 20.0
             }
@@ -2117,10 +2117,10 @@
             "Item": "Black Is White Travel Box",
             "SKU": "PBIW_TB",
             "Branch": {
-                "Total": 77.0,
+                "Total": 76.0,
                 "Samyan": 11.0,
                 "Circle": 10.0,
-                "Rama 9": 9.0,
+                "Rama 9": 8.0,
                 "Eastville": 7.0,
                 "Mega": 6.0,
                 "Embassy": 6.0,
@@ -2147,14 +2147,14 @@
             "Item": "Black Is White Set",
             "SKU": "PBIWS",
             "Branch": {
-                "Total": 88.0,
+                "Total": 87.0,
                 "Samyan": 8.0,
                 "Circle": 9.0,
                 "Rama 9": 8.0,
                 "Eastville": 6.0,
                 "Mega": 8.0,
                 "Embassy": 16.0,
-                "EmQuartier": 6.0,
+                "EmQuartier": 5.0,
                 "On Time": 27.0
             }
         },
@@ -2177,10 +2177,10 @@
             "Item": "Black Is White 10 ml.",
             "SKU": "PBIWT10",
             "Branch": {
-                "Total": 33.0,
+                "Total": 32.0,
                 "Samyan": 5.0,
                 "Circle": 3.0,
-                "Rama 9": 1.0,
+                "Rama 9": 0.0,
                 "Eastville": 2.0,
                 "Mega": 4.0,
                 "Embassy": 5.0,
@@ -2282,8 +2282,8 @@
             "Item": "BE YOU 10 ml. Explorer",
             "SKU": "PBYEG10",
             "Branch": {
-                "Total": 3.0,
-                "Samyan": 2.0,
+                "Total": 2.0,
+                "Samyan": 1.0,
                 "Circle": 0.0,
                 "Rama 9": 0.0,
                 "Eastville": 0.0,
@@ -2446,10 +2446,10 @@
             "Item": "Curaprox Baby Toothbrush",
             "SKU": "PCUBY",
             "Branch": {
-                "Total": 288.0,
+                "Total": 287.0,
                 "Samyan": 66.0,
                 "Circle": 34.0,
-                "Rama 9": 37.0,
+                "Rama 9": 36.0,
                 "Eastville": 40.0,
                 "Mega": 29.0,
                 "Embassy": 42.0,
@@ -2474,15 +2474,15 @@
             "Item": "drTung's Smart Floss",
             "SKU": "PDTFS",
             "Branch": {
-                "Total": 1093.0,
-                "Samyan": 87.0,
+                "Total": 1084.0,
+                "Samyan": 85.0,
                 "Circle": 72.0,
                 "Rama 9": 62.0,
                 "Eastville": 67.0,
-                "Mega": 74.0,
-                "Embassy": 86.0,
+                "Mega": 70.0,
+                "Embassy": 84.0,
                 "EmQuartier": 67.0,
-                "On Time": 578.0
+                "On Time": 577.0
             }
         },
         {
@@ -2518,8 +2518,8 @@
             "Item": "drTung's Tongue Cleaner",
             "SKU": "PDTTC",
             "Branch": {
-                "Total": 135.0,
-                "Samyan": 14.0,
+                "Total": 134.0,
+                "Samyan": 13.0,
                 "Circle": 15.0,
                 "Rama 9": 20.0,
                 "Eastville": 8.0,
@@ -2562,19 +2562,19 @@
             "Item": "Enzycal Zero",
             "SKU": "PENZE",
             "Branch": {
-                "Total": 84.0,
+                "Total": 82.0,
                 "Samyan": 21.0,
                 "Circle": 9.0,
                 "Rama 9": 12.0,
                 "Eastville": 3.0,
                 "Mega": 5.0,
                 "Embassy": 9.0,
-                "EmQuartier": 4.0,
+                "EmQuartier": 2.0,
                 "On Time": 21.0
             }
         },
         {
-            "Item": "edel+white FlosserPik Power",
+            "Item": "edel+white FlosserPik",
             "SKU": "PEW-WJ180",
             "Branch": {
                 "Total": 20.0,
@@ -2651,8 +2651,8 @@
             "Item": "Flipper Animal Kitten Siamese",
             "SKU": "PFKIT",
             "Branch": {
-                "Total": 27.0,
-                "Samyan": 3.0,
+                "Total": 26.0,
+                "Samyan": 2.0,
                 "Circle": 0.0,
                 "Rama 9": 2.0,
                 "Eastville": 0.0,
@@ -2830,11 +2830,11 @@
             "Item": "CURAPROX CS Ortho",
             "SKU": "PORTH",
             "Branch": {
-                "Total": 325.0,
+                "Total": 324.0,
                 "Samyan": 54.0,
                 "Circle": 58.0,
                 "Rama 9": 62.0,
-                "Eastville": 49.0,
+                "Eastville": 48.0,
                 "Mega": 22.0,
                 "Embassy": 53.0,
                 "EmQuartier": 27.0
@@ -2934,7 +2934,7 @@
             "Item": "Plackers Flosser Micro Mint (36 pcs)",
             "SKU": "PPLFL_MI36",
             "Branch": {
-                "Total": 113.0,
+                "Total": 112.0,
                 "Samyan": 12.0,
                 "Circle": 8.0,
                 "Rama 9": 8.0,
@@ -2942,7 +2942,7 @@
                 "Mega": 0.0,
                 "Embassy": 11.0,
                 "EmQuartier": 8.0,
-                "On Time": 60.0
+                "On Time": 59.0
             }
         },
         {
@@ -3009,8 +3009,8 @@
             "Item": "Plackers TriClean",
             "SKU": "PPLTR_CL",
             "Branch": {
-                "Total": 42.0,
-                "Samyan": 7.0,
+                "Total": 41.0,
+                "Samyan": 6.0,
                 "Circle": 2.0,
                 "Rama 9": 5.0,
                 "Eastville": 1.0,
@@ -3203,13 +3203,13 @@
             "Item": "CURAPROX CS 1006",
             "SKU": "PSIN06",
             "Branch": {
-                "Total": 251.0,
+                "Total": 250.0,
                 "Samyan": 16.0,
                 "Circle": 14.0,
                 "Rama 9": 27.0,
                 "Eastville": 15.0,
                 "Mega": 15.0,
-                "Embassy": 37.0,
+                "Embassy": 36.0,
                 "EmQuartier": 17.0,
                 "On Time": 110.0
             }
@@ -3292,14 +3292,14 @@
             "Item": "TheraBreath Fresh Breath (Mild Mint)",
             "SKU": "PTBMM",
             "Branch": {
-                "Total": 23.0,
-                "Samyan": 2.0,
-                "Circle": 4.0,
+                "Total": 18.0,
+                "Samyan": 0.0,
+                "Circle": 3.0,
                 "Rama 9": 7.0,
                 "Eastville": 0.0,
                 "Mega": 0.0,
                 "Embassy": 0.0,
-                "EmQuartier": 9.0,
+                "EmQuartier": 7.0,
                 "On Time": 1.0
             }
         },
@@ -3363,14 +3363,14 @@
             "Item": "ORALPEACE Clean & Moisture Spray Mint",
             "SKU": "SPB",
             "Branch": {
-                "Total": 29.0,
+                "Total": 28.0,
                 "Samyan": 4.0,
                 "Circle": 3.0,
                 "Rama 9": 2.0,
                 "Eastville": 2.0,
                 "Mega": 1.0,
                 "Embassy": 0.0,
-                "EmQuartier": 1.0,
+                "EmQuartier": 0.0,
                 "On Time": 16.0
             }
         },
@@ -3393,14 +3393,14 @@
             "Item": "ORALPEACE Clean & Moisture Spray Orange",
             "SKU": "SPO",
             "Branch": {
-                "Total": 31.0,
+                "Total": 30.0,
                 "Samyan": 3.0,
                 "Circle": 2.0,
                 "Rama 9": 6.0,
                 "Eastville": 2.0,
                 "Mega": 3.0,
                 "Embassy": 1.0,
-                "EmQuartier": 1.0,
+                "EmQuartier": 0.0,
                 "On Time": 13.0
             }
         },
@@ -3715,7 +3715,7 @@
             }
         },
         {
-            "Item": "edel+white Flosserpik Power Spa",
+            "Item": "edel+white Flosserpik",
             "SKU": "PEW-WJ180",
             "Branch": {
                 "Total": 29.0,
@@ -3734,8 +3734,8 @@
             "Item": "drTung's Snap-On | Blue",
             "SKU": "DRSN_BL",
             "Branch": {
-                "Total": 6.0,
-                "On Time": 6.0
+                "Total": 5.0,
+                "On Time": 5.0
             }
         },
         {
@@ -3766,8 +3766,8 @@
             "Item": "drTung's Tongue Cleaner | Ocean Blue",
             "SKU": "DRTO_TU",
             "Branch": {
-                "Total": 42.0,
-                "On Time": 42.0
+                "Total": 41.0,
+                "On Time": 41.0
             }
         },
         {
@@ -4302,8 +4302,8 @@
             "Item": "CURAPROX CS Ortho | N1 - Pink/Yellow",
             "SKU": "ORTH_N1",
             "Branch": {
-                "Total": 21.0,
-                "On Time": 21.0
+                "Total": 20.0,
+                "On Time": 20.0
             }
         },
         {
@@ -4611,6 +4611,15 @@
             }
         },
         {
+            "Item": "No.10 Flosserpik",
+            "SKU": "PEW-WJ180",
+            "Branch": {
+                "Total": 2.0,
+                "True Digital Park": 1.0,
+                "T One Building": 1.0
+            }
+        },
+        {
             "Item": "No.12 Hydrosonic Black is White",
             "SKU": "PHydrosonic_BIW",
             "Branch": {
@@ -4860,14 +4869,6 @@
                 "Total": 11.0,
                 "True Digital Park": 5.0,
                 "T One Building": 6.0
-            }
-        },
-        {
-            "Item": "No.10 Flosserpick Power spa",
-            "SKU": "PEW-WJ180",
-            "Branch": {
-                "Total": 1.0,
-                "T One Building": 1.0
             }
         }
     ]

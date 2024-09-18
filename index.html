@@ -38,9 +38,12 @@
       th {
         background-color: #f2f2f2;
       }
-      #branchFilter,
+      #branchFilterContainer,
       #exportButton {
         margin-bottom: 20px;
+      }
+      .branch-checkbox {
+        margin-right: 10px;
       }
     </style>
   </head>
@@ -48,12 +51,11 @@
     <h1>DragCura Inventory</h1>
     <h5 id="lastUpdated">Last Updated at:</h5>
 
-    <!-- Dropdown for filtering branches -->
-    <label for="branchFilter">Select Branch:</label>
-    <select id="branchFilter">
-      <option value="">All</option>
-      <!-- Options will be populated dynamically -->
-    </select>
+    <!-- Checkbox group for filtering branches -->
+    <label for="branchFilter">Select Branch(es):</label>
+    <div id="branchFilterContainer">
+      <!-- Checkboxes will be populated dynamically -->
+    </div>
 
     <!-- Export to Excel Button -->
     <button id="exportButton">Export to Excel</button>
@@ -118,26 +120,38 @@
             // Add data to DataTable
             table.clear().rows.add(processedData).draw();
 
-            // Populate branch filter options with unique branch names
+            // Populate branch filter checkboxes with unique branch names
             var branchNames = {};
             processedData.forEach((item) => {
               branchNames[item.Branch] = true; // Store unique branch names
             });
             Object.keys(branchNames).forEach((branch) => {
-              $("#branchFilter").append(new Option(branch, branch));
+              $("#branchFilterContainer").append(
+                `<label><input type="checkbox" class="branch-checkbox" value="${branch}"/> ${branch}</label>`
+              );
             });
 
-            // Filter by selected branch
-            $("#branchFilter").on("change", function () {
-              var selectedBranch = $(this).val();
-              table
-                .column(2) // Column index for "Branch"
-                .search(
-                  selectedBranch ? "^" + selectedBranch + "$" : "",
-                  true,
-                  false
-                )
-                .draw();
+            // Filter by selected branches
+            $(".branch-checkbox").on("change", function () {
+              var selectedBranches = [];
+              $(".branch-checkbox:checked").each(function () {
+                selectedBranches.push($(this).val());
+              });
+
+              if (selectedBranches.length === 0) {
+                // No branches selected, show all
+                table
+                  .column(2) // Column index for "Branch"
+                  .search("", true, false)
+                  .draw();
+              } else {
+                // Create a regex for multiple branch filtering
+                var branchRegex = selectedBranches.join("|");
+                table
+                  .column(2) // Column index for "Branch"
+                  .search(branchRegex, true, false)
+                  .draw();
+              }
             });
           })
           .fail(function () {
