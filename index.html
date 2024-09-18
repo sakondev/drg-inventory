@@ -22,7 +22,7 @@
 
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: Helvetica, sans-serif;
         margin: 20px;
       }
       table {
@@ -42,14 +42,63 @@
       #exportButton {
         margin-bottom: 20px;
       }
+      .branch-checkbox-group {
+        display: inline-block;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+      }
+      .branch-checkbox-group:hover {
+        background-color: #f0f0f0;
+      }
       .branch-checkbox {
+        width: 20px;
+        height: 20px;
         margin-right: 10px;
+        vertical-align: middle;
+      }
+      label {
+        font-size: 16px;
+        cursor: pointer;
+      }
+      label input {
+        margin-right: 10px;
+      }
+
+      #selectButtonsContainer {
+        margin-bottom: 15px;
+      }
+
+      #selectAllButton,
+      #deselectAllButton {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+
+      #selectAllButton:hover,
+      #deselectAllButton:hover {
+        background-color: #0056b3;
       }
     </style>
   </head>
   <body>
     <h1>DragCura Inventory</h1>
     <h5 id="lastUpdated">Last Updated at:</h5>
+
+    <!-- Buttons to select/deselect all branches -->
+    <div id="selectButtonsContainer">
+      <button id="selectAllButton">Select All</button>
+      <button id="deselectAllButton">Deselect All</button>
+    </div>
 
     <!-- Checkbox group for filtering branches -->
     <label for="branchFilter">Select Branch(es):</label>
@@ -66,7 +115,6 @@
         <tr>
           <th style="width: 20%">SKU</th>
           <th style="width: 40%">Item</th>
-          <th style="width: 20%">Branch</th>
           <th style="width: 20%">Qty</th>
         </tr>
       </thead>
@@ -84,16 +132,11 @@
             // Initialize DataTable
             var table = $("#inventoryTable").DataTable({
               data: [],
-              columns: [
-                { data: "SKU" },
-                { data: "Item" },
-                { data: "Branch" },
-                { data: "Qty" },
-              ],
-              pageLength: 25,
+              columns: [{ data: "SKU" }, { data: "Item" }, { data: "Qty" }],
+              pageLength: 30,
               lengthMenu: [
-                [25, 50, 100, -1],
-                [25, 50, 100, "All"],
+                [30, 50, 100, -1],
+                [30, 50, 100, "All"],
               ],
               paging: true,
               dom: "<'top'lf>rt<'bottom'i<'clear'>p>",
@@ -104,7 +147,7 @@
             data.inventory.forEach((item) => {
               var branches = item.Branch;
 
-              // Loop through branches
+              // Loop through branches and create entries for each branch
               for (var branch in branches) {
                 var qty = parseFloat(branches[branch]);
 
@@ -126,32 +169,59 @@
               branchNames[item.Branch] = true; // Store unique branch names
             });
             Object.keys(branchNames).forEach((branch) => {
-              $("#branchFilterContainer").append(
-                `<label><input type="checkbox" class="branch-checkbox" value="${branch}"/> ${branch}</label>`
-              );
+              var checkboxHtml = `
+                <label class="branch-checkbox-group">
+                  <input type="checkbox" class="branch-checkbox" value="${branch}" /> ${branch}
+                </label>`;
+              $("#branchFilterContainer").append(checkboxHtml);
             });
 
-            // Filter by selected branches
-            $(".branch-checkbox").on("change", function () {
+            // Function to filter and sum by selected branches
+            function filterAndUpdateTable() {
               var selectedBranches = [];
               $(".branch-checkbox:checked").each(function () {
                 selectedBranches.push($(this).val());
               });
 
-              if (selectedBranches.length === 0) {
-                // No branches selected, show all
-                table
-                  .column(2) // Column index for "Branch"
-                  .search("", true, false)
-                  .draw();
-              } else {
-                // Create a regex for multiple branch filtering
-                var branchRegex = selectedBranches.join("|");
-                table
-                  .column(2) // Column index for "Branch"
-                  .search(branchRegex, true, false)
-                  .draw();
-              }
+              // Filter data based on selected branches
+              var filteredData = processedData.filter((item) =>
+                selectedBranches.includes(item.Branch)
+              );
+
+              // Group by SKU and sum the quantities
+              var groupedData = {};
+              filteredData.forEach((item) => {
+                if (groupedData[item.SKU]) {
+                  groupedData[item.SKU].Qty += item.Qty;
+                } else {
+                  groupedData[item.SKU] = {
+                    SKU: item.SKU,
+                    Item: item.Item,
+                    Qty: item.Qty,
+                  };
+                }
+              });
+
+              // Convert the grouped data back to an array
+              var groupedDataArray = Object.values(groupedData);
+
+              // Update the table with the grouped data
+              table.clear().rows.add(groupedDataArray).draw();
+            }
+
+            // Trigger the filter and sum function when checkboxes are changed
+            $(".branch-checkbox").on("change", filterAndUpdateTable);
+
+            // Select All button functionality
+            $("#selectAllButton").on("click", function () {
+              $(".branch-checkbox").prop("checked", true);
+              filterAndUpdateTable();
+            });
+
+            // Deselect All button functionality
+            $("#deselectAllButton").on("click", function () {
+              $(".branch-checkbox").prop("checked", false);
+              filterAndUpdateTable();
             });
           })
           .fail(function () {

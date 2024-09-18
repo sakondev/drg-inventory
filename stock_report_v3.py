@@ -286,11 +286,11 @@ def process_data():
         logging.error(f"Vending machine file 'vending_stock.xlsx' not found in: {download_folder}")
 
     # Sum quantities for all branches and create a "Total" branch
-    logging.info("Summing quantities for all branches...")
-    for item, details in reorganized_inventory.items():
-        total_qty = sum(details["Branch"].values())
-        details["Branch"]["Total"] = total_qty
-        details["Branch"] = OrderedDict(sorted(details["Branch"].items(), key=lambda x: x[0] != "Total"))
+    # logging.info("Summing quantities for all branches...")
+    # for item, details in reorganized_inventory.items():
+    #    total_qty = sum(details["Branch"].values())
+    #    details["Branch"]["Total"] = total_qty
+    #    details["Branch"] = OrderedDict(sorted(details["Branch"].items(), key=lambda x: x[0] != "Total"))
 
     # Convert to the desired structure
     result_inventory = []
