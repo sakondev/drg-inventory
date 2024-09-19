@@ -88,6 +88,15 @@
       #deselectAllButton:hover {
         background-color: #0056b3;
       }
+
+      /* Custom row colors */
+      .row-low-qty {
+        color: #f59e0b !important; /* Yellow for qty < 10 */
+      }
+
+      .row-critical-qty {
+        color: #ef4444 !important; /* Red for qty < 5 */
+      }
     </style>
   </head>
   <body>
@@ -140,6 +149,15 @@
               ],
               paging: true,
               dom: "<'top'lf>rt<'bottom'i<'clear'>p>",
+
+              // Add row callback to change row color based on Qty
+              createdRow: function (row, data, dataIndex) {
+                if (data.Qty < 5) {
+                  $(row).addClass("row-critical-qty");
+                } else if (data.Qty < 10) {
+                  $(row).addClass("row-low-qty");
+                }
+              },
             });
 
             // Process inventory data

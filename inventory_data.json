@@ -1,5 +1,5 @@
 {
-    "last_updated": "2024-09-18 21:47:10",
+    "last_updated": "2024-09-19 07:08:56",
     "inventory": [
         {
             "Item": "edel+white Intensive Flosserbrush",
@@ -107,7 +107,7 @@
                 "Mega": 1.0,
                 "Embassy": 1.0,
                 "EmQuartier": 0.0,
-                "On Time": 2.0
+                "On Time": 1.0
             }
         },
         {
@@ -258,7 +258,7 @@
                 "Mega": 3.0,
                 "Embassy": 39.0,
                 "EmQuartier": 13.0,
-                "On Time": 50.0
+                "On Time": 49.0
             }
         },
         {
@@ -707,7 +707,7 @@
                 "Mega": 10.0,
                 "Embassy": 5.0,
                 "EmQuartier": 1.0,
-                "On Time": 28.0
+                "On Time": 27.0
             }
         },
         {
@@ -1678,7 +1678,7 @@
                 "Mega": 9.0,
                 "Embassy": 9.0,
                 "EmQuartier": 9.0,
-                "On Time": 88.0
+                "On Time": 86.0
             }
         },
         {
@@ -1832,7 +1832,7 @@
                 "Mega": 3.0,
                 "Embassy": 2.0,
                 "EmQuartier": 5.0,
-                "On Time": 25.0
+                "On Time": 24.0
             }
         },
         {
@@ -1980,7 +1980,7 @@
                 "Mega": 6.0,
                 "Embassy": 6.0,
                 "EmQuartier": 10.0,
-                "On Time": 18.0
+                "On Time": 17.0
             }
         },
         {
@@ -2036,7 +2036,7 @@
                 "Mega": 4.0,
                 "Embassy": 5.0,
                 "EmQuartier": 0.0,
-                "On Time": 13.0
+                "On Time": 12.0
             }
         },
         {
@@ -2313,7 +2313,7 @@
                 "Mega": 70.0,
                 "Embassy": 84.0,
                 "EmQuartier": 67.0,
-                "On Time": 577.0
+                "On Time": 574.0
             }
         },
         {
@@ -2464,7 +2464,7 @@
                 "Mega": 8.0,
                 "Embassy": 1.0,
                 "EmQuartier": 2.0,
-                "On Time": 17.0
+                "On Time": 16.0
             }
         },
         {
@@ -2714,7 +2714,7 @@
                 "Mega": 3.0,
                 "Embassy": 1.0,
                 "EmQuartier": 6.0,
-                "On Time": 22.0
+                "On Time": 21.0
             }
         },
         {
@@ -2770,7 +2770,7 @@
                 "Mega": 5.0,
                 "Embassy": 21.0,
                 "EmQuartier": 3.0,
-                "On Time": 25.0
+                "On Time": 24.0
             }
         },
         {
@@ -3170,7 +3170,7 @@
                 "Mega": 3.0,
                 "Embassy": 1.0,
                 "EmQuartier": 0.0,
-                "On Time": 13.0
+                "On Time": 12.0
             }
         },
         {
@@ -3948,7 +3948,7 @@
             "Item": "CURAPROX CS Ortho | O1 - Orange/Yellow",
             "SKU": "ORTH_O1",
             "Branch": {
-                "On Time": 14.0
+                "On Time": 13.0
             }
         },
         {
@@ -4018,7 +4018,7 @@
             "Item": "CURAPROX CS 5460 | K1 - Purple/Green",
             "SKU": "5460_K1",
             "Branch": {
-                "On Time": 31.0
+                "On Time": 30.0
             }
         },
         {
@@ -4053,7 +4053,7 @@
             "Item": "CURAPROX CS 5460 | I2 - Hot Pink/Yellow",
             "SKU": "5460_I2",
             "Branch": {
-                "On Time": 25.0
+                "On Time": 24.0
             }
         },
         {
@@ -4165,7 +4165,7 @@
             "Item": "CURAPROX CS 5460 | D1 - Blue Sky/Green",
             "SKU": "5460_D1",
             "Branch": {
-                "On Time": 47.0
+                "On Time": 45.0
             }
         },
         {
@@ -4228,7 +4228,7 @@
             "Item": "CURAPROX CS 5460 | A1 - White/Blue",
             "SKU": "5460_A1",
             "Branch": {
-                "On Time": 25.0
+                "On Time": 24.0
             }
         },
         {
