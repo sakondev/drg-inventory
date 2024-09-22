@@ -72,7 +72,7 @@ def delete_file(file_path):
 
 # Download and process data from ChocoCard with retry logic
 def download_chococard_data():
-    max_retries = 3  # Set a maximum number of retries
+    max_retries = 5  # Set a maximum number of retries
     try:
         logging.info("Starting ChocoCard data download...")
 
