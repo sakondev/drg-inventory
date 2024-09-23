@@ -70,100 +70,96 @@ def delete_file(file_path):
     except Exception as e:
         logging.error(f"Failed to delete {file_path}. Reason: {e}")
 
-# Download and process data from ChocoCard with retry logic
-def download_chococard_data():
-    max_retries = 5  # Set a maximum number of retries
-    try:
-        logging.info("Starting ChocoCard data download...")
-
-        # Log in to ChocoCard
-        driver.get('https://mychococard.com/Account/Login')
-        wait_for_element(By.NAME, 'username').send_keys(choco_username)
-        wait_for_element(By.NAME, 'password').send_keys(choco_password)
-        wait_for_clickable(By.ID, 'loginBtn').click()
-
-        logging.info("Logged into ChocoCard")
-        wait_for_element(By.XPATH, "//h3[contains(text(), 'Group / Branch List')]")
-
-        # Base URL for downloading branch inventory
-        base_url = "https://mychococard.com/CRM/v2/Restaurant/{}/Inventory/DownloadTemplate/{}"
-        branches = {
-            "Samyan": (7485, 2209),
-            "Circle": (7487, 2207),
-            "Rama 9": (7484, 2206),
-            "Eastville": (7483, 2205),
-            "Mega": (7482, 2204),
-            "Embassy": (7481, 2203),
-            "EmQuartier": (7480, 2202)
-        }
-
-        # Initialize the reorganized inventory dictionary
-        reorganized_inventory = {}
-
-        # Download and process data for each branch
-        for branch, (id_, template_id) in branches.items():
-            retry_count = 0
-            download_successful = False
-
-            while retry_count < max_retries and not download_successful:
+# Retry decorator
+def retry(max_retries=5, delay=2):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            retries = 0
+            while retries < max_retries:
                 try:
-                    url = base_url.format(id_, template_id)
-                    logging.info(f"Downloading file for: {branch}... (Attempt {retry_count + 1})")
-                    driver.get(url)
-
-                    # Wait for download to complete (adjust if necessary)
-                    time.sleep(2)
-
-                    # Find the latest downloaded file
-                    downloaded_file = max(
-                        [os.path.join(download_folder, f) for f in os.listdir(download_folder)],
-                        key=os.path.getctime
-                    )
-
-                    # Check if the file is valid (e.g., check if it's a valid Excel file)
-                    if downloaded_file.endswith('.xlsx'):
-                        # Read the downloaded Excel file
-                        df = pd.read_excel(downloaded_file, engine='openpyxl')
-                        df = df[['Item', 'SKU', 'Available Qty.']]  # Extract necessary columns
-                        df.columns = ['Item', 'SKU', 'Qty']  # Rename columns
-
-                        # Reorganize data and add it to the inventory
-                        for _, row in df.iterrows():
-                            item = row['Item']
-                            sku = row['SKU']
-                            qty = float(row['Qty'])  # Ensure quantity is a float
-
-                            if item not in reorganized_inventory:
-                                reorganized_inventory[item] = {
-                                    "SKU": sku,
-                                    "Branch": OrderedDict()
-                                }
-                            reorganized_inventory[item]["Branch"][branch] = qty
-
-                        logging.info(f"Successfully processed data for: {branch}")
-                        download_successful = True  # Mark download as successful
-                    else:
-                        raise Exception("Downloaded file is not a valid Excel file.")
-
+                    return func(*args, **kwargs)
                 except Exception as e:
-                    logging.error(f"Error downloading data for {branch}: {e}")
-                    retry_count += 1
+                    retries += 1
+                    logging.warning(f"Attempt {retries} failed: {e}. Retrying...")
+                    time.sleep(delay)
+            logging.error(f"Failed after {max_retries} attempts.")
+            return None
+        return wrapper
+    return decorator
 
-                    # Delete the downloaded file if it exists and is invalid
-                    if 'downloaded_file' in locals() and os.path.exists(downloaded_file):
-                        delete_file(downloaded_file)
+# Download and process data from ChocoCard with retry logic
+@retry(max_retries=5, delay=5)
+def download_chococard_data():
+    logging.info("Starting ChocoCard data download...")
 
-                    if retry_count >= max_retries:
-                        logging.error(f"Failed to download file for {branch} after {max_retries} attempts.")
+    # Log in to ChocoCard
+    driver.get('https://mychococard.com/Account/Login')
+    wait_for_element(By.NAME, 'username').send_keys(choco_username)
+    wait_for_element(By.NAME, 'password').send_keys(choco_password)
+    wait_for_clickable(By.ID, 'loginBtn').click()
 
-        logging.info("ChocoCard data has been processed for all branches.")
-        return reorganized_inventory  # Return the organized data
+    logging.info("Logged into ChocoCard")
+    wait_for_element(By.XPATH, "//h3[contains(text(), 'Group / Branch List')]")
 
-    except Exception as e:
-        logging.error(f"Error downloading ChocoCard data: {e}")
-        return {}
+    # Base URL for downloading branch inventory
+    base_url = "https://mychococard.com/CRM/v2/Restaurant/{}/Inventory/DownloadTemplate/{}"
+    branches = {
+        "Samyan": (7485, 2209),
+        "Circle": (7487, 2207),
+        "Rama 9": (7484, 2206),
+        "Eastville": (7483, 2205),
+        "Mega": (7482, 2204),
+        "Embassy": (7481, 2203),
+        "EmQuartier": (7480, 2202)
+    }
+
+    # Initialize the reorganized inventory dictionary
+    reorganized_inventory = {}
+
+    # Download and process data for each branch
+    for branch, (id_, template_id) in branches.items():
+        url = base_url.format(id_, template_id)
+        logging.info(f"Downloading file for: {branch}...")
+        driver.get(url)
+
+        # Wait for download to complete (adjust if necessary)
+        time.sleep(2)
+
+        # Find the latest downloaded file
+        downloaded_file = max(
+            [os.path.join(download_folder, f) for f in os.listdir(download_folder)],
+            key=os.path.getctime
+        )
+
+        # Check if the file is valid (e.g., check if it's a valid Excel file)
+        if downloaded_file.endswith('.xlsx'):
+            # Read the downloaded Excel file
+            df = pd.read_excel(downloaded_file, engine='openpyxl')
+            df = df[['Item', 'SKU', 'Available Qty.']]  # Extract necessary columns
+            df.columns = ['Item', 'SKU', 'Qty']  # Rename columns
+
+            # Reorganize data and add it to the inventory
+            for _, row in df.iterrows():
+                item = row['Item']
+                sku = row['SKU']
+                qty = float(row['Qty'])  # Ensure quantity is a float
+
+                if item not in reorganized_inventory:
+                    reorganized_inventory[item] = {
+                        "SKU": sku,
+                        "Branch": OrderedDict()
+                    }
+                reorganized_inventory[item]["Branch"][branch] = qty
+
+            logging.info(f"Successfully processed data for: {branch}")
+        else:
+            raise Exception("Downloaded file is not a valid Excel file.")
+
+    logging.info("ChocoCard data has been processed for all branches.")
+    return reorganized_inventory  # Return the organized data
 
 # Fetch data from the API
+@retry(max_retries=5, delay=5)
 def fetch_api_data():
     api_url = "https://open-api.zortout.com/v4/Product/GetProducts"
     headers = {
@@ -172,58 +168,47 @@ def fetch_api_data():
         "apisecret": zort_apisecret
     }
 
-    try:
-        logging.info("Fetching data from ZORT API...")
-        response = requests.get(api_url, headers=headers)
-        response.raise_for_status()
-        logging.info("ZORT API data fetched successfully.")
-        return response.json()
-    except requests.exceptions.RequestException as e:
-        logging.error(f"Error fetching API data: {e}")
-        return {}
+    logging.info("Fetching data from ZORT API...")
+    response = requests.get(api_url, headers=headers)
+    response.raise_for_status()
+    logging.info("ZORT API data fetched successfully.")
+    return response.json()
 
 # Download and process data from Vending Machine
+@retry(max_retries=5, delay=5)
 def download_vending_data():
-    try:
-        logging.info("Logging into Worldwide Vending...")
-        driver.get('https://www.worldwidevending-vms.com/sys/login.do')
-        wait_for_element(By.NAME, 'loginname').send_keys(vend_username)
-        wait_for_element(By.NAME, 'loginpwd').send_keys(vend_password)
-        wait_for_clickable(By.ID, 'loginsubmit').click()
+    logging.info("Logging into Worldwide Vending...")
+    driver.get('https://www.worldwidevending-vms.com/sys/login.do')
+    wait_for_element(By.NAME, 'loginname').send_keys(vend_username)
+    wait_for_element(By.NAME, 'loginpwd').send_keys(vend_password)
+    wait_for_clickable(By.ID, 'loginsubmit').click()
 
-        driver.get('https://www.worldwidevending-vms.com/page/multi_states.do')
-        logging.info("Downloading file for: Vending Machine...")
-        wait_for_clickable(By.XPATH, "//button[@onclick='export_inventory_list()']").click()
-        driver.switch_to.frame(0)
-        wait_for_clickable(By.ID, 'selAll').click()
-        wait_for_clickable(By.XPATH, "//button[@onclick='execute_export()']").click()
+    driver.get('https://www.worldwidevending-vms.com/page/multi_states.do')
+    logging.info("Downloading file for: Vending Machine...")
+    wait_for_clickable(By.XPATH, "//button[@onclick='export_inventory_list()']").click()
+    driver.switch_to.frame(0)
+    wait_for_clickable(By.ID, 'selAll').click()
+    wait_for_clickable(By.XPATH, "//button[@onclick='execute_export()']").click()
 
-        # Wait for the download to complete (adjust this time if necessary)
-        time.sleep(2)
+    # Wait for the download to complete (adjust this time if necessary)
+    time.sleep(2)
 
-        # Find the latest downloaded file
-        downloaded_file = max(
-            [os.path.join(download_folder, f) for f in os.listdir(download_folder) if f.endswith('.xlsx')],
-            key=os.path.getctime
-        )
+    # Find the latest downloaded file
+    downloaded_file = max(
+        [os.path.join(download_folder, f) for f in os.listdir(download_folder) if f.endswith('.xlsx')],
+        key=os.path.getctime
+    )
 
-        # Rename the file to 'vending_stock.xlsx' to ensure consistency
-        renamed_file = os.path.join(download_folder, 'vending_stock.xlsx')
-        os.rename(downloaded_file, renamed_file)
-        logging.info(f"Downloaded vending machine file renamed to: {renamed_file}")
-
-    except Exception as e:
-        logging.error(f"Error downloading Vending Machine data: {e}")
+    # Rename the file to 'vending_stock.xlsx' to ensure consistency
+    renamed_file = os.path.join(download_folder, 'vending_stock.xlsx')
+    os.rename(downloaded_file, renamed_file)
+    logging.info(f"Downloaded vending machine file renamed to: {renamed_file}")
 
 # Process all data
 def process_data():
     # Process ChocoCard data first
     reorganized_inventory = download_chococard_data()  # Start with ChocoCard data
     
-    # Log the reorganized inventory after ChocoCard processing
-    # logging.info("Reorganized inventory after ChocoCard processing:")
-    # logging.info(json.dumps(reorganized_inventory, indent=4, ensure_ascii=False))  # Pretty-print the dictionary
-
     # Process API data (ZORT)
     logging.info("Processing API data...")
     api_data = fetch_api_data()
@@ -249,12 +234,10 @@ def process_data():
         df = pd.read_excel(vending_file, engine='openpyxl')
 
         # Drop the first row (which doesn't contain headers)
-        # logging.info(f"Vending Machine DataFrame head before processing:\n{df.head()}")
         df = df.drop(index=0)
 
         # Load SKU mapping CSV (this maps Goods Name to SKU)
         sku_mapping_df = pd.read_csv(sku_mapping_file)
-        # logging.info(f"SKU Mapping DataFrame head:\n{sku_mapping_df.head()}")
 
         # Create a dictionary for quick SKU lookup
         sku_mapping = dict(zip(sku_mapping_df['Goods Name'], sku_mapping_df['SKU']))
@@ -264,9 +247,6 @@ def process_data():
             item = row.iloc[4]
             branch = row.iloc[2]
             qty = float(row.iloc[7])
-
-            # Debugging log
-            # logging.info(f"Processing item: {item}, branch: {branch}, quantity: {qty}")
 
             # Retrieve SKU using the item name
             sku = sku_mapping.get(item, None)
@@ -284,13 +264,6 @@ def process_data():
         logging.info(f"Finished processing Vending Machine data for vending_stock.xlsx")
     else:
         logging.error(f"Vending machine file 'vending_stock.xlsx' not found in: {download_folder}")
-
-    # Sum quantities for all branches and create a "Total" branch
-    # logging.info("Summing quantities for all branches...")
-    # for item, details in reorganized_inventory.items():
-    #    total_qty = sum(details["Branch"].values())
-    #    details["Branch"]["Total"] = total_qty
-    #    details["Branch"] = OrderedDict(sorted(details["Branch"].items(), key=lambda x: x[0] != "Total"))
 
     # Convert to the desired structure
     result_inventory = []
