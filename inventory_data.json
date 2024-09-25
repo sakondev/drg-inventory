@@ -1,18 +1,18 @@
 {
-    "last_updated": "2024-09-23 11:12:40",
+    "last_updated": "2024-09-25 07:23:49",
     "inventory": [
         {
             "Item": "edel+white Intensive Flosserbrush",
             "SKU": "P_EW-INT",
             "Branch": {
-                "Samyan": 95.0,
-                "Circle": 46.0,
+                "Samyan": 94.0,
+                "Circle": 43.0,
                 "Rama 9": 51.0,
                 "Eastville": 71.0,
-                "Mega": 3.0,
-                "Embassy": 67.0,
+                "Mega": 0.0,
+                "Embassy": 64.0,
                 "EmQuartier": 39.0,
-                "On Time": 44.0
+                "On Time": 48.0
             }
         },
         {
@@ -128,40 +128,40 @@
             "Item": "BE YOU 60 ml.| Apple",
             "SKU": "PBYOU60_AP",
             "Branch": {
-                "Samyan": 6.0,
+                "Samyan": 5.0,
                 "Circle": 5.0,
                 "Rama 9": 3.0,
                 "Eastville": 4.0,
                 "Mega": 4.0,
                 "Embassy": 11.0,
                 "EmQuartier": 2.0,
-                "On Time": 18.0
+                "On Time": 17.0
             }
         },
         {
             "Item": "BE YOU 60 ml.| Blackberry",
             "SKU": "PBYOU60_BB",
             "Branch": {
-                "Samyan": 8.0,
+                "Samyan": 7.0,
                 "Circle": 6.0,
                 "Rama 9": 8.0,
-                "Eastville": 5.0,
+                "Eastville": 4.0,
                 "Mega": 6.0,
                 "Embassy": 7.0,
                 "EmQuartier": 1.0,
-                "On Time": 25.0
+                "On Time": 24.0
             }
         },
         {
             "Item": "BE YOU 60 ml.| Grapefruit",
             "SKU": "PBYOU60_GF",
             "Branch": {
-                "Samyan": 6.0,
+                "Samyan": 5.0,
                 "Circle": 7.0,
                 "Rama 9": 7.0,
                 "Eastville": 3.0,
                 "Mega": 3.0,
-                "Embassy": 11.0,
+                "Embassy": 10.0,
                 "EmQuartier": 4.0,
                 "On Time": 18.0
             }
@@ -198,14 +198,14 @@
             "Item": "BE YOU 60 ml.| Watermelon",
             "SKU": "PBYOU60_WM",
             "Branch": {
-                "Samyan": 2.0,
+                "Samyan": 1.0,
                 "Circle": 3.0,
                 "Rama 9": 5.0,
                 "Eastville": 4.0,
                 "Mega": 5.0,
                 "Embassy": 10.0,
                 "EmQuartier": 5.0,
-                "On Time": 17.0
+                "On Time": 16.0
             }
         },
         {
@@ -238,13 +238,13 @@
             "Item": "DragCura Bag",
             "SKU": "DRG_Bag01",
             "Branch": {
-                "Samyan": 154.0,
-                "Circle": 254.0,
-                "Rama 9": 263.0,
-                "Eastville": 217.0,
-                "Mega": 133.0,
+                "Samyan": 142.0,
+                "Circle": 248.0,
+                "Rama 9": 257.0,
+                "Eastville": 213.0,
+                "Mega": 124.0,
                 "Embassy": 0.0,
-                "EmQuartier": 79.0
+                "EmQuartier": 78.0
             }
         },
         {
@@ -256,9 +256,9 @@
                 "Rama 9": 10.0,
                 "Eastville": 7.0,
                 "Mega": 0.0,
-                "Embassy": 37.0,
+                "Embassy": 35.0,
                 "EmQuartier": 10.0,
-                "On Time": 39.0
+                "On Time": 50.0
             }
         },
         {
@@ -511,7 +511,7 @@
                 "Rama 9": 6.0,
                 "Eastville": 2.0,
                 "Mega": 2.0,
-                "Embassy": 3.0,
+                "Embassy": 2.0,
                 "EmQuartier": 3.0,
                 "On Time": 12.0
             }
@@ -536,12 +536,12 @@
             "Branch": {
                 "Samyan": 11.0,
                 "Circle": 7.0,
-                "Rama 9": 7.0,
+                "Rama 9": 6.0,
                 "Eastville": 4.0,
                 "Mega": 3.0,
                 "Embassy": 15.0,
                 "EmQuartier": 6.0,
-                "On Time": 18.0
+                "On Time": 33.0
             }
         },
         {
@@ -561,14 +561,14 @@
             "Item": "Curaprox Kids Watermelon - Floride 1450 ppm",
             "SKU": "P_CK- WM-1450",
             "Branch": {
-                "Samyan": 10.0,
+                "Samyan": 9.0,
                 "Circle": 8.0,
                 "Rama 9": 11.0,
                 "Eastville": 6.0,
                 "Mega": 0.0,
                 "Embassy": 7.0,
                 "EmQuartier": 2.0,
-                "On Time": 28.0
+                "On Time": 43.0
             }
         },
         {
@@ -635,7 +635,7 @@
                 "Rama 9": 6.0,
                 "Eastville": 6.0,
                 "Mega": 3.0,
-                "Embassy": 15.0,
+                "Embassy": 13.0,
                 "EmQuartier": 5.0,
                 "On Time": 5.0
             }
@@ -649,7 +649,7 @@
                 "Rama 9": 3.0,
                 "Eastville": 0.0,
                 "Mega": 0.0,
-                "Embassy": 15.0,
+                "Embassy": 13.0,
                 "EmQuartier": 1.0,
                 "On Time": 6.0
             }
@@ -660,7 +660,7 @@
             "Branch": {
                 "Samyan": 12.0,
                 "Circle": 9.0,
-                "Rama 9": 5.0,
+                "Rama 9": 4.0,
                 "Eastville": 11.0,
                 "Mega": 9.0,
                 "Embassy": 23.0,
@@ -674,21 +674,21 @@
             "Branch": {
                 "Samyan": 12.0,
                 "Circle": 11.0,
-                "Rama 9": 5.0,
+                "Rama 9": 4.0,
                 "Eastville": 11.0,
                 "Mega": 9.0,
                 "Embassy": 23.0,
                 "EmQuartier": 15.0,
-                "On Time": 46.0
+                "On Time": 58.0
             }
         },
         {
             "Item": "Enzycal 1450",
             "SKU": "P_EN1450",
             "Branch": {
-                "Samyan": 5.0,
+                "Samyan": 4.0,
                 "Circle": 9.0,
-                "Rama 9": 11.0,
+                "Rama 9": 10.0,
                 "Eastville": 4.0,
                 "Mega": 6.0,
                 "Embassy": 15.0,
@@ -705,7 +705,7 @@
                 "Rama 9": 5.0,
                 "Eastville": 2.0,
                 "Mega": 9.0,
-                "Embassy": 4.0,
+                "Embassy": 3.0,
                 "EmQuartier": 0.0,
                 "On Time": 27.0
             }
@@ -731,10 +731,10 @@
                 "Samyan": 17.0,
                 "Circle": 7.0,
                 "Rama 9": 25.0,
-                "Eastville": 7.0,
+                "Eastville": 6.0,
                 "Mega": 13.0,
                 "Embassy": 3.0,
-                "EmQuartier": 9.0,
+                "EmQuartier": 8.0,
                 "On Time": 55.0
             }
         },
@@ -814,12 +814,12 @@
             "Branch": {
                 "Samyan": 15.0,
                 "Circle": 0.0,
-                "Rama 9": 11.0,
+                "Rama 9": 10.0,
                 "Eastville": 10.0,
                 "Mega": 0.0,
                 "Embassy": 0.0,
                 "EmQuartier": 20.0,
-                "On Time": 36.0
+                "On Time": 48.0
             }
         },
         {
@@ -833,7 +833,7 @@
                 "Mega": 1.0,
                 "Embassy": 2.0,
                 "EmQuartier": 3.0,
-                "On Time": 32.0
+                "On Time": 31.0
             }
         },
         {
@@ -884,26 +884,26 @@
             "Branch": {
                 "Samyan": 15.0,
                 "Circle": 12.0,
-                "Rama 9": 24.0,
+                "Rama 9": 22.0,
                 "Eastville": 8.0,
                 "Mega": 14.0,
                 "Embassy": 11.0,
-                "EmQuartier": 11.0,
-                "On Time": 60.0
+                "EmQuartier": 10.0,
+                "On Time": 59.0
             }
         },
         {
             "Item": "edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
             "Branch": {
-                "Samyan": 70.0,
+                "Samyan": 66.0,
                 "Circle": 54.0,
-                "Rama 9": 64.0,
-                "Eastville": 28.0,
-                "Mega": 49.0,
-                "Embassy": 66.0,
-                "EmQuartier": 35.0,
-                "On Time": 265.0
+                "Rama 9": 62.0,
+                "Eastville": 24.0,
+                "Mega": 47.0,
+                "Embassy": 55.0,
+                "EmQuartier": 28.0,
+                "On Time": 255.0
             }
         },
         {
@@ -914,8 +914,8 @@
                 "Circle": 1.0,
                 "Rama 9": 7.0,
                 "Eastville": 2.0,
-                "Mega": 3.0,
-                "Embassy": 4.0,
+                "Mega": 2.0,
+                "Embassy": 3.0,
                 "EmQuartier": 2.0,
                 "On Time": 29.0
             }
@@ -942,10 +942,10 @@
                 "Circle": 10.0,
                 "Rama 9": 10.0,
                 "Eastville": 11.0,
-                "Mega": 11.0,
+                "Mega": 10.0,
                 "Embassy": 12.0,
                 "EmQuartier": 8.0,
-                "On Time": 67.0
+                "On Time": 66.0
             }
         },
         {
@@ -957,7 +957,7 @@
                 "Rama 9": 12.0,
                 "Eastville": 6.0,
                 "Mega": 6.0,
-                "Embassy": 37.0,
+                "Embassy": 11.0,
                 "EmQuartier": 6.0
             }
         },
@@ -983,9 +983,9 @@
                 "Rama 9": 9.0,
                 "Eastville": 8.0,
                 "Mega": 12.0,
-                "Embassy": 23.0,
+                "Embassy": 12.0,
                 "EmQuartier": 6.0,
-                "On Time": 69.0
+                "On Time": 68.0
             }
         },
         {
@@ -995,9 +995,9 @@
                 "Samyan": 4.0,
                 "Circle": 9.0,
                 "Rama 9": 7.0,
-                "Eastville": 3.0,
+                "Eastville": 2.0,
                 "Mega": 1.0,
-                "Embassy": 5.0,
+                "Embassy": 4.0,
                 "EmQuartier": 3.0,
                 "On Time": 10.0
             }
@@ -1006,7 +1006,7 @@
             "Item": "Gentles Tots | Plus",
             "SKU": "P_GT_360P",
             "Branch": {
-                "Samyan": 3.0,
+                "Samyan": 1.0,
                 "Circle": 3.0,
                 "Rama 9": 1.0,
                 "Eastville": 0.0,
@@ -1137,7 +1137,7 @@
                 "Rama 9": 1.0,
                 "Eastville": 0.0,
                 "Mega": 2.0,
-                "Embassy": 1.0,
+                "Embassy": 0.0,
                 "EmQuartier": 0.0,
                 "On Time": 6.0
             }
@@ -1177,7 +1177,7 @@
                 "Samyan": 2.0,
                 "Circle": 2.0,
                 "Rama 9": 2.0,
-                "Eastville": 3.0,
+                "Eastville": 2.0,
                 "Mega": 2.0,
                 "Embassy": 0.0,
                 "EmQuartier": 1.0,
@@ -1193,7 +1193,7 @@
                 "Rama 9": 2.0,
                 "Eastville": 3.0,
                 "Mega": 3.0,
-                "Embassy": 6.0,
+                "Embassy": 5.0,
                 "EmQuartier": 2.0,
                 "On Time": 8.0
             }
@@ -1400,7 +1400,7 @@
                 "Mega": 2.0,
                 "Embassy": 10.0,
                 "EmQuartier": 0.0,
-                "On Time": 6.0
+                "On Time": 5.0
             }
         },
         {
@@ -1440,7 +1440,7 @@
                 "Eastville": 3.0,
                 "Mega": 4.0,
                 "Embassy": 0.0,
-                "On Time": 2.0
+                "On Time": 14.0
             }
         },
         {
@@ -1452,19 +1452,19 @@
                 "Eastville": 0.0,
                 "Mega": 4.0,
                 "Embassy": 0.0,
-                "On Time": 7.0
+                "On Time": 27.0
             }
         },
         {
             "Item": "Marvis Jasmin Mint 85ML",
             "SKU": "MV_JM",
             "Branch": {
-                "Samyan": 5.0,
+                "Samyan": 4.0,
                 "Circle": 1.0,
                 "Eastville": 0.0,
                 "Mega": 3.0,
                 "Embassy": 0.0,
-                "On Time": 2.0
+                "On Time": 5.0
             }
         },
         {
@@ -1486,7 +1486,7 @@
                 "Samyan": 0.0,
                 "Circle": 1.0,
                 "Eastville": 0.0,
-                "Mega": 1.0,
+                "Mega": 0.0,
                 "Embassy": 0.0,
                 "On Time": 4.0
             }
@@ -1500,21 +1500,21 @@
                 "Eastville": 0.0,
                 "Mega": 1.0,
                 "Embassy": 0.0,
-                "On Time": 0.0
+                "On Time": 20.0
             }
         },
         {
             "Item": "[Campaign] Oralpeace (Sachet)",
             "SKU": "P_CPB24_OP",
             "Branch": {
-                "Samyan": 14.0,
+                "Samyan": 9.0,
                 "Circle": 11.0,
                 "Rama 9": 0.0,
                 "Eastville": 9.0,
                 "Mega": 0.0,
                 "Embassy": 1.0,
                 "EmQuartier": 1.0,
-                "On Time": 48.0
+                "On Time": 46.0
             }
         },
         {
@@ -1527,7 +1527,7 @@
                 "Eastville": 3.0,
                 "Mega": 3.0,
                 "Embassy": 6.0,
-                "EmQuartier": 4.0,
+                "EmQuartier": 3.0,
                 "On Time": 10.0
             }
         },
@@ -1541,7 +1541,7 @@
                 "Eastville": 2.0,
                 "Mega": 8.0,
                 "Embassy": 0.0,
-                "EmQuartier": 7.0
+                "EmQuartier": 5.0
             }
         },
         {
@@ -1569,7 +1569,7 @@
                 "Mega": 2.0,
                 "Embassy": 0.0,
                 "EmQuartier": 0.0,
-                "On Time": 23.0
+                "On Time": 22.0
             }
         },
         {
@@ -1645,12 +1645,12 @@
             "Item": "CURAPROX Velvet",
             "SKU": "P_Velvet",
             "Branch": {
-                "Samyan": 96.0,
-                "Circle": 88.0,
-                "Rama 9": 68.0,
+                "Samyan": 90.0,
+                "Circle": 83.0,
+                "Rama 9": 63.0,
                 "Eastville": 60.0,
-                "Mega": 69.0,
-                "Embassy": 215.0,
+                "Mega": 64.0,
+                "Embassy": 210.0,
                 "EmQuartier": 42.0
             }
         },
@@ -1673,12 +1673,12 @@
             "Branch": {
                 "Samyan": 12.0,
                 "Circle": 4.0,
-                "Rama 9": 10.0,
+                "Rama 9": 9.0,
                 "Eastville": 2.0,
                 "Mega": 9.0,
                 "Embassy": 6.0,
                 "EmQuartier": 9.0,
-                "On Time": 83.0
+                "On Time": 79.0
             }
         },
         {
@@ -1688,7 +1688,7 @@
                 "Samyan": 5.0,
                 "Circle": 0.0,
                 "Rama 9": 13.0,
-                "Eastville": 6.0,
+                "Eastville": 5.0,
                 "Mega": 7.0,
                 "Embassy": 15.0,
                 "EmQuartier": 2.0,
@@ -1787,10 +1787,10 @@
                 "Circle": 5.0,
                 "Rama 9": 3.0,
                 "Eastville": 5.0,
-                "Mega": 9.0,
+                "Mega": 8.0,
                 "Embassy": 0.0,
-                "EmQuartier": 7.0,
-                "On Time": 29.0
+                "EmQuartier": 6.0,
+                "On Time": 27.0
             }
         },
         {
@@ -1803,8 +1803,8 @@
                 "Eastville": 5.0,
                 "Mega": 2.0,
                 "Embassy": 0.0,
-                "EmQuartier": 1.0,
-                "On Time": 23.0
+                "EmQuartier": 0.0,
+                "On Time": 22.0
             }
         },
         {
@@ -1815,8 +1815,8 @@
                 "Circle": 4.0,
                 "Rama 9": 2.0,
                 "Eastville": 3.0,
-                "Mega": 3.0,
-                "Embassy": 10.0,
+                "Mega": 2.0,
+                "Embassy": 9.0,
                 "EmQuartier": 8.0,
                 "On Time": 25.0
             }
@@ -1825,12 +1825,12 @@
             "Item": "CURAPROX Travel Set Pink Box",
             "SKU": "P29_CTSP",
             "Branch": {
-                "Samyan": 6.0,
+                "Samyan": 5.0,
                 "Circle": 4.0,
                 "Rama 9": 7.0,
                 "Eastville": 3.0,
-                "Mega": 3.0,
-                "Embassy": 2.0,
+                "Mega": 2.0,
+                "Embassy": 1.0,
                 "EmQuartier": 5.0,
                 "On Time": 23.0
             }
@@ -1846,14 +1846,14 @@
                 "Mega": 1.0,
                 "Embassy": 5.0,
                 "EmQuartier": 4.0,
-                "On Time": 29.0
+                "On Time": 28.0
             }
         },
         {
             "Item": "CURAPROX Travel Set Yellow Box",
             "SKU": "P29_CTSY",
             "Branch": {
-                "Samyan": 5.0,
+                "Samyan": 4.0,
                 "Circle": 3.0,
                 "Rama 9": 4.0,
                 "Eastville": 2.0,
@@ -1867,13 +1867,13 @@
             "Item": "CURAPROX CS 5460",
             "SKU": "P5460",
             "Branch": {
-                "Samyan": 219.0,
-                "Circle": 272.0,
-                "Rama 9": 194.0,
-                "Eastville": 217.0,
-                "Mega": 193.0,
-                "Embassy": 278.0,
-                "EmQuartier": 229.0
+                "Samyan": 217.0,
+                "Circle": 269.0,
+                "Rama 9": 188.0,
+                "Eastville": 215.0,
+                "Mega": 187.0,
+                "Embassy": 269.0,
+                "EmQuartier": 225.0
             }
         },
         {
@@ -1908,7 +1908,7 @@
             "SKU": "5460_FB",
             "Branch": {
                 "Samyan": 5.0,
-                "Circle": 6.0,
+                "Circle": 5.0,
                 "Rama 9": 1.0,
                 "Eastville": 5.0,
                 "Mega": 0.0,
@@ -1975,10 +1975,10 @@
             "Branch": {
                 "Samyan": 11.0,
                 "Circle": 8.0,
-                "Rama 9": 7.0,
+                "Rama 9": 6.0,
                 "Eastville": 6.0,
                 "Mega": 4.0,
-                "Embassy": 5.0,
+                "Embassy": 4.0,
                 "EmQuartier": 10.0,
                 "On Time": 17.0
             }
@@ -2020,9 +2020,9 @@
                 "Rama 9": 11.0,
                 "Eastville": 5.0,
                 "Mega": 0.0,
-                "Embassy": 8.0,
-                "EmQuartier": 9.0,
-                "On Time": 23.0
+                "Embassy": 4.0,
+                "EmQuartier": 8.0,
+                "On Time": 21.0
             }
         },
         {
@@ -2033,7 +2033,7 @@
                 "Circle": 3.0,
                 "Rama 9": 0.0,
                 "Eastville": 0.0,
-                "Mega": 3.0,
+                "Mega": 2.0,
                 "Embassy": 3.0,
                 "EmQuartier": 0.0,
                 "On Time": 12.0
@@ -2092,7 +2092,7 @@
                 "Mega": 1.0,
                 "Embassy": 1.0,
                 "EmQuartier": 0.0,
-                "On Time": 3.0
+                "On Time": 2.0
             }
         },
         {
@@ -2148,7 +2148,7 @@
                 "Mega": 2.0,
                 "Embassy": 1.0,
                 "EmQuartier": 0.0,
-                "On Time": 9.0
+                "On Time": 14.0
             }
         },
         {
@@ -2169,7 +2169,7 @@
             "Item": "BE YOU Travel Set",
             "SKU": "PBYTV",
             "Branch": {
-                "Samyan": 6.0,
+                "Samyan": 5.0,
                 "Circle": 5.0,
                 "Rama 9": 5.0,
                 "Eastville": 3.0,
@@ -2185,9 +2185,9 @@
             "Branch": {
                 "Samyan": 79.0,
                 "Circle": 46.0,
-                "Rama 9": 34.0,
-                "Eastville": 57.0,
-                "Mega": 26.0,
+                "Rama 9": 32.0,
+                "Eastville": 55.0,
+                "Mega": 24.0,
                 "Embassy": 74.0,
                 "EmQuartier": 28.0
             }
@@ -2217,7 +2217,7 @@
                 "Mega": 2.0,
                 "Embassy": 2.0,
                 "EmQuartier": 2.0,
-                "On Time": 6.0
+                "On Time": 12.0
             }
         },
         {
@@ -2231,7 +2231,7 @@
                 "Mega": 1.0,
                 "Embassy": 1.0,
                 "EmQuartier": 1.0,
-                "On Time": 8.0
+                "On Time": 14.0
             }
         },
         {
@@ -2245,21 +2245,21 @@
                 "Mega": 2.0,
                 "Embassy": 4.0,
                 "EmQuartier": 3.0,
-                "On Time": 7.0
+                "On Time": 10.0
             }
         },
         {
             "Item": "CURAPROX CPS Prime refill x8 | Size: 11",
             "SKU": "PCPSx8_11",
             "Branch": {
-                "Samyan": 3.0,
+                "Samyan": 2.0,
                 "Circle": 1.0,
                 "Rama 9": 1.0,
                 "Eastville": 0.0,
                 "Mega": 2.0,
                 "Embassy": 1.0,
                 "EmQuartier": 2.0,
-                "On Time": 5.0
+                "On Time": 8.0
             }
         },
         {
@@ -2280,11 +2280,11 @@
             "Item": "Curaprox Baby Toothbrush",
             "SKU": "PCUBY",
             "Branch": {
-                "Samyan": 65.0,
-                "Circle": 33.0,
-                "Rama 9": 34.0,
+                "Samyan": 63.0,
+                "Circle": 31.0,
+                "Rama 9": 33.0,
                 "Eastville": 38.0,
-                "Mega": 23.0,
+                "Mega": 22.0,
                 "Embassy": 37.0,
                 "EmQuartier": 38.0
             }
@@ -2307,20 +2307,20 @@
             "SKU": "PDTFS",
             "Branch": {
                 "Samyan": 81.0,
-                "Circle": 70.0,
+                "Circle": 68.0,
                 "Rama 9": 57.0,
                 "Eastville": 62.0,
                 "Mega": 64.0,
-                "Embassy": 64.0,
-                "EmQuartier": 59.0,
-                "On Time": 513.0
+                "Embassy": 62.0,
+                "EmQuartier": 58.0,
+                "On Time": 636.0
             }
         },
         {
             "Item": "drTung's Snap-On",
             "SKU": "PDTSN",
             "Branch": {
-                "Samyan": 5.0,
+                "Samyan": 4.0,
                 "Circle": 3.0,
                 "Rama 9": 3.0,
                 "Eastville": 3.0,
@@ -2347,13 +2347,13 @@
             "Item": "drTung's Tongue Cleaner",
             "SKU": "PDTTC",
             "Branch": {
-                "Samyan": 10.0,
+                "Samyan": 8.0,
                 "Circle": 12.0,
                 "Rama 9": 19.0,
                 "Eastville": 7.0,
                 "Mega": 15.0,
                 "Embassy": 36.0,
-                "EmQuartier": 18.0
+                "EmQuartier": 17.0
             }
         },
         {
@@ -2390,12 +2390,12 @@
             "Branch": {
                 "Samyan": 21.0,
                 "Circle": 8.0,
-                "Rama 9": 12.0,
+                "Rama 9": 11.0,
                 "Eastville": 3.0,
                 "Mega": 5.0,
-                "Embassy": 7.0,
+                "Embassy": 6.0,
                 "EmQuartier": 1.0,
-                "On Time": 19.0
+                "On Time": 18.0
             }
         },
         {
@@ -2420,9 +2420,9 @@
                 "Rama 9": 10.0,
                 "Eastville": 6.0,
                 "Mega": 0.0,
-                "Embassy": 11.0,
+                "Embassy": 9.0,
                 "EmQuartier": 4.0,
-                "On Time": 26.0
+                "On Time": 25.0
             }
         },
         {
@@ -2489,7 +2489,7 @@
                 "Rama 9": 4.0,
                 "Eastville": 2.0,
                 "Mega": 7.0,
-                "Embassy": 3.0,
+                "Embassy": 0.0,
                 "EmQuartier": 1.0,
                 "On Time": 21.0
             }
@@ -2517,7 +2517,7 @@
                 "Rama 9": 6.0,
                 "Eastville": 5.0,
                 "Mega": 2.0,
-                "Embassy": 4.0,
+                "Embassy": 3.0,
                 "EmQuartier": 5.0,
                 "On Time": 18.0
             }
@@ -2531,7 +2531,7 @@
                 "Rama 9": 4.0,
                 "Eastville": 2.0,
                 "Mega": 0.0,
-                "Embassy": 10.0,
+                "Embassy": 9.0,
                 "EmQuartier": 4.0,
                 "On Time": 14.0
             }
@@ -2616,7 +2616,7 @@
                 "Eastville": 0.0,
                 "Mega": 1.0,
                 "Embassy": 2.0,
-                "EmQuartier": 2.0,
+                "EmQuartier": 1.0,
                 "On Time": 4.0
             }
         },
@@ -2629,7 +2629,7 @@
                 "Rama 9": 0.0,
                 "Eastville": 1.0,
                 "Mega": 3.0,
-                "Embassy": 2.0,
+                "Embassy": 0.0,
                 "EmQuartier": 2.0,
                 "On Time": 6.0
             }
@@ -2638,11 +2638,11 @@
             "Item": "CURAPROX CS Ortho",
             "SKU": "PORTH",
             "Branch": {
-                "Samyan": 50.0,
+                "Samyan": 48.0,
                 "Circle": 58.0,
-                "Rama 9": 62.0,
+                "Rama 9": 61.0,
                 "Eastville": 48.0,
-                "Mega": 20.0,
+                "Mega": 19.0,
                 "Embassy": 53.0,
                 "EmQuartier": 27.0
             }
@@ -2707,14 +2707,14 @@
             "Item": "Plackers Flosser Kids Dual Gripz",
             "SKU": "PPLFL_KI",
             "Branch": {
-                "Samyan": 7.0,
+                "Samyan": 6.0,
                 "Circle": 7.0,
                 "Rama 9": 6.0,
                 "Eastville": 6.0,
                 "Mega": 3.0,
                 "Embassy": 0.0,
                 "EmQuartier": 3.0,
-                "On Time": 20.0
+                "On Time": 36.0
             }
         },
         {
@@ -2737,7 +2737,7 @@
             "Branch": {
                 "Samyan": 9.0,
                 "Circle": 8.0,
-                "Rama 9": 7.0,
+                "Rama 9": 5.0,
                 "Eastville": 6.0,
                 "Mega": 0.0,
                 "Embassy": 11.0,
@@ -2763,14 +2763,14 @@
             "Item": "Plackers Flosser Micro Mint Travel",
             "SKU": "PPLFL_TR",
             "Branch": {
-                "Samyan": 6.0,
+                "Samyan": 5.0,
                 "Circle": 14.0,
                 "Rama 9": 7.0,
                 "Eastville": 8.0,
                 "Mega": 4.0,
-                "Embassy": 8.0,
+                "Embassy": 5.0,
                 "EmQuartier": 2.0,
-                "On Time": 21.0
+                "On Time": 33.0
             }
         },
         {
@@ -2779,12 +2779,12 @@
             "Branch": {
                 "Samyan": 5.0,
                 "Circle": 6.0,
-                "Rama 9": 13.0,
+                "Rama 9": 12.0,
                 "Eastville": 6.0,
                 "Mega": 3.0,
-                "Embassy": 17.0,
-                "EmQuartier": 7.0,
-                "On Time": 42.0
+                "Embassy": 15.0,
+                "EmQuartier": 6.0,
+                "On Time": 41.0
             }
         },
         {
@@ -2792,13 +2792,13 @@
             "SKU": "PPLGR_NM",
             "Branch": {
                 "Samyan": 1.0,
-                "Circle": 2.0,
+                "Circle": 1.0,
                 "Rama 9": 2.0,
                 "Eastville": 2.0,
                 "Mega": 2.0,
                 "Embassy": 2.0,
                 "EmQuartier": 2.0,
-                "On Time": 8.0
+                "On Time": 6.0
             }
         },
         {
@@ -2866,7 +2866,7 @@
                 "Rama 9": 0.0,
                 "Eastville": 0.0,
                 "Mega": 3.0,
-                "Embassy": 9.0,
+                "Embassy": 8.0,
                 "EmQuartier": 0.0,
                 "On Time": 2.0
             }
@@ -2977,7 +2977,7 @@
                 "Rama 9": 3.0,
                 "Eastville": 3.0,
                 "Mega": 3.0,
-                "Embassy": 3.0,
+                "Embassy": 2.0,
                 "EmQuartier": 2.0,
                 "On Time": 10.0
             }
@@ -2986,7 +2986,7 @@
             "Item": "CURAPROX CS 1006",
             "SKU": "PSIN06",
             "Branch": {
-                "Samyan": 16.0,
+                "Samyan": 15.0,
                 "Circle": 14.0,
                 "Rama 9": 25.0,
                 "Eastville": 12.0,
@@ -3002,8 +3002,8 @@
             "Branch": {
                 "Samyan": 7.0,
                 "Circle": 8.0,
-                "Rama 9": 18.0,
-                "Eastville": 9.0,
+                "Rama 9": 17.0,
+                "Eastville": 8.0,
                 "Mega": 6.0,
                 "Embassy": 5.0,
                 "EmQuartier": 8.0,
@@ -3070,12 +3070,12 @@
             "SKU": "PTBMM",
             "Branch": {
                 "Samyan": 0.0,
-                "Circle": 2.0,
+                "Circle": 1.0,
                 "Rama 9": 2.0,
                 "Eastville": 0.0,
                 "Mega": 0.0,
                 "Embassy": 0.0,
-                "EmQuartier": 1.0,
+                "EmQuartier": 0.0,
                 "On Time": 0.0
             }
         },
@@ -3126,7 +3126,7 @@
                 "Rama 9": 0.0,
                 "Eastville": 0.0,
                 "Mega": 2.0,
-                "Embassy": 13.0,
+                "Embassy": 12.0,
                 "EmQuartier": 0.0,
                 "On Time": 4.0
             }
@@ -3154,9 +3154,9 @@
                 "Rama 9": 2.0,
                 "Eastville": 1.0,
                 "Mega": 3.0,
-                "Embassy": 2.0,
+                "Embassy": 1.0,
                 "EmQuartier": 2.0,
-                "On Time": 7.0
+                "On Time": 13.0
             }
         },
         {
@@ -3168,7 +3168,7 @@
                 "Rama 9": 6.0,
                 "Eastville": 2.0,
                 "Mega": 3.0,
-                "Embassy": 1.0,
+                "Embassy": 0.0,
                 "EmQuartier": 0.0,
                 "On Time": 12.0
             }
@@ -3227,14 +3227,14 @@
             "Item": "Marvis Mouthwash Anise Mint 120ML",
             "SKU": "MV_MAM",
             "Branch": {
-                "On Time": 0.0
+                "On Time": 12.0
             }
         },
         {
             "Item": "Marvis Mouthwash Spear Mint 120ML",
             "SKU": "MV_MSM",
             "Branch": {
-                "On Time": 0.0
+                "On Time": 24.0
             }
         },
         {
@@ -3472,14 +3472,14 @@
             "Item": "drTung's Tongue Cleaner | Purple",
             "SKU": "DRTO_PU",
             "Branch": {
-                "On Time": 41.0
+                "On Time": 53.0
             }
         },
         {
             "Item": "drTung's Tongue Cleaner | Pink",
             "SKU": "DRTO_PI",
             "Branch": {
-                "On Time": 41.0
+                "On Time": 51.0
             }
         },
         {
@@ -3493,7 +3493,7 @@
             "Item": "drTung's Tongue Cleaner | Ocean Blue",
             "SKU": "DRTO_TU",
             "Branch": {
-                "On Time": 36.0
+                "On Time": 35.0
             }
         },
         {
@@ -3514,7 +3514,7 @@
             "Item": "CURAPROX Velvet | L1 - Granet/Grey",
             "SKU": "V34",
             "Branch": {
-                "On Time": 28.0
+                "On Time": 27.0
             }
         },
         {
@@ -3542,21 +3542,21 @@
             "Item": "CURAPROX Velvet | J3 - Pink Princess/Red",
             "SKU": "V30",
             "Branch": {
-                "On Time": 6.0
+                "On Time": 16.0
             }
         },
         {
             "Item": "CURAPROX Velvet | J2 - Pink Princess/Pink",
             "SKU": "V29",
             "Branch": {
-                "On Time": 4.0
+                "On Time": 14.0
             }
         },
         {
             "Item": "CURAPROX Velvet | J1 - Pink Princess/Grey",
             "SKU": "V28",
             "Branch": {
-                "On Time": 0.0
+                "On Time": 10.0
             }
         },
         {
@@ -3570,7 +3570,7 @@
             "Item": "CURAPROX Velvet | I2 - Mint/Pink",
             "SKU": "V26",
             "Branch": {
-                "On Time": 14.0
+                "On Time": 24.0
             }
         },
         {
@@ -3612,7 +3612,7 @@
             "Item": "CURAPROX Velvet | G2 - Grey/Pink",
             "SKU": "V20",
             "Branch": {
-                "On Time": 6.0
+                "On Time": 16.0
             }
         },
         {
@@ -3717,7 +3717,7 @@
             "Item": "CURAPROX Velvet | B2 - Yellow/Pink",
             "SKU": "V05",
             "Branch": {
-                "On Time": 21.0
+                "On Time": 20.0
             }
         },
         {
@@ -3738,14 +3738,14 @@
             "Item": "CURAPROX Velvet | A2 - White/Pink",
             "SKU": "V02",
             "Branch": {
-                "On Time": 0.0
+                "On Time": 10.0
             }
         },
         {
             "Item": "CURAPROX Velvet | A1 - White/Grey",
             "SKU": "V01",
             "Branch": {
-                "On Time": 1.0
+                "On Time": 11.0
             }
         },
         {
@@ -3759,28 +3759,28 @@
             "Item": "CURAPROX KIDS | Orange",
             "SKU": "KID_15",
             "Branch": {
-                "On Time": 28.0
+                "On Time": 27.0
             }
         },
         {
             "Item": "CURAPROX KIDS | Green",
             "SKU": "KID_14",
             "Branch": {
-                "On Time": 19.0
+                "On Time": 30.0
             }
         },
         {
             "Item": "CURAPROX KIDS | Blue",
             "SKU": "KID_13",
             "Branch": {
-                "On Time": 22.0
+                "On Time": 33.0
             }
         },
         {
             "Item": "CURAPROX KIDS | Purple",
             "SKU": "KID_12",
             "Branch": {
-                "On Time": 18.0
+                "On Time": 30.0
             }
         },
         {
@@ -3801,7 +3801,7 @@
             "Item": "CURAPROX Baby | Pink/Blue",
             "SKU": "CUBY_09",
             "Branch": {
-                "On Time": 13.0
+                "On Time": 19.0
             }
         },
         {
@@ -3815,35 +3815,35 @@
             "Item": "CURAPROX Baby | Blue/Pink",
             "SKU": "CUBY_07",
             "Branch": {
-                "On Time": 14.0
+                "On Time": 20.0
             }
         },
         {
             "Item": "CURAPROX Baby | Blue/Blue",
             "SKU": "CUBY_06",
             "Branch": {
-                "On Time": 13.0
+                "On Time": 19.0
             }
         },
         {
             "Item": "CURAPROX Baby | Blue/Green",
             "SKU": "CUBY_05",
             "Branch": {
-                "On Time": 12.0
+                "On Time": 24.0
             }
         },
         {
             "Item": "CURAPROX Baby | Green/Pink",
             "SKU": "CUBY_04",
             "Branch": {
-                "On Time": 15.0
+                "On Time": 20.0
             }
         },
         {
             "Item": "CURAPROX Baby | Green/Blue",
             "SKU": "CUBY_03",
             "Branch": {
-                "On Time": 21.0
+                "On Time": 27.0
             }
         },
         {
@@ -3906,7 +3906,7 @@
             "Item": "CURAPROX CS Ortho | R1 - Navy/Yellow",
             "SKU": "ORTH_R1",
             "Branch": {
-                "On Time": 12.0
+                "On Time": 18.0
             }
         },
         {
@@ -3955,14 +3955,14 @@
             "Item": "CURAPROX CS Ortho | N2 - Pink/Navy",
             "SKU": "ORTH_N2",
             "Branch": {
-                "On Time": 21.0
+                "On Time": 20.0
             }
         },
         {
             "Item": "CURAPROX CS Ortho | N1 - Pink/Yellow",
             "SKU": "ORTH_N1",
             "Branch": {
-                "On Time": 18.0
+                "On Time": 17.0
             }
         },
         {
@@ -3976,7 +3976,7 @@
             "Item": "CURAPROX CS Ortho | M1 - Purple/Yellow",
             "SKU": "ORTH_M1",
             "Branch": {
-                "On Time": 22.0
+                "On Time": 21.0
             }
         },
         {
@@ -4004,14 +4004,14 @@
             "Item": "CURAPROX CS 5460 | K3 - Purple/Navy",
             "SKU": "5460_K3",
             "Branch": {
-                "On Time": 27.0
+                "On Time": 30.0
             }
         },
         {
             "Item": "CURAPROX CS 5460 | K2 - Purple/Yellow",
             "SKU": "5460_K2",
             "Branch": {
-                "On Time": 40.0
+                "On Time": 38.0
             }
         },
         {
@@ -4025,14 +4025,14 @@
             "Item": "CURAPROX CS 5460 | J3 - Pink/Green",
             "SKU": "5460_J3",
             "Branch": {
-                "On Time": 23.0
+                "On Time": 34.0
             }
         },
         {
             "Item": "CURAPROX CS 5460 | J2 - Pink/Yellow",
             "SKU": "5460_J2",
             "Branch": {
-                "On Time": 32.0
+                "On Time": 31.0
             }
         },
         {
@@ -4060,14 +4060,14 @@
             "Item": "CURAPROX CS 5460 | I1 - Hot Pink/Red",
             "SKU": "5460_I1",
             "Branch": {
-                "On Time": 30.0
+                "On Time": 34.0
             }
         },
         {
             "Item": "CURAPROX CS 5460 | H3 - Orange/Navy",
             "SKU": "5460_H3",
             "Branch": {
-                "On Time": 27.0
+                "On Time": 26.0
             }
         },
         {
@@ -4088,7 +4088,7 @@
             "Item": "CURAPROX CS 5460 | G3 - Yellow/Navy",
             "SKU": "5460_G3",
             "Branch": {
-                "On Time": 27.0
+                "On Time": 33.0
             }
         },
         {
@@ -4109,21 +4109,21 @@
             "Item": "CURAPROX CS 5460 | F3 - Navy/Pink",
             "SKU": "5460_F3",
             "Branch": {
-                "On Time": 22.0
+                "On Time": 33.0
             }
         },
         {
             "Item": "CURAPROX CS 5460 | F2 - Navy/Yellow",
             "SKU": "5460_F2",
             "Branch": {
-                "On Time": 34.0
+                "On Time": 33.0
             }
         },
         {
             "Item": "CURAPROX CS 5460 | F1 - Navy/Green",
             "SKU": "5460_F1",
             "Branch": {
-                "On Time": 30.0
+                "On Time": 29.0
             }
         },
         {
@@ -4137,7 +4137,7 @@
             "Item": "CURAPROX CS 5460 | E2 - Drak Blue/Green",
             "SKU": "5460_E2",
             "Branch": {
-                "On Time": 26.0
+                "On Time": 25.0
             }
         },
         {
@@ -4151,7 +4151,7 @@
             "Item": "CURAPROX CS 5460 | D3 - Blue Sky/Blue",
             "SKU": "5460_D3",
             "Branch": {
-                "On Time": 38.0
+                "On Time": 36.0
             }
         },
         {
@@ -4179,21 +4179,21 @@
             "Item": "CURAPROX CS 5460 | C2 - Turquoise/Orange",
             "SKU": "5460_C2",
             "Branch": {
-                "On Time": 24.0
+                "On Time": 22.0
             }
         },
         {
             "Item": "CURAPROX CS 5460 | C1 - Turquoise/Pink",
             "SKU": "5460_C1",
             "Branch": {
-                "On Time": 37.0
+                "On Time": 40.0
             }
         },
         {
             "Item": "CURAPROX CS 5460 | B3 - Green/Orange",
             "SKU": "5460_B3",
             "Branch": {
-                "On Time": 37.0
+                "On Time": 36.0
             }
         },
         {
@@ -4207,28 +4207,28 @@
             "Item": "CURAPROX CS 5460 | B1 - Green/Green",
             "SKU": "5460_B1",
             "Branch": {
-                "On Time": 19.0
+                "On Time": 25.0
             }
         },
         {
             "Item": "CURAPROX CS 5460 | A3 - White/Pink",
             "SKU": "5460_A3",
             "Branch": {
-                "On Time": 21.0
+                "On Time": 27.0
             }
         },
         {
             "Item": "CURAPROX CS 5460 | A2 - White/Orange",
             "SKU": "5460_A2",
             "Branch": {
-                "On Time": 55.0
+                "On Time": 51.0
             }
         },
         {
             "Item": "CURAPROX CS 5460 | A1 - White/Blue",
             "SKU": "5460_A1",
             "Branch": {
-                "On Time": 20.0
+                "On Time": 26.0
             }
         },
         {
@@ -4323,7 +4323,7 @@
             "Item": "No.29 TheraBreath Fresh Breath (Mild Mint)",
             "SKU": "PTBMM",
             "Branch": {
-                "True Digital Park": 2.0,
+                "True Digital Park": 1.0,
                 "T One Building": 2.0
             }
         },
@@ -4372,7 +4372,7 @@
             "SKU": "P_EW-TW75",
             "Branch": {
                 "True Digital Park": 6.0,
-                "T One Building": 6.0
+                "T One Building": 5.0
             }
         },
         {
@@ -4420,7 +4420,7 @@
             "SKU": "PDTFS",
             "Branch": {
                 "True Digital Park": 9.0,
-                "T One Building": 11.0
+                "T One Building": 10.0
             }
         },
         {
