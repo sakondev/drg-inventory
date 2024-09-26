@@ -142,7 +142,7 @@
             var table = $("#inventoryTable").DataTable({
               data: [],
               columns: [{ data: "SKU" }, { data: "Item" }, { data: "Qty" }],
-              pageLength: 30,
+              pageLength: -1,
               lengthMenu: [
                 [30, 50, 100, -1],
                 [30, 50, 100, "All"],
