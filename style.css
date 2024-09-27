@@ -1,0 +1,109 @@
+body {
+  font-family: Helvetica, sans-serif;
+  margin: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+#branchFilterContainer,
+#exportButton {
+  margin-bottom: 20px;
+}
+
+.branch-checkbox-group {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.branch-checkbox-group:hover {
+  background-color: #f0f0f0;
+}
+
+.branch-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+label {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+label input {
+  margin-right: 10px;
+}
+
+#selectButtonsContainer {
+  margin-bottom: 15px;
+}
+
+#selectAllButton,
+#deselectAllButton,
+#exportButton {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#exportButton {
+  background-color: #ef4444;
+}
+
+#selectAllButton:hover,
+#deselectAllButton:hover {
+  background-color: #0056b3;
+}
+
+/* Custom row colors */
+.row-low-qty {
+  color: #f59e0b !important;
+  /* Yellow for qty < 10 */
+}
+
+.row-critical-qty {
+  color: #ef4444 !important;
+  /* Red for qty < 5 */
+}
+
+/* สีสำหรับกลุ่มต่าง ๆ */
+.branch-group-store {
+  background-color: #dbeafe;
+}
+
+.branch-group-hq {
+  background-color: #d9f99d;
+}
+
+.branch-group-online {
+  background-color: #fef08a;
+}
+
+.branch-group-vending {
+  background-color: #e9d5ff;
+}

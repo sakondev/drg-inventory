@@ -11,6 +11,9 @@
       href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"
     />
 
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css" />
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -19,85 +22,6 @@
 
     <!-- xlsx library for exporting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-
-    <style>
-      body {
-        font-family: Helvetica, sans-serif;
-        margin: 20px;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      th,
-      td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-      }
-      th {
-        background-color: #f2f2f2;
-      }
-      #branchFilterContainer,
-      #exportButton {
-        margin-bottom: 20px;
-      }
-      .branch-checkbox-group {
-        display: inline-block;
-        margin-right: 20px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-      }
-      .branch-checkbox-group:hover {
-        background-color: #f0f0f0;
-      }
-      .branch-checkbox {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-        vertical-align: middle;
-      }
-      label {
-        font-size: 16px;
-        cursor: pointer;
-      }
-      label input {
-        margin-right: 10px;
-      }
-
-      #selectButtonsContainer {
-        margin-bottom: 15px;
-      }
-
-      #selectAllButton,
-      #deselectAllButton {
-        padding: 10px 15px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-right: 10px;
-      }
-
-      #selectAllButton:hover,
-      #deselectAllButton:hover {
-        background-color: #0056b3;
-      }
-
-      /* Custom row colors */
-      .row-low-qty {
-        color: #f59e0b !important; /* Yellow for qty < 10 */
-      }
-
-      .row-critical-qty {
-        color: #ef4444 !important; /* Red for qty < 5 */
-      }
-    </style>
   </head>
   <body>
     <h1>DragCura Inventory</h1>
@@ -107,6 +31,8 @@
     <div id="selectButtonsContainer">
       <button id="selectAllButton">Select All</button>
       <button id="deselectAllButton">Deselect All</button>
+      <!-- Export to Excel Button -->
+      <button id="exportButton">Export to Excel</button>
     </div>
 
     <!-- Checkbox group for filtering branches -->
@@ -114,9 +40,6 @@
     <div id="branchFilterContainer">
       <!-- Checkboxes will be populated dynamically -->
     </div>
-
-    <!-- Export to Excel Button -->
-    <button id="exportButton">Export to Excel</button>
 
     <!-- Table for DataTables -->
     <table id="inventoryTable" class="display">
@@ -132,133 +55,7 @@
       </tbody>
     </table>
 
-    <script>
-      $(document).ready(function () {
-        $.getJSON("inventory_data.json")
-          .done(function (data) {
-            $("#lastUpdated").text("Last Updated at: " + data.last_updated);
-
-            // Initialize DataTable
-            var table = $("#inventoryTable").DataTable({
-              data: [],
-              columns: [{ data: "SKU" }, { data: "Item" }, { data: "Qty" }],
-              pageLength: -1,
-              lengthMenu: [
-                [30, 50, 100, -1],
-                [30, 50, 100, "All"],
-              ],
-              paging: true,
-              dom: "<'top'lf>rt<'bottom'i<'clear'>p>",
-
-              // Add row callback to change row color based on Qty
-              createdRow: function (row, data, dataIndex) {
-                if (data.Qty < 5) {
-                  $(row).addClass("row-critical-qty");
-                } else if (data.Qty < 10) {
-                  $(row).addClass("row-low-qty");
-                }
-              },
-            });
-
-            // Process inventory data
-            var processedData = [];
-            data.inventory.forEach((item) => {
-              var branches = item.Branch;
-
-              // Loop through branches and create entries for each branch
-              for (var branch in branches) {
-                var qty = parseFloat(branches[branch]);
-
-                processedData.push({
-                  SKU: item.SKU,
-                  Item: item.Item,
-                  Branch: branch,
-                  Qty: qty,
-                });
-              }
-            });
-
-            // Add data to DataTable
-            table.clear().rows.add(processedData).draw();
-
-            // Populate branch filter checkboxes with unique branch names
-            var branchNames = {};
-            processedData.forEach((item) => {
-              branchNames[item.Branch] = true; // Store unique branch names
-            });
-            Object.keys(branchNames).forEach((branch) => {
-              var checkboxHtml = `
-                <label class="branch-checkbox-group">
-                  <input type="checkbox" class="branch-checkbox" value="${branch}" /> ${branch}
-                </label>`;
-              $("#branchFilterContainer").append(checkboxHtml);
-            });
-
-            // Function to filter and sum by selected branches
-            function filterAndUpdateTable() {
-              var selectedBranches = [];
-              $(".branch-checkbox:checked").each(function () {
-                selectedBranches.push($(this).val());
-              });
-
-              // Filter data based on selected branches
-              var filteredData = processedData.filter((item) =>
-                selectedBranches.includes(item.Branch)
-              );
-
-              // Group by SKU and sum the quantities
-              var groupedData = {};
-              filteredData.forEach((item) => {
-                if (groupedData[item.SKU]) {
-                  groupedData[item.SKU].Qty += item.Qty;
-                } else {
-                  groupedData[item.SKU] = {
-                    SKU: item.SKU,
-                    Item: item.Item,
-                    Qty: item.Qty,
-                  };
-                }
-              });
-
-              // Convert the grouped data back to an array
-              var groupedDataArray = Object.values(groupedData);
-
-              // Update the table with the grouped data
-              table.clear().rows.add(groupedDataArray).draw();
-            }
-
-            // Trigger the filter and sum function when checkboxes are changed
-            $(".branch-checkbox").on("change", filterAndUpdateTable);
-
-            // Select All button functionality
-            $("#selectAllButton").on("click", function () {
-              $(".branch-checkbox").prop("checked", true);
-              filterAndUpdateTable();
-            });
-
-            // Deselect All button functionality
-            $("#deselectAllButton").on("click", function () {
-              $(".branch-checkbox").prop("checked", false);
-              filterAndUpdateTable();
-            });
-          })
-          .fail(function () {
-            console.error("Failed to load JSON data.");
-            alert(
-              "Error loading data. Please check the console for more details."
-            );
-          });
-
-        // Export to Excel
-        $("#exportButton").on("click", function () {
-          var ws = XLSX.utils.table_to_sheet(
-            document.getElementById("inventoryTable")
-          );
-          var wb = XLSX.utils.book_new();
-          XLSX.utils.book_append_sheet(wb, ws, "InventoryData");
-          XLSX.writeFile(wb, "inventory_data.xlsx");
-        });
-      });
-    </script>
+    <!-- Custom JS -->
+    <script src="app.js"></script>
   </body>
 </html>
