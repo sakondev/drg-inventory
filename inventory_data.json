@@ -1,12 +1,12 @@
 {
-    "last_updated": "2024-09-27 14:02:24",
+    "last_updated": "2024-09-27 21:07:48",
     "inventory": [
         {
             "Item": "BIW Lightpack",
             "SKU": "BIWLP",
             "Branch": {
                 "Samyan": 4.0,
-                "Embassy": 5.0,
+                "Embassy": 3.0,
                 "EmQuartier": 4.0
             }
         },
@@ -14,7 +14,7 @@
             "Item": "edel+white Intensive Flosserbrush",
             "SKU": "P_EW-INT",
             "Branch": {
-                "Samyan": 93.0,
+                "Samyan": 92.0,
                 "Circle": 55.0,
                 "Rama 9": 63.0,
                 "Eastville": 71.0,
@@ -177,7 +177,7 @@
                 "Mega": 6.0,
                 "Embassy": 10.0,
                 "EmQuartier": 7.0,
-                "On Time": 18.0,
+                "On Time": 16.0,
                 "HQ": 30.0
             }
         },
@@ -189,7 +189,7 @@
                 "Circle": 6.0,
                 "Rama 9": 7.0,
                 "Eastville": 7.0,
-                "Mega": 3.0,
+                "Mega": 2.0,
                 "Embassy": 9.0,
                 "EmQuartier": 10.0,
                 "On Time": 15.0,
@@ -256,13 +256,13 @@
             "Item": "DragCura Bag",
             "SKU": "DRG_Bag01",
             "Branch": {
-                "Samyan": 232.0,
-                "Circle": 346.0,
-                "Rama 9": 351.0,
-                "Eastville": 304.0,
-                "Mega": 215.0,
-                "Embassy": 279.0,
-                "EmQuartier": 68.0
+                "Samyan": 225.0,
+                "Circle": 343.0,
+                "Rama 9": 348.0,
+                "Eastville": 303.0,
+                "Mega": 208.0,
+                "Embassy": 271.0,
+                "EmQuartier": 67.0
             }
         },
         {
@@ -272,11 +272,11 @@
                 "Samyan": 27.0,
                 "Circle": 20.0,
                 "Rama 9": 22.0,
-                "Eastville": 19.0,
+                "Eastville": 18.0,
                 "Mega": 18.0,
                 "Embassy": 33.0,
                 "EmQuartier": 34.0,
-                "On Time": 46.0,
+                "On Time": 45.0,
                 "HQ": 0.0
             }
         },
@@ -300,8 +300,8 @@
                 "Samyan": 12.0,
                 "Circle": 11.0,
                 "Rama 9": 12.0,
-                "Eastville": 11.0,
-                "Mega": 10.0,
+                "Eastville": 10.0,
+                "Mega": 9.0,
                 "Embassy": 9.0,
                 "EmQuartier": 11.0
             }
@@ -621,11 +621,11 @@
                 "Samyan": 15.0,
                 "Circle": 10.0,
                 "Rama 9": 26.0,
-                "Eastville": 12.0,
-                "Mega": 15.0,
+                "Eastville": 11.0,
+                "Mega": 14.0,
                 "Embassy": 22.0,
                 "EmQuartier": 17.0,
-                "On Time": 41.0,
+                "On Time": 40.0,
                 "HQ": 51.0
             }
         },
@@ -725,7 +725,7 @@
                 "Circle": 9.0,
                 "Rama 9": 3.0,
                 "Eastville": 10.0,
-                "Mega": 7.0,
+                "Mega": 6.0,
                 "Embassy": 22.0,
                 "EmQuartier": 14.0,
                 "On Time": 27.0,
@@ -740,7 +740,7 @@
                 "Circle": 11.0,
                 "Rama 9": 3.0,
                 "Eastville": 10.0,
-                "Mega": 7.0,
+                "Mega": 6.0,
                 "Embassy": 22.0,
                 "EmQuartier": 15.0,
                 "On Time": 58.0,
@@ -751,14 +751,14 @@
             "Item": "Enzycal 1450",
             "SKU": "P_EN1450",
             "Branch": {
-                "Samyan": 16.0,
+                "Samyan": 14.0,
                 "Circle": 9.0,
                 "Rama 9": 16.0,
                 "Eastville": 0.0,
-                "Mega": 18.0,
+                "Mega": 17.0,
                 "Embassy": 21.0,
                 "EmQuartier": 20.0,
-                "On Time": 44.0,
+                "On Time": 42.0,
                 "HQ": 105.0
             }
         },
@@ -768,7 +768,7 @@
             "Branch": {
                 "Samyan": 12.0,
                 "Circle": 10.0,
-                "Rama 9": 11.0,
+                "Rama 9": 10.0,
                 "Eastville": 8.0,
                 "Mega": 9.0,
                 "Embassy": 14.0,
@@ -786,7 +786,7 @@
                 "Rama 9": 12.0,
                 "Eastville": 5.0,
                 "Mega": 5.0,
-                "Embassy": 6.0,
+                "Embassy": 5.0,
                 "EmQuartier": 7.0,
                 "On Time": 17.0,
                 "HQ": 531.0
@@ -796,7 +796,7 @@
             "Item": "edel+white Care Forte",
             "SKU": "P_EW-GUM75",
             "Branch": {
-                "Samyan": 22.0,
+                "Samyan": 21.0,
                 "Circle": 18.0,
                 "Rama 9": 25.0,
                 "Eastville": 11.0,
@@ -961,7 +961,7 @@
             "Item": "edel+white Anti Plaque + Whitening",
             "SKU": "P_EW-TW75",
             "Branch": {
-                "Samyan": 19.0,
+                "Samyan": 18.0,
                 "Circle": 18.0,
                 "Rama 9": 21.0,
                 "Eastville": 14.0,
@@ -976,10 +976,10 @@
             "Item": "edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
             "Branch": {
-                "Samyan": 101.0,
+                "Samyan": 100.0,
                 "Circle": 78.0,
                 "Rama 9": 109.0,
-                "Eastville": 53.0,
+                "Eastville": 47.0,
                 "Mega": 94.0,
                 "Embassy": 156.0,
                 "EmQuartier": 87.0,
@@ -1027,7 +1027,7 @@
                 "Mega": 10.0,
                 "Embassy": 12.0,
                 "EmQuartier": 8.0,
-                "On Time": 57.0
+                "On Time": 56.0
             }
         },
         {
@@ -1060,14 +1060,14 @@
             "Item": "edel+white Whitening + Anti-Plaqe 12 ml.",
             "SKU": "P_F_EW_WHT12",
             "Branch": {
-                "Samyan": 13.0,
+                "Samyan": 12.0,
                 "Circle": 8.0,
                 "Rama 9": 9.0,
                 "Eastville": 8.0,
                 "Mega": 12.0,
                 "Embassy": 12.0,
                 "EmQuartier": 6.0,
-                "On Time": 59.0
+                "On Time": 58.0
             }
         },
         {
@@ -1079,7 +1079,7 @@
                 "Rama 9": 7.0,
                 "Eastville": 1.0,
                 "Mega": 7.0,
-                "Embassy": 9.0,
+                "Embassy": 8.0,
                 "EmQuartier": 3.0,
                 "On Time": 10.0,
                 "HQ": 13.0
@@ -1122,7 +1122,7 @@
                 "Samyan": 12.0,
                 "Circle": 5.0,
                 "Rama 9": 7.0,
-                "Eastville": 3.0,
+                "Eastville": 2.0,
                 "Mega": 3.0,
                 "Embassy": 5.0,
                 "EmQuartier": 3.0,
@@ -1168,7 +1168,7 @@
                 "Circle": 4.0,
                 "Rama 9": 0.0,
                 "Eastville": 3.0,
-                "Mega": 2.0,
+                "Mega": 1.0,
                 "Embassy": 0.0,
                 "EmQuartier": 3.0,
                 "On Time": 6.0,
@@ -1179,12 +1179,12 @@
             "Item": "Gentles Tots Kids | Strawberry Yugurt",
             "SKU": "P_GT_TPSY",
             "Branch": {
-                "Samyan": 2.0,
+                "Samyan": 1.0,
                 "Circle": 4.0,
                 "Rama 9": 0.0,
                 "Eastville": 0.0,
                 "Mega": 2.0,
-                "Embassy": 3.0,
+                "Embassy": 1.0,
                 "EmQuartier": 1.0,
                 "On Time": 11.0,
                 "HQ": 0.0
@@ -1507,7 +1507,7 @@
                 "Rama 9": 2.0,
                 "Eastville": 3.0,
                 "Mega": 2.0,
-                "Embassy": 17.0,
+                "Embassy": 16.0,
                 "EmQuartier": 11.0,
                 "On Time": 5.0,
                 "HQ": 7.0
@@ -1537,7 +1537,7 @@
                 "Rama 9": 1.0,
                 "Eastville": 1.0,
                 "Mega": 2.0,
-                "Embassy": 1.0,
+                "Embassy": 0.0,
                 "EmQuartier": 3.0,
                 "On Time": 3.0,
                 "HQ": 17.0
@@ -1577,7 +1577,7 @@
                 "Circle": 7.0,
                 "Eastville": 3.0,
                 "Mega": 3.0,
-                "Embassy": 12.0,
+                "Embassy": 11.0,
                 "On Time": 5.0,
                 "HQ": 0.0
             }
@@ -1613,7 +1613,7 @@
             "SKU": "MV_WM",
             "Branch": {
                 "Samyan": 6.0,
-                "Circle": 12.0,
+                "Circle": 9.0,
                 "Eastville": 5.0,
                 "Mega": 7.0,
                 "Embassy": 16.0,
@@ -1625,7 +1625,7 @@
             "Item": "[Campaign] Oralpeace (Sachet)",
             "SKU": "P_CPB24_OP",
             "Branch": {
-                "Samyan": 7.0,
+                "Samyan": 6.0,
                 "Circle": 11.0,
                 "Rama 9": 0.0,
                 "Eastville": 8.0,
@@ -1699,7 +1699,7 @@
             "Branch": {
                 "Samyan": 12.0,
                 "Circle": 5.0,
-                "Rama 9": 12.0,
+                "Rama 9": 10.0,
                 "Eastville": 3.0,
                 "Mega": 3.0,
                 "Embassy": 0.0,
@@ -1714,7 +1714,7 @@
                 "Samyan": 12.0,
                 "Circle": 7.0,
                 "Rama 9": 9.0,
-                "Eastville": 2.0,
+                "Eastville": 1.0,
                 "Mega": 3.0,
                 "Embassy": 0.0,
                 "EmQuartier": 0.0,
@@ -1757,7 +1757,7 @@
                 "Circle": 5.0,
                 "Rama 9": 4.0,
                 "Eastville": 3.0,
-                "Mega": 4.0,
+                "Mega": 2.0,
                 "Embassy": 0.0,
                 "EmQuartier": 0.0
             }
@@ -1767,11 +1767,11 @@
             "SKU": "P_Velvet",
             "Branch": {
                 "Samyan": 124.0,
-                "Circle": 155.0,
-                "Rama 9": 133.0,
+                "Circle": 154.0,
+                "Rama 9": 132.0,
                 "Eastville": 129.0,
                 "Mega": 134.0,
-                "Embassy": 348.0,
+                "Embassy": 331.0,
                 "EmQuartier": 112.0,
                 "HQ": 348.0
             }
@@ -1795,9 +1795,9 @@
             "Branch": {
                 "Samyan": 12.0,
                 "Circle": 4.0,
-                "Rama 9": 7.0,
+                "Rama 9": 6.0,
                 "Eastville": 2.0,
-                "Mega": 9.0,
+                "Mega": 8.0,
                 "Embassy": 6.0,
                 "EmQuartier": 9.0,
                 "On Time": 74.0,
@@ -1813,7 +1813,7 @@
                 "Rama 9": 13.0,
                 "Eastville": 11.0,
                 "Mega": 10.0,
-                "Embassy": 33.0,
+                "Embassy": 32.0,
                 "EmQuartier": 14.0,
                 "On Time": 35.0,
                 "HQ": 77.0
@@ -1920,7 +1920,7 @@
                 "Mega": 11.0,
                 "Embassy": 12.0,
                 "EmQuartier": 15.0,
-                "On Time": 27.0,
+                "On Time": 26.0,
                 "HQ": 57.0
             }
         },
@@ -1932,7 +1932,7 @@
                 "Circle": 7.0,
                 "Rama 9": 6.0,
                 "Eastville": 8.0,
-                "Mega": 8.0,
+                "Mega": 6.0,
                 "Embassy": 12.0,
                 "EmQuartier": 9.0,
                 "On Time": 21.0,
@@ -1947,8 +1947,8 @@
                 "Circle": 10.0,
                 "Rama 9": 11.0,
                 "Eastville": 3.0,
-                "Mega": 8.0,
-                "Embassy": 14.0,
+                "Mega": 7.0,
+                "Embassy": 13.0,
                 "EmQuartier": 10.0,
                 "On Time": 24.0,
                 "HQ": 37.0
@@ -1963,7 +1963,7 @@
                 "Rama 9": 7.0,
                 "Eastville": 9.0,
                 "Mega": 8.0,
-                "Embassy": 13.0,
+                "Embassy": 11.0,
                 "EmQuartier": 7.0,
                 "On Time": 22.0,
                 "HQ": 36.0
@@ -1977,7 +1977,7 @@
                 "Circle": 10.0,
                 "Rama 9": 9.0,
                 "Eastville": 6.0,
-                "Mega": 7.0,
+                "Mega": 6.0,
                 "Embassy": 11.0,
                 "EmQuartier": 13.0,
                 "On Time": 27.0,
@@ -2003,13 +2003,13 @@
             "Item": "CURAPROX CS 5460",
             "SKU": "P5460",
             "Branch": {
-                "Samyan": 319.0,
-                "Circle": 341.0,
+                "Samyan": 312.0,
+                "Circle": 340.0,
                 "Rama 9": 291.0,
                 "Eastville": 275.0,
-                "Mega": 318.0,
-                "Embassy": 424.0,
-                "EmQuartier": 363.0,
+                "Mega": 313.0,
+                "Embassy": 418.0,
+                "EmQuartier": 362.0,
                 "HQ": 2789.0
             }
         },
@@ -2046,7 +2046,7 @@
             "Item": "Curaprox CS 5460 Duo Fox and Bunny Edition",
             "SKU": "5460_FB",
             "Branch": {
-                "Samyan": 4.0,
+                "Samyan": 3.0,
                 "Circle": 5.0,
                 "Rama 9": 1.0,
                 "Eastville": 4.0,
@@ -2117,7 +2117,7 @@
             "Item": "Black Is White Travel Box",
             "SKU": "PBIW_TB",
             "Branch": {
-                "Samyan": 14.0,
+                "Samyan": 13.0,
                 "Circle": 14.0,
                 "Rama 9": 8.0,
                 "Eastville": 8.0,
@@ -2162,7 +2162,7 @@
             "Item": "Black Is White Toothpaste",
             "SKU": "PBIWT",
             "Branch": {
-                "Samyan": 15.0,
+                "Samyan": 14.0,
                 "Circle": 10.0,
                 "Rama 9": 14.0,
                 "Eastville": 7.0,
@@ -2286,7 +2286,7 @@
                 "Circle": 1.0,
                 "Rama 9": 2.0,
                 "Eastville": 1.0,
-                "Mega": 2.0,
+                "Mega": 0.0,
                 "Embassy": 3.0,
                 "EmQuartier": 2.0,
                 "On Time": 0.0,
@@ -2316,7 +2316,7 @@
                 "Circle": 1.0,
                 "Rama 9": 2.0,
                 "Eastville": 1.0,
-                "Mega": 1.0,
+                "Mega": 0.0,
                 "Embassy": 2.0,
                 "EmQuartier": 0.0,
                 "On Time": 13.0,
@@ -2345,9 +2345,9 @@
                 "Samyan": 74.0,
                 "Circle": 82.0,
                 "Rama 9": 66.0,
-                "Eastville": 89.0,
+                "Eastville": 85.0,
                 "Mega": 58.0,
-                "Embassy": 102.0,
+                "Embassy": 101.0,
                 "EmQuartier": 59.0,
                 "HQ": 132.0
             }
@@ -2450,8 +2450,8 @@
                 "Circle": 58.0,
                 "Rama 9": 59.0,
                 "Eastville": 36.0,
-                "Mega": 47.0,
-                "Embassy": 64.0,
+                "Mega": 46.0,
+                "Embassy": 63.0,
                 "EmQuartier": 65.0,
                 "HQ": 147.0
             }
@@ -2474,14 +2474,14 @@
             "Item": "drTung's Smart Floss",
             "SKU": "PDTFS",
             "Branch": {
-                "Samyan": 126.0,
+                "Samyan": 125.0,
                 "Circle": 92.0,
-                "Rama 9": 104.0,
+                "Rama 9": 102.0,
                 "Eastville": 91.0,
                 "Mega": 131.0,
-                "Embassy": 194.0,
-                "EmQuartier": 128.0,
-                "On Time": 619.0,
+                "Embassy": 192.0,
+                "EmQuartier": 127.0,
+                "On Time": 616.0,
                 "HQ": 588.0
             }
         },
@@ -2520,7 +2520,7 @@
             "Branch": {
                 "Samyan": 25.0,
                 "Circle": 30.0,
-                "Rama 9": 31.0,
+                "Rama 9": 30.0,
                 "Eastville": 25.0,
                 "Mega": 26.0,
                 "Embassy": 66.0,
@@ -2637,7 +2637,7 @@
             "Branch": {
                 "Samyan": 1.0,
                 "Circle": 3.0,
-                "Rama 9": 4.0,
+                "Rama 9": 2.0,
                 "Eastville": 3.0,
                 "Mega": 8.0,
                 "Embassy": 0.0,
@@ -2726,7 +2726,7 @@
             "Branch": {
                 "Samyan": 4.0,
                 "Circle": 4.0,
-                "Rama 9": 5.0,
+                "Rama 9": 4.0,
                 "Eastville": 3.0,
                 "Mega": 4.0,
                 "Embassy": 6.0,
@@ -2756,7 +2756,7 @@
             "Branch": {
                 "Samyan": 4.0,
                 "Circle": 3.0,
-                "Rama 9": 6.0,
+                "Rama 9": 5.0,
                 "Eastville": 3.0,
                 "Mega": 3.0,
                 "Embassy": 11.0,
@@ -2831,9 +2831,9 @@
             "Branch": {
                 "Samyan": 48.0,
                 "Circle": 58.0,
-                "Rama 9": 61.0,
+                "Rama 9": 60.0,
                 "Eastville": 48.0,
-                "Mega": 55.0,
+                "Mega": 54.0,
                 "Embassy": 88.0,
                 "EmQuartier": 61.0,
                 "HQ": 136.0
@@ -2967,7 +2967,7 @@
                 "Circle": 13.0,
                 "Rama 9": 19.0,
                 "Eastville": 11.0,
-                "Mega": 14.0,
+                "Mega": 13.0,
                 "Embassy": 17.0,
                 "EmQuartier": 14.0,
                 "On Time": 30.0,
@@ -2981,8 +2981,8 @@
                 "Samyan": 13.0,
                 "Circle": 10.0,
                 "Rama 9": 12.0,
-                "Eastville": 6.0,
-                "Mega": 9.0,
+                "Eastville": 4.0,
+                "Mega": 7.0,
                 "Embassy": 13.0,
                 "EmQuartier": 5.0,
                 "On Time": 39.0,
@@ -3188,7 +3188,7 @@
             "SKU": "BIW10",
             "Branch": {
                 "Samyan": 25.0,
-                "Embassy": 23.0,
+                "Embassy": 22.0,
                 "EmQuartier": 25.0
             }
         },
@@ -3198,7 +3198,7 @@
             "Branch": {
                 "Samyan": 2.0,
                 "Circle": 3.0,
-                "Rama 9": 3.0,
+                "Rama 9": 2.0,
                 "Eastville": 3.0,
                 "Mega": 3.0,
                 "Embassy": 2.0,
@@ -3216,8 +3216,8 @@
                 "Rama 9": 20.0,
                 "Eastville": 18.0,
                 "Mega": 26.0,
-                "Embassy": 51.0,
-                "EmQuartier": 33.0,
+                "Embassy": 50.0,
+                "EmQuartier": 32.0,
                 "On Time": 107.0,
                 "HQ": 108.0
             }
@@ -3228,7 +3228,7 @@
             "Branch": {
                 "Samyan": 16.0,
                 "Circle": 14.0,
-                "Rama 9": 17.0,
+                "Rama 9": 16.0,
                 "Eastville": 12.0,
                 "Mega": 15.0,
                 "Embassy": 17.0,
@@ -3385,7 +3385,7 @@
             "Item": "ORALPEACE Clean & Moisture Spray Natural",
             "SKU": "SPG",
             "Branch": {
-                "Samyan": 5.0,
+                "Samyan": 4.0,
                 "Circle": 3.0,
                 "Rama 9": 2.0,
                 "Eastville": 3.0,
@@ -3469,7 +3469,7 @@
             "Item": "Marvis Cinnamon Mint 85ML",
             "SKU": "MV_CM",
             "Branch": {
-                "Embassy": 12.0,
+                "Embassy": 11.0,
                 "HQ": 0.0
             }
         },
@@ -3947,7 +3947,7 @@
             "Item": "CURAPROX Velvet | D1 - Nevy/Grey",
             "SKU": "V10",
             "Branch": {
-                "On Time": 9.0
+                "On Time": 8.0
             }
         },
         {
@@ -3989,7 +3989,7 @@
             "Item": "CURAPROX Velvet | B1 - Yellow/Grey",
             "SKU": "V04",
             "Branch": {
-                "On Time": 38.0
+                "On Time": 37.0
             }
         },
         {
@@ -4409,14 +4409,14 @@
             "Item": "CURAPROX CS 5460 | E1 - Drak Blue/Orange",
             "SKU": "5460_E1",
             "Branch": {
-                "On Time": 31.0
+                "On Time": 30.0
             }
         },
         {
             "Item": "CURAPROX CS 5460 | D3 - Blue Sky/Blue",
             "SKU": "5460_D3",
             "Branch": {
-                "On Time": 33.0
+                "On Time": 32.0
             }
         },
         {
@@ -4479,21 +4479,21 @@
             "Item": "CURAPROX CS 5460 | A3 - White/Pink",
             "SKU": "5460_A3",
             "Branch": {
-                "On Time": 22.0
+                "On Time": 21.0
             }
         },
         {
             "Item": "CURAPROX CS 5460 | A2 - White/Orange",
             "SKU": "5460_A2",
             "Branch": {
-                "On Time": 47.0
+                "On Time": 46.0
             }
         },
         {
             "Item": "CURAPROX CS 5460 | A1 - White/Blue",
             "SKU": "5460_A1",
             "Branch": {
-                "On Time": 22.0
+                "On Time": 21.0
             }
         },
         {
@@ -4516,7 +4516,7 @@
             "Item": "No.20 ไหมขัดฟันแบบมีด้ามจับพร้อมกล่องพกพา Plackers Flosser Micro Mint Travel 12 pcs",
             "SKU": "PPLFL_TR",
             "Branch": {
-                "True Digital Park": 12.0,
+                "True Digital Park": 18.0,
                 "T One Building": 16.0
             }
         },
@@ -4525,23 +4525,23 @@
             "SKU": "P5460",
             "Branch": {
                 "True Digital Park": 11.0,
-                "T One Building": 8.0
+                "T One Building": 12.0
             }
         },
         {
             "Item": "No.22 CURAPROX CS 5460",
             "SKU": "P5460",
             "Branch": {
-                "True Digital Park": 4.0,
-                "T One Building": 7.0
+                "True Digital Park": 11.0,
+                "T One Building": 12.0
             }
         },
         {
             "Item": "No.23 CURAPROX Velvet",
             "SKU": "P_Velvet",
             "Branch": {
-                "True Digital Park": 4.0,
-                "T One Building": 7.0
+                "True Digital Park": 10.0,
+                "T One Building": 10.0
             }
         },
         {
@@ -4549,14 +4549,14 @@
             "SKU": "P_EW-US",
             "Branch": {
                 "True Digital Park": 12.0,
-                "T One Building": 8.0
+                "T One Building": 14.0
             }
         },
         {
             "Item": "No.25 edel+white UltraSoft Flosserbrush",
             "SKU": "P_EW-US",
             "Branch": {
-                "True Digital Park": 7.0,
+                "True Digital Park": 14.0,
                 "T One Building": 14.0
             }
         },
@@ -4564,7 +4564,7 @@
             "Item": "No.26 edel+white Intensive",
             "SKU": "P_EW-INT",
             "Branch": {
-                "True Digital Park": 10.0,
+                "True Digital Park": 11.0,
                 "T One Building": 11.0
             }
         },
@@ -4588,16 +4588,16 @@
             "Item": "No.29 TheraBreath Fresh Breath (Mild Mint)",
             "SKU": "PTBMM",
             "Branch": {
-                "True Digital Park": 1.0,
-                "T One Building": 2.0
+                "True Digital Park": 4.0,
+                "T One Building": 4.0
             }
         },
         {
             "Item": "No.30 ยาสีฟัน Enzycal 1450 (75 ml.)",
             "SKU": "P_EN1450",
             "Branch": {
-                "True Digital Park": 2.0,
-                "T One Building": 2.0
+                "True Digital Park": 6.0,
+                "T One Building": 6.0
             }
         },
         {
@@ -4620,7 +4620,7 @@
             "Item": "No. 33 ยาสีฟัน BE YOU 60 ml. รุ่น Apple",
             "SKU": "PBYOU60_AP",
             "Branch": {
-                "True Digital Park": 2.0,
+                "True Digital Park": 8.0,
                 "T One Building": 8.0
             }
         },
@@ -4644,7 +4644,7 @@
             "Item": "No.36 ชุดยาสีฟัน Black Is White | ประเภท: BIW Set",
             "SKU": "PBIWS",
             "Branch": {
-                "True Digital Park": 8.0,
+                "True Digital Park": 7.0,
                 "T One Building": 8.0
             }
         },
@@ -4652,8 +4652,8 @@
             "Item": "No.37 ชุดพกพา Black Is white",
             "SKU": "PBIW_TB",
             "Branch": {
-                "True Digital Park": 7.0,
-                "T One Building": 7.0
+                "True Digital Park": 12.0,
+                "T One Building": 12.0
             }
         },
         {
@@ -4684,7 +4684,7 @@
             "Item": "No.41 ไหมขัดฟัน drTung's Smart Floss",
             "SKU": "PDTFS",
             "Branch": {
-                "True Digital Park": 8.0,
+                "True Digital Park": 14.0,
                 "T One Building": 10.0
             }
         },
@@ -4692,15 +4692,15 @@
             "Item": "No.42 ไหมขัดฟันแบบมีด้ามจับ Plackers Flosser Micro Mint (36 pcs)",
             "SKU": "PPLFL_MI36",
             "Branch": {
-                "True Digital Park": 4.0,
-                "T One Building": 7.0
+                "True Digital Park": 12.0,
+                "T One Building": 11.0
             }
         },
         {
             "Item": "No.43 ที่ทำความสะอาดลิ้น drTung's Tongue Cleaner",
             "SKU": "PDTTC",
             "Branch": {
-                "True Digital Park": 10.0,
+                "True Digital Park": 18.0,
                 "T One Building": 12.0
             }
         },
@@ -4716,7 +4716,7 @@
             "Item": "No.45 ชุดพกพา CURAPROX Travel Set",
             "SKU": "Vending_No45",
             "Branch": {
-                "True Digital Park": 7.0,
+                "True Digital Park": 12.0,
                 "T One Building": 11.0
             }
         },
@@ -4724,7 +4724,7 @@
             "Item": "No.46 Flipper-Mixed Animal",
             "SKU": "PFELE",
             "Branch": {
-                "True Digital Park": 5.0,
+                "True Digital Park": 6.0,
                 "T One Building": 6.0
             }
         },
