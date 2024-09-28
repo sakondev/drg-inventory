@@ -8,3 +8,6 @@ log.txt
 archive/
 sku_mapping.csv
 html/
+app.py
+saimai.py
+saimai.xlsx

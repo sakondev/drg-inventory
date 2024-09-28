@@ -1,5 +1,4 @@
-# VERSION 3.4
-# ADDED DOWNLOAD FROM HQ
+# VERSION 3.5
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -17,6 +16,9 @@ import json
 from collections import OrderedDict
 import logging
 import shutil  # ใช้สำหรับย้ายไฟล์
+import warnings
+
+warnings.simplefilter("ignore", UserWarning)
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -302,6 +304,38 @@ def process_google_sheet_data(reorganized_inventory):
         reorganized_inventory[item]["Branch"]['HQ'] = qty
 
     logging.info("Processed data from Google Sheets and added to inventory.")
+    
+# Process Data From Saimai.xlsx
+def process_saimai_data(reorganized_inventory):
+    # โหลดไฟล์ saimai.xlsx โดยข้ามแถวแรก
+    saimai_file = 'saimai.xlsx'
+    df_saimai = pd.read_excel(saimai_file, engine='openpyxl')
+
+    # โหลดไฟล์ sku_mapping.csv
+    sku_mapping_file = 'sku_mapping.csv'
+    sku_mapping_df = pd.read_csv(sku_mapping_file)
+
+    # สร้าง dictionary สำหรับ sku mapping
+    sku_mapping = dict(zip(sku_mapping_df['Saimai'], sku_mapping_df['SKU']))
+
+    # ประมวลผลข้อมูลจาก saimai.xlsx
+    for _, row in df_saimai.iterrows():
+        sku = row.iloc[0]  # SKU จาก Column A (index 0)
+        item = row.iloc[1]  # ชื่อสินค้า จาก Column B (index 1)
+        qty = float(row.iloc[4])  # จำนวน จาก Column E (index 4)
+
+        # ตรวจสอบ SKU และทำ mapping
+        mapped_sku = sku_mapping.get(sku, sku)
+
+        # เพิ่มข้อมูลใน reorganized_inventory
+        if item not in reorganized_inventory:
+            reorganized_inventory[item] = {
+                "SKU": mapped_sku,
+                "Branch": OrderedDict()
+            }
+        reorganized_inventory[item]["Branch"]['Saimai'] = qty
+
+    logging.info("Processed data from saimai.xlsx and added to inventory.")
 
 # Process all data
 def process_data():
@@ -367,6 +401,10 @@ def process_data():
     # Process Google Sheets data
     logging.info("Processing Google Sheets data...")
     process_google_sheet_data(reorganized_inventory)
+    
+    # Process saimai data
+    logging.info("Processing Saimai.xlsx data...")
+    process_saimai_data(reorganized_inventory)
 
     # Convert to the desired structure
     result_inventory = []
