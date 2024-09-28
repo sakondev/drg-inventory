@@ -44,6 +44,7 @@ os.makedirs(download_folder, exist_ok=True)
 # Set up headless options
 chrome_options = Options()
 chrome_options.add_argument("--headless=new")  # ใช้ headless รุ่นใหม่ของ Chrome (เวอร์ชัน 109 ขึ้นไป)
+chrome_options.add_argument("--window-position=-10000,-10000")   # แก้บั๊ก Chrome 129
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--disable-gpu")  # ปิดการใช้ GPU

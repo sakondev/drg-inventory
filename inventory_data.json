@@ -1,5 +1,5 @@
 {
-    "last_updated": "2024-09-27 21:07:48",
+    "last_updated": "2024-09-28 07:05:38",
     "inventory": [
         {
             "Item": "BIW Lightpack",
@@ -258,10 +258,10 @@
             "Branch": {
                 "Samyan": 225.0,
                 "Circle": 343.0,
-                "Rama 9": 348.0,
+                "Rama 9": 347.0,
                 "Eastville": 303.0,
                 "Mega": 208.0,
-                "Embassy": 271.0,
+                "Embassy": 270.0,
                 "EmQuartier": 67.0
             }
         },
@@ -276,7 +276,7 @@
                 "Mega": 18.0,
                 "Embassy": 33.0,
                 "EmQuartier": 34.0,
-                "On Time": 45.0,
+                "On Time": 44.0,
                 "HQ": 0.0
             }
         },
@@ -768,7 +768,7 @@
             "Branch": {
                 "Samyan": 12.0,
                 "Circle": 10.0,
-                "Rama 9": 10.0,
+                "Rama 9": 9.0,
                 "Eastville": 8.0,
                 "Mega": 9.0,
                 "Embassy": 14.0,
@@ -891,7 +891,7 @@
                 "Rama 9": 10.0,
                 "Eastville": 10.0,
                 "Mega": 32.0,
-                "Embassy": 46.0,
+                "Embassy": 45.0,
                 "EmQuartier": 20.0,
                 "On Time": 47.0,
                 "HQ": 936.0
@@ -1025,7 +1025,7 @@
                 "Rama 9": 10.0,
                 "Eastville": 11.0,
                 "Mega": 10.0,
-                "Embassy": 12.0,
+                "Embassy": 11.0,
                 "EmQuartier": 8.0,
                 "On Time": 56.0
             }
@@ -1039,7 +1039,7 @@
                 "Rama 9": 12.0,
                 "Eastville": 6.0,
                 "Mega": 6.0,
-                "Embassy": 11.0,
+                "Embassy": 10.0,
                 "EmQuartier": 6.0
             }
         },
@@ -1052,7 +1052,7 @@
                 "Rama 9": 11.0,
                 "Eastville": 12.0,
                 "Mega": 12.0,
-                "Embassy": 10.0,
+                "Embassy": 9.0,
                 "EmQuartier": 8.0
             }
         },
@@ -1065,7 +1065,7 @@
                 "Rama 9": 9.0,
                 "Eastville": 8.0,
                 "Mega": 12.0,
-                "Embassy": 12.0,
+                "Embassy": 11.0,
                 "EmQuartier": 6.0,
                 "On Time": 58.0
             }
@@ -1630,7 +1630,7 @@
                 "Rama 9": 0.0,
                 "Eastville": 8.0,
                 "Mega": 0.0,
-                "Embassy": 1.0,
+                "Embassy": 0.0,
                 "EmQuartier": 0.0,
                 "On Time": 39.0,
                 "HQ": 34.0
@@ -1755,7 +1755,7 @@
             "Branch": {
                 "Samyan": 6.0,
                 "Circle": 5.0,
-                "Rama 9": 4.0,
+                "Rama 9": 3.0,
                 "Eastville": 3.0,
                 "Mega": 2.0,
                 "Embassy": 0.0,
@@ -1800,7 +1800,7 @@
                 "Mega": 8.0,
                 "Embassy": 6.0,
                 "EmQuartier": 9.0,
-                "On Time": 74.0,
+                "On Time": 73.0,
                 "HQ": 12.0
             }
         },
@@ -1995,7 +1995,7 @@
                 "Mega": 7.0,
                 "Embassy": 16.0,
                 "EmQuartier": 7.0,
-                "On Time": 23.0,
+                "On Time": 22.0,
                 "HQ": 4.0
             }
         },
@@ -2006,7 +2006,7 @@
                 "Samyan": 312.0,
                 "Circle": 340.0,
                 "Rama 9": 291.0,
-                "Eastville": 275.0,
+                "Eastville": 271.0,
                 "Mega": 313.0,
                 "Embassy": 418.0,
                 "EmQuartier": 362.0,
@@ -2481,7 +2481,7 @@
                 "Mega": 131.0,
                 "Embassy": 192.0,
                 "EmQuartier": 127.0,
-                "On Time": 616.0,
+                "On Time": 614.0,
                 "HQ": 588.0
             }
         },
@@ -2696,7 +2696,7 @@
             "Branch": {
                 "Samyan": 8.0,
                 "Circle": 6.0,
-                "Rama 9": 9.0,
+                "Rama 9": 8.0,
                 "Eastville": 5.0,
                 "Mega": 7.0,
                 "Embassy": 10.0,
@@ -2726,7 +2726,7 @@
             "Branch": {
                 "Samyan": 4.0,
                 "Circle": 4.0,
-                "Rama 9": 4.0,
+                "Rama 9": 3.0,
                 "Eastville": 3.0,
                 "Mega": 4.0,
                 "Embassy": 6.0,
@@ -2936,7 +2936,7 @@
                 "Samyan": 13.0,
                 "Circle": 14.0,
                 "Rama 9": 9.0,
-                "Eastville": 6.0,
+                "Eastville": 5.0,
                 "Mega": 11.0,
                 "Embassy": 11.0,
                 "EmQuartier": 14.0,
@@ -3737,7 +3737,7 @@
             "Item": "drTung's Tongue Cleaner | Purple",
             "SKU": "DRTO_PU",
             "Branch": {
-                "On Time": 47.0
+                "On Time": 46.0
             }
         },
         {
@@ -3758,7 +3758,7 @@
             "Item": "drTung's Tongue Cleaner | Ocean Blue",
             "SKU": "DRTO_TU",
             "Branch": {
-                "On Time": 31.0
+                "On Time": 30.0
             }
         },
         {
@@ -3821,7 +3821,7 @@
             "Item": "CURAPROX Velvet | J1 - Pink Princess/Grey",
             "SKU": "V28",
             "Branch": {
-                "On Time": 9.0
+                "On Time": 8.0
             }
         },
         {
@@ -3877,7 +3877,7 @@
             "Item": "CURAPROX Velvet | G2 - Grey/Pink",
             "SKU": "V20",
             "Branch": {
-                "On Time": 15.0
+                "On Time": 14.0
             }
         },
         {
@@ -3940,7 +3940,7 @@
             "Item": "CURAPROX Velvet | D2 - Nevy/Pink",
             "SKU": "V11",
             "Branch": {
-                "On Time": 17.0
+                "On Time": 16.0
             }
         },
         {
@@ -3954,7 +3954,7 @@
             "Item": "CURAPROX Velvet | C3 - Drak Princess/Red",
             "SKU": "V09",
             "Branch": {
-                "On Time": 15.0
+                "On Time": 14.0
             }
         },
         {
@@ -4003,14 +4003,14 @@
             "Item": "CURAPROX Velvet | A2 - White/Pink",
             "SKU": "V02",
             "Branch": {
-                "On Time": 6.0
+                "On Time": 5.0
             }
         },
         {
             "Item": "CURAPROX Velvet | A1 - White/Grey",
             "SKU": "V01",
             "Branch": {
-                "On Time": 10.0
+                "On Time": 9.0
             }
         },
         {
@@ -4430,7 +4430,7 @@
             "Item": "CURAPROX CS 5460 | D1 - Blue Sky/Green",
             "SKU": "5460_D1",
             "Branch": {
-                "On Time": 41.0
+                "On Time": 40.0
             }
         },
         {
@@ -4479,7 +4479,7 @@
             "Item": "CURAPROX CS 5460 | A3 - White/Pink",
             "SKU": "5460_A3",
             "Branch": {
-                "On Time": 21.0
+                "On Time": 19.0
             }
         },
         {
@@ -4493,7 +4493,7 @@
             "Item": "CURAPROX CS 5460 | A1 - White/Blue",
             "SKU": "5460_A1",
             "Branch": {
-                "On Time": 21.0
+                "On Time": 20.0
             }
         },
         {
