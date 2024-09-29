@@ -425,6 +425,27 @@ def process_data():
         json.dump(final_result, json_file, ensure_ascii=False, indent=4)
 
     logging.info(f"Inventory data exported to {json_filename}")
+    
+    # Save another file to /data
+    data_folder = os.path.join(os.path.dirname(__file__), 'data')
+    os.makedirs(data_folder, exist_ok=True)
+
+    # Generate filename with DDMMYY_Timestamp
+    timestamp = datetime.now().strftime("%H%M%S")
+    date_str = datetime.now().strftime("%d%m%y")
+    data_json_filename = os.path.join(data_folder, f"{date_str}_{timestamp}.json")
+
+    # Write the inventory to the new JSON file
+    with open(data_json_filename, 'w', encoding='utf-8') as json_file:
+        json.dump(final_result, json_file, ensure_ascii=False, indent=4)
+
+    logging.info(f"Inventory data exported to {data_json_filename}")
+    
+    # ส่งข้อความแจ้งเตือนเมื่อสร้างไฟล์เสร็จเรียบร้อย
+    timestamp = datetime.now().strftime('%d%m%y - %H:%M:%S')
+    message = f"สร้างไฟล์ข้อมูลจำนวนสินค้าวันที่ {timestamp} สำเร็จ"
+    send_line_notify(message)
+    logging.info(message)
 
 # Function to clean up all files in the download folder
 def clean_download_folder(download_folder):
@@ -442,6 +463,17 @@ def clean_download_folder(download_folder):
         logging.info(f"Download folder cleaned successfully.")
     except Exception as e:
         logging.error(f"Error during cleanup of download folder: {e}")
+        
+# ฟังก์ชันสำหรับส่งข้อความไปยัง Line Notify
+def send_line_notify(message):
+    line_notify_token = os.getenv('LINE_NOTIFY_TOKEN')  # ตั้งค่า Access Token ใน .env
+    headers = {
+        "Authorization": f"Bearer {line_notify_token}",
+        "Content-Type": "application/x-www-form-urlencoded"
+    }
+    payload = {'message': message}
+    response = requests.post("https://notify-api.line.me/api/notify", headers=headers, params=payload)
+    return response.status_code
 
 # Run the functions
 try:
