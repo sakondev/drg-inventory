@@ -1,5 +1,5 @@
 {
-    "last_updated": "2024-09-29 07:30:53",
+    "last_updated": "2024-09-29 08:30:27",
     "inventory": [
         {
             "Item": "BIW Lightpack",
@@ -2486,7 +2486,7 @@
                 "Mega": 124.0,
                 "Embassy": 184.0,
                 "EmQuartier": 124.0,
-                "On Time": 598.0,
+                "On Time": 597.0,
                 "HQ": 588.0
             }
         },
@@ -2916,7 +2916,7 @@
                 "Mega": 11.0,
                 "Embassy": 8.0,
                 "EmQuartier": 3.0,
-                "On Time": 36.0,
+                "On Time": 35.0,
                 "HQ": 93.0
             }
         },
@@ -3751,7 +3751,7 @@
             "Item": "drTung's Tongue Cleaner | Pink",
             "SKU": "DRTO_PI",
             "Branch": {
-                "On Time": 45.0
+                "On Time": 44.0
             }
         },
         {

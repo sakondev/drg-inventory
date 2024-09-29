@@ -4,44 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DragCura Inventory</title>
-
-    <!-- DataTables CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"
     />
-
-    <!-- Style -->
     <link rel="stylesheet" href="style.css" />
-
-    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- DataTables JS -->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-
-    <!-- xlsx library for exporting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
   </head>
   <body>
-    <h1>DragCura Inventory</h1>
-    <h5 id="lastUpdated">Last Updated at:</h5>
+    <h1 class="header">DragCura Inventory</h1>
+    <!-- Dropdown for selecting JSON files -->
+    <div class="file-selector">
+      <label for="fileSelector">เลือกข้อมูล</label>
+      <select id="fileSelector">
+        <!-- Other options will be populated dynamically -->
+      </select>
+    </div>
+    <h5 id="lastUpdated"></h5>
 
-    <!-- Buttons to select/deselect all branches -->
     <div id="selectButtonsContainer">
       <button id="selectAllButton">Select All</button>
       <button id="deselectAllButton">Deselect All</button>
-      <!-- Export to Excel Button -->
       <button id="exportButton">Export to Excel</button>
     </div>
 
-    <!-- Checkbox group for filtering branches -->
     <label for="branchFilter">Select Branch(es):</label>
-    <div id="branchFilterContainer">
-      <!-- Checkboxes will be populated dynamically -->
-    </div>
+    <div id="branchFilterContainer"></div>
 
-    <!-- Table for DataTables -->
     <table id="inventoryTable" class="display">
       <thead>
         <tr>
@@ -50,12 +41,9 @@
           <th style="width: 20%">Qty</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Data will be dynamically loaded here -->
-      </tbody>
+      <tbody></tbody>
     </table>
 
-    <!-- Custom JS -->
     <script src="app.js"></script>
   </body>
 </html>

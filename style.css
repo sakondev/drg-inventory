@@ -3,6 +3,13 @@ body {
   margin: 20px;
 }
 
+.header {
+  padding: 50px;
+  background-color: #6AAAE4;
+  color: #fff;
+  text-align: center;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -53,6 +60,18 @@ label {
 
 label input {
   margin-right: 10px;
+}
+
+.file-selector {
+  margin: 10px 0;
+}
+
+.file-selector label {
+  font-size: 16px;
+}
+
+.file-selector select {
+  padding: 5px;
 }
 
 #selectButtonsContainer {
