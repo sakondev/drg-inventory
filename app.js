@@ -3,7 +3,7 @@ $(document).ready(function () {
 
   // Function to fetch available JSON files and populate dropdown
   function populateFileDropdown() {
-    $.getJSON("/data/file_list.json")
+    $.getJSON("data/file_list.json")
       .done(function (files) {
         files.forEach((file) => {
           const datePart = file.split("_")[0];
@@ -35,7 +35,7 @@ $(document).ready(function () {
 
   // Load data from the selected file
   function loadData(file) {
-    $.getJSON(`/data/${file}`)
+    $.getJSON(`data/${file}`)
       .done(function (data) {
         $("#lastUpdated").text("Data Updated at: " + data.last_updated);
         initializeDataTable(data.inventory);
