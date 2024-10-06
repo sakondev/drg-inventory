@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ดูข้อมูล JSON</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"
+    />
+    <style>
+      body {
+        font-family: Helvetica, sans-serif;
+        font-size: 14px;
+        margin: 20px;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      table {
+        width: 100%;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #6aaae4;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DragCura Inventory</h1>
+    <label for="dateFilter">เลือกวันที่:</label>
+    <input type="date" id="dateFilter" />
+    <p id="selectedDateTime"></p>
+    <div id="tableContainer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script>
+      let inventoryData = [];
+      let dataTable;
+      let lastFilteredInventory = [];
+      let uniqueDates = [];
+
+      async function loadData() {
+        try {
+          const response = await fetch("merge_data.json");
+          const data = await response.json();
+          inventoryData = data.inventory;
+          displayData(data.items, data.branches, inventoryData);
+
+          // Create an array of unique dates from the inventory data
+          uniqueDates = [
+            ...new Set(inventoryData.map((inv) => inv.date.split(" ")[0])),
+          ];
+
+          // Sort dates in descending order
+          uniqueDates.sort((a, b) => new Date(b) - new Date(a));
+
+          // Set min and max for input type=date
+          const dateFilter = document.getElementById("dateFilter");
+          dateFilter.min = uniqueDates[uniqueDates.length - 1]; // Earliest date
+          dateFilter.max = uniqueDates[0]; // Latest date
+
+          // Set the default value to the latest date
+          dateFilter.value = uniqueDates[0];
+
+          // Update the table with the latest date's data
+          const latestInventory = inventoryData.filter((inv) =>
+            inv.date.startsWith(dateFilter.value)
+          );
+          updateTable(data.items, data.branches, latestInventory);
+          updateSelectedDateTime(dateFilter.value, latestInventory);
+        } catch (error) {
+          console.error("Error loading data:", error);
+        }
+      }
+
+      function displayData(items, branches, inventory) {
+        const tableContainer = document.getElementById("tableContainer");
+        tableContainer.innerHTML = "";
+
+        let inventoryTable = `
+                <table id="inventoryTable">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Name</th>
+                            ${branches
+                              .map((branch) => `<th>${branch.name}</th>`)
+                              .join("")}
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+        items.forEach((item) => {
+          const row = [item.sku, item.name];
+          let total = 0;
+          branches.forEach((branch) => {
+            const stock = inventory.find(
+              (inv) => inv.item_id === item.id && inv.branch_id === branch.id
+            );
+            const stockValue = stock ? stock.stock : 0;
+            row.push(stockValue);
+            total += stockValue;
+          });
+          row.push(total);
+          inventoryTable += `<tr><td>${row.join("</td><td>")}</td></tr>`;
+        });
+
+        inventoryTable += "</tbody></table>";
+        tableContainer.innerHTML = inventoryTable;
+
+        // Initialize DataTable
+        dataTable = $("#inventoryTable").DataTable();
+
+        // Set up the change event for the date filter
+        document
+          .getElementById("dateFilter")
+          .addEventListener("change", function () {
+            const selectedDate = this.value;
+            const filteredInventory = inventory.filter((inv) =>
+              inv.date.startsWith(selectedDate)
+            );
+            lastFilteredInventory = filteredInventory;
+            updateTable(items, branches, filteredInventory);
+            updateSelectedDateTime(selectedDate, filteredInventory);
+          });
+      }
+
+      function updateTable(items, branches, filteredInventory) {
+        const currentSearch = dataTable ? dataTable.search() : "";
+
+        if ($.fn.DataTable.isDataTable("#inventoryTable")) {
+          dataTable.destroy();
+        }
+
+        const tableContainer = document.getElementById("tableContainer");
+        let inventoryTable = `
+                <table id="inventoryTable">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Name</th>
+                            ${branches
+                              .map((branch) => `<th>${branch.name}</th>`)
+                              .join("")}
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+        items.forEach((item) => {
+          const row = [item.sku, item.name];
+          let total = 0;
+          branches.forEach((branch) => {
+            const stock = filteredInventory.find(
+              (inv) => inv.item_id === item.id && inv.branch_id === branch.id
+            );
+            const stockValue = stock ? stock.stock : 0;
+            row.push(stockValue);
+            total += stockValue;
+          });
+          row.push(total);
+          inventoryTable += `<tr><td>${row.join("</td><td>")}</td></tr>`;
+        });
+
+        inventoryTable += "</tbody></table>";
+        tableContainer.innerHTML = inventoryTable;
+
+        dataTable = $("#inventoryTable").DataTable();
+        dataTable.search(currentSearch).draw();
+      }
+
+      function updateSelectedDateTime(selectedDate, inventory) {
+        const filtered = inventory.filter((inv) =>
+          inv.date.startsWith(selectedDate)
+        );
+        const dateTimeDisplay =
+          filtered.length > 0 ? filtered[0].date : "ไม่มีข้อมูล";
+        document.getElementById(
+          "selectedDateTime"
+        ).innerText = `วันที่และเวลาของข้อมูล: ${dateTimeDisplay}`;
+      }
+
+      window.onload = loadData;
+    </script>
+  </body>
+</html>
