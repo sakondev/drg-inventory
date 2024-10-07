@@ -13156,22 +13156,12 @@
             {
                 "item_id": 140,
                 "branch_id": 11,
-                "stock": 11.0
+                "stock": 22.0
             },
             {
                 "item_id": 140,
                 "branch_id": 12,
-                "stock": 11.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 11,
-                "stock": 11.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 12,
-                "stock": 12.0
+                "stock": 23.0
             },
             {
                 "item_id": 124,
@@ -13186,22 +13176,12 @@
             {
                 "item_id": 69,
                 "branch_id": 11,
-                "stock": 12.0
+                "stock": 26.0
             },
             {
                 "item_id": 69,
                 "branch_id": 12,
-                "stock": 11.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 11,
-                "stock": 14.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 12,
-                "stock": 14.0
+                "stock": 25.0
             },
             {
                 "item_id": 2,
@@ -24668,22 +24648,12 @@
             {
                 "item_id": 140,
                 "branch_id": 11,
-                "stock": 11.0
+                "stock": 22.0
             },
             {
                 "item_id": 140,
                 "branch_id": 12,
-                "stock": 11.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 11,
-                "stock": 11.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 12,
-                "stock": 12.0
+                "stock": 23.0
             },
             {
                 "item_id": 124,
@@ -24698,22 +24668,12 @@
             {
                 "item_id": 69,
                 "branch_id": 11,
-                "stock": 12.0
+                "stock": 26.0
             },
             {
                 "item_id": 69,
                 "branch_id": 12,
-                "stock": 11.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 11,
-                "stock": 14.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 12,
-                "stock": 14.0
+                "stock": 25.0
             },
             {
                 "item_id": 2,
@@ -36190,22 +36150,12 @@
             {
                 "item_id": 140,
                 "branch_id": 11,
-                "stock": 11.0
+                "stock": 22.0
             },
             {
                 "item_id": 140,
                 "branch_id": 12,
-                "stock": 10.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 11,
-                "stock": 11.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 12,
-                "stock": 12.0
+                "stock": 22.0
             },
             {
                 "item_id": 124,
@@ -36220,22 +36170,12 @@
             {
                 "item_id": 69,
                 "branch_id": 11,
-                "stock": 12.0
+                "stock": 26.0
             },
             {
                 "item_id": 69,
                 "branch_id": 12,
-                "stock": 11.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 11,
-                "stock": 14.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 12,
-                "stock": 14.0
+                "stock": 25.0
             },
             {
                 "item_id": 2,
@@ -47707,22 +47647,12 @@
             {
                 "item_id": 140,
                 "branch_id": 11,
-                "stock": 11.0
+                "stock": 22.0
             },
             {
                 "item_id": 140,
                 "branch_id": 12,
-                "stock": 10.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 11,
-                "stock": 11.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 12,
-                "stock": 12.0
+                "stock": 22.0
             },
             {
                 "item_id": 124,
@@ -47737,22 +47667,12 @@
             {
                 "item_id": 69,
                 "branch_id": 11,
-                "stock": 12.0
+                "stock": 26.0
             },
             {
                 "item_id": 69,
                 "branch_id": 12,
-                "stock": 11.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 11,
-                "stock": 14.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 12,
-                "stock": 14.0
+                "stock": 25.0
             },
             {
                 "item_id": 2,
@@ -59224,22 +59144,12 @@
             {
                 "item_id": 140,
                 "branch_id": 11,
-                "stock": 11.0
+                "stock": 22.0
             },
             {
                 "item_id": 140,
                 "branch_id": 12,
-                "stock": 10.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 11,
-                "stock": 11.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 12,
-                "stock": 12.0
+                "stock": 22.0
             },
             {
                 "item_id": 124,
@@ -59254,22 +59164,12 @@
             {
                 "item_id": 69,
                 "branch_id": 11,
-                "stock": 12.0
+                "stock": 26.0
             },
             {
                 "item_id": 69,
                 "branch_id": 12,
-                "stock": 11.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 11,
-                "stock": 14.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 12,
-                "stock": 14.0
+                "stock": 25.0
             },
             {
                 "item_id": 2,
@@ -70741,22 +70641,12 @@
             {
                 "item_id": 140,
                 "branch_id": 11,
-                "stock": 11.0
+                "stock": 21.0
             },
             {
                 "item_id": 140,
                 "branch_id": 12,
-                "stock": 10.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 11,
-                "stock": 10.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 12,
-                "stock": 12.0
+                "stock": 22.0
             },
             {
                 "item_id": 124,
@@ -70771,22 +70661,12 @@
             {
                 "item_id": 69,
                 "branch_id": 11,
-                "stock": 12.0
+                "stock": 25.0
             },
             {
                 "item_id": 69,
                 "branch_id": 12,
-                "stock": 11.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 11,
-                "stock": 13.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 12,
-                "stock": 13.0
+                "stock": 24.0
             },
             {
                 "item_id": 2,
@@ -82258,22 +82138,12 @@
             {
                 "item_id": 140,
                 "branch_id": 11,
-                "stock": 11.0
+                "stock": 21.0
             },
             {
                 "item_id": 140,
                 "branch_id": 12,
-                "stock": 10.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 11,
-                "stock": 10.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 12,
-                "stock": 12.0
+                "stock": 22.0
             },
             {
                 "item_id": 124,
@@ -82288,22 +82158,12 @@
             {
                 "item_id": 69,
                 "branch_id": 11,
-                "stock": 11.0
+                "stock": 24.0
             },
             {
                 "item_id": 69,
                 "branch_id": 12,
-                "stock": 11.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 11,
-                "stock": 13.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 12,
-                "stock": 13.0
+                "stock": 24.0
             },
             {
                 "item_id": 2,
@@ -93720,22 +93580,12 @@
             {
                 "item_id": 140,
                 "branch_id": 11,
-                "stock": 11.0
+                "stock": 22.0
             },
             {
                 "item_id": 140,
                 "branch_id": 12,
-                "stock": 12.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 11,
-                "stock": 11.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 12,
-                "stock": 12.0
+                "stock": 24.0
             },
             {
                 "item_id": 124,
@@ -93750,22 +93600,12 @@
             {
                 "item_id": 69,
                 "branch_id": 11,
-                "stock": 12.0
+                "stock": 26.0
             },
             {
                 "item_id": 69,
                 "branch_id": 12,
-                "stock": 14.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 11,
-                "stock": 14.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 12,
-                "stock": 14.0
+                "stock": 28.0
             },
             {
                 "item_id": 2,
@@ -105152,22 +104992,12 @@
             {
                 "item_id": 140,
                 "branch_id": 11,
-                "stock": 11.0
+                "stock": 22.0
             },
             {
                 "item_id": 140,
                 "branch_id": 12,
-                "stock": 12.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 11,
-                "stock": 11.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 12,
-                "stock": 12.0
+                "stock": 24.0
             },
             {
                 "item_id": 124,
@@ -105182,22 +105012,12 @@
             {
                 "item_id": 69,
                 "branch_id": 11,
-                "stock": 12.0
+                "stock": 26.0
             },
             {
                 "item_id": 69,
                 "branch_id": 12,
-                "stock": 14.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 11,
-                "stock": 14.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 12,
-                "stock": 14.0
+                "stock": 28.0
             },
             {
                 "item_id": 2,
@@ -116664,22 +116484,12 @@
             {
                 "item_id": 140,
                 "branch_id": 11,
-                "stock": 11.0
+                "stock": 22.0
             },
             {
                 "item_id": 140,
                 "branch_id": 12,
-                "stock": 11.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 11,
-                "stock": 11.0
-            },
-            {
-                "item_id": 140,
-                "branch_id": 12,
-                "stock": 12.0
+                "stock": 23.0
             },
             {
                 "item_id": 124,
@@ -116694,22 +116504,12 @@
             {
                 "item_id": 69,
                 "branch_id": 11,
-                "stock": 12.0
+                "stock": 26.0
             },
             {
                 "item_id": 69,
                 "branch_id": 12,
-                "stock": 14.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 11,
-                "stock": 14.0
-            },
-            {
-                "item_id": 69,
-                "branch_id": 12,
-                "stock": 14.0
+                "stock": 28.0
             },
             {
                 "item_id": 2,
