@@ -1,11 +1,12 @@
 import os
 import json
+from collections import defaultdict
 
 def load_json_files(folder_path):
     data = {
         "items": [],
         "branches": [],
-        "inventory": []
+        "inventory": defaultdict(lambda: [])
     }
     
     # ตรวจสอบไฟล์ในโฟลเดอร์
@@ -15,6 +16,9 @@ def load_json_files(folder_path):
             with open(file_path, 'r') as f:
                 json_data = json.load(f)
                 process_json_data(json_data, data)
+
+    # แปลงข้อมูล inventory จาก defaultdict เป็น dict
+    data['inventory'] = dict(data['inventory'])
 
     return data
 
@@ -44,11 +48,11 @@ def process_json_data(json_data, data):
                     "name": branch_name
                 })
 
-            data['inventory'].append({
+            # เพิ่มข้อมูลในโครงสร้างใหม่
+            data['inventory'][json_data['last_updated']].append({
                 "item_id": item_id,
                 "branch_id": branch_id,
-                "stock": stock,
-                "date": json_data['last_updated']  # ใช้ last_updated เป็นวันที่
+                "stock": stock
             })
 
 def save_to_json(data, output_file):

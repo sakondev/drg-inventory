@@ -14,5 +14,3 @@ line_notify.py
 git_push.py
 create_json_list.py
 .vscode
-data2/
-inventory_database.json
