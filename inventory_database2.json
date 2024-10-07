@@ -1995,8 +1995,7 @@
     {
       "id": 11,
       "name": "True Digital Park",
-      "isVendingMachine": true,
-      "vendingMachineSKUs": [
+      "onlySKUs": [
         "PDTFS",
         "PDTTC",
         "P5460",
@@ -2031,8 +2030,7 @@
     {
       "id": 12,
       "name": "T One Building",
-      "isVendingMachine": true,
-      "vendingMachineSKUs": [
+      "onlySKUs": [
         "PDTFS",
         "PDTTC",
         "P5460",
