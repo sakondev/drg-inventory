@@ -2096,7 +2096,7 @@
       {
         "item_id": 1,
         "branch_id": 1,
-        "stock": 3.0
+        "stock": 300.0
       },
       {
         "item_id": 1,
@@ -13206,7 +13206,7 @@
       {
         "item_id": 2,
         "branch_id": 11,
-        "stock": 110.0
+        "stock": 11.0
       },
       {
         "item_id": 2,
