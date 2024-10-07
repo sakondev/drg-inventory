@@ -1990,7 +1990,39 @@
     },
     {
       "id": 10,
-      "name": "Saimai"
+      "name": "Saimai",
+      {
+        "onlySKUs": [
+          "PEW-US-Duo",
+          "P_EW-US",
+          "P_EW-SE",
+          "P_EW-INT",
+          "P_EW-Refill-DC",
+          "EW-CC",
+          "P_EW-TW75",
+          "P_EW-GUM75",
+          "P_EW-PO",
+          "EW-USF",
+          "P_F_EW_WHT12",
+          "P_EW-Refill-TF",
+          "P_EW-SF",
+          "PEW-WJ180",
+          "P_EW-Refill-WH",
+          "EW-WJR2",
+          "P_F_EW_CRF12",
+          "EW-PC70",
+          "P_EW-FT70",
+          "EW-SG8PLUS",
+          "EW-PL5",
+          "P_EW-FTGR",
+          "P_EW-OT75",
+          "P_EW-SG8",
+          "P_EW-SR75",
+          "P_EW-US-P3",
+          "P_F_EW_OSM12",
+          "P_F_EW_STS12"
+        ]
+      }
     },
     {
       "id": 11,
