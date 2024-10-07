@@ -6,7 +6,7 @@ def load_json_files(folder_path):
     data = {
         "items": [],
         "branches": [],
-        "inventory": defaultdict(lambda: [])
+        "inventory": defaultdict(lambda: defaultdict(lambda: defaultdict(float)))
     }
     
     for filename in os.listdir(folder_path):
@@ -16,7 +16,8 @@ def load_json_files(folder_path):
                 json_data = json.load(f)
                 process_json_data(json_data, data)
 
-    data['inventory'] = dict(data['inventory'])
+    data['inventory'] = {date: {item_id: dict(branches) for item_id, branches in items.items()} 
+                         for date, items in data['inventory'].items()}
     return data
 
 def process_json_data(json_data, data):
@@ -42,16 +43,12 @@ def process_json_data(json_data, data):
                     "name": branch_name
                 })
 
-            data['inventory'][json_data['last_updated']].append({
-                "item_id": item_id,
-                "branch_id": branch_id,
-                "stock": stock
-            })
+            data['inventory'][json_data['last_updated']][item_id][branch_id] += float(stock)
 
 def add_only_skus(data):
     vmSKUs = [
         "PDTFS", "PDTTC", "P5460", "P_EW-US", "Vending_No45", "SPB",
-        "P_OP_SP", "PPLFL_MI36", "PPLFL_TR", "PTBMM", "P_EN1450", "P5460",
+        "P_OP_SP", "PPLFL_MI36", "PPLFL_TR", "PTBMM", "P_EN1450",
         "PBIWS", "PHydrosonic_BIW", "P_Velvet", "PBYOU60_PE", "PBYOU60_AP",
         "PBYOU60_BB", "P29_CTSB", "PBIW_TB", "P_EW-US", "P_EW-INT",
         "P_EW-PO", "PEW-WJ180", "P_EW-GUM75", "P_EW-TW75", "P_EW-FT70",
@@ -84,9 +81,15 @@ def add_only_skus(data):
                 "onlySKUs": skus
             })
 
-def save_to_json(data, output_file):
+def minify_json(data):
+    return json.dumps(data, ensure_ascii=False, separators=(',', ':'))
+
+def save_to_json(data, output_file, minify=True):
     with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+        if minify:
+            f.write(minify_json(data))
+        else:
+            json.dump(data, f, ensure_ascii=False, indent=4)
 
 def main():
     folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
@@ -94,8 +97,20 @@ def main():
 
     merged_data = load_json_files(folder_path)
     add_only_skus(merged_data)
-    save_to_json(merged_data, output_file)
-    print(f"ข้อมูลถูกบันทึกลงใน {output_file}")
+
+    flat_inventory = []
+    for date, items in merged_data['inventory'].items():
+        for item_id, branches in items.items():
+            for branch_id, stock in branches.items():
+                flat_inventory.append({
+                    "item_id": item_id,
+                    "branch_id": branch_id,
+                    "stock": stock
+                })
+    merged_data['inventory'] = flat_inventory
+
+    save_to_json(merged_data, output_file, minify=True)
+    print(f"ข้อมูลถูกบันทึกลงใน {output_file} (minified)")
 
 if __name__ == "__main__":
     main()
