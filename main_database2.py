@@ -42,11 +42,21 @@ def process_json_data(json_data, data):
                     "name": branch_name
                 })
 
-            data['inventory'][json_data['last_updated']].append({
-                "item_id": item_id,
-                "branch_id": branch_id,
-                "stock": stock
-            })
+            # เช็คและรวม stock ในกรณีที่ข้อมูลซ้ำ
+            existing_stocks = data['inventory'][json_data['last_updated']]
+            found = False
+            for entry in existing_stocks:
+                if entry['item_id'] == item_id and entry['branch_id'] == branch_id:
+                    entry['stock'] += stock
+                    found = True
+                    break
+            
+            if not found:
+                data['inventory'][json_data['last_updated']].append({
+                    "item_id": item_id,
+                    "branch_id": branch_id,
+                    "stock": stock
+                })
 
 def add_only_skus(data):
     vmSKUs = [

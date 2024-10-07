@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DragCura Inventory</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css"
+    />
+    <style>
+      body {
+        font-family: Helvetica, sans-serif;
+        font-size: 14px;
+        margin: 20px;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      table {
+        width: 100%;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #6aaae4;
+        color: white;
+      }
+      input#dateFilter {
+        font-size: 14px;
+        padding: 5px;
+      }
+      #selectedDateTime {
+        display: inline-block;
+        background-color: #c6dcf4;
+        color: #00263a;
+        padding: 5px 20px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DragCura Inventory <a href="branch.html">ดูแบบรายสาขาคลิกที่นี่</a></h1>
+    <label for="dateFilter">Select Date: </label>
+    <input type="date" id="dateFilter" />
+    <div id="selectedDateTime"></div>
+    <div id="tableContainer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+    <script>
+      let inventoryData = {};
+      let dataTable;
+      let uniqueDates = [];
+
+      async function loadData() {
+        try {
+          const response = await fetch("inventory_database.json");
+          const data = await response.json();
+          inventoryData = data.inventory;
+
+          // Create an array of unique dates from the inventory data
+          uniqueDates = Object.keys(inventoryData).sort(
+            (a, b) => new Date(b) - new Date(a)
+          );
+
+          // Set min and max for input type=date
+          const dateFilter = document.getElementById("dateFilter");
+          dateFilter.min = uniqueDates[uniqueDates.length - 1].substring(0, 10); // Earliest date
+          dateFilter.max = uniqueDates[0].substring(0, 10); // Latest date
+
+          // Set the default value to the latest date
+          dateFilter.value = uniqueDates[0].substring(0, 10);
+
+          // Display initial data
+          updateTable(data.items, data.branches, dateFilter.value);
+          updateSelectedDateTime(dateFilter.value);
+
+          // Set up the change event for the date filter
+          dateFilter.addEventListener("change", function () {
+            const selectedDate = this.value;
+            updateTable(data.items, data.branches, selectedDate);
+            updateSelectedDateTime(selectedDate);
+          });
+        } catch (error) {
+          console.error("Error loading data:", error);
+        }
+      }
+
+      function updateTable(items, branches, selectedDate) {
+        const currentSearch = dataTable ? dataTable.search() : "";
+
+        if ($.fn.DataTable.isDataTable("#inventoryTable")) {
+          dataTable.destroy();
+        }
+
+        const tableContainer = document.getElementById("tableContainer");
+        let inventoryTable = `
+          <table id="inventoryTable" class="display">
+              <thead>
+                  <tr>
+                      <th>SKU</th>
+                      <th>Name</th>
+                      ${branches
+                        .map((branch) => `<th>${branch.name}</th>`)
+                        .join("")}
+                      <th>Total</th>
+                  </tr>
+              </thead>
+              <tbody>
+      `;
+
+        const dateKey = selectedDate.substring(0, 10); // ดึงเฉพาะวันที่
+
+        items.forEach((item) => {
+          const row = [item.sku, item.name];
+          let total = 0;
+
+          branches.forEach((branch) => {
+            // ตรวจสอบคีย์ใน inventoryData ที่ตรงกับวันที่
+            const stockData = Object.keys(inventoryData).reduce((acc, key) => {
+              if (key.startsWith(dateKey)) {
+                return inventoryData[key]; // คืนค่าข้อมูลที่ตรงกับวันที่
+              }
+              return acc;
+            }, []);
+
+            const stock = stockData.find(
+              (inv) => inv.item_id === item.id && inv.branch_id === branch.id
+            );
+            const stockValue = stock ? stock.stock : 0; // Get stock value or default to 0
+            row.push(stockValue);
+            total += stockValue; // Calculate total stock
+          });
+
+          row.push(total);
+          inventoryTable += `<tr><td>${row.join("</td><td>")}</td></tr>`;
+        });
+
+        inventoryTable += "</tbody></table>";
+        tableContainer.innerHTML = inventoryTable;
+
+        // Initialize DataTable with export buttons
+        const datePicker = document.getElementById("dateFilter");
+
+        dataTable = $("#inventoryTable").DataTable({
+          dom: "Bfrtip",
+          buttons: [
+            {
+              extend: "copyHtml5",
+              text: "Copy",
+              title: `DragCura Inventory @ ${datePicker.value}`, // ใช้ค่าใน date picker
+              exportOptions: {
+                modifier: {
+                  page: "all",
+                },
+                columns: ":visible",
+              },
+            },
+            {
+              extend: "excelHtml5",
+              text: "Excel",
+              title: `DragCura Inventory @ ${datePicker.value}`, // ใช้ค่าใน date picker
+              filename: `DragCura_Inventory_${datePicker.value}`, // ใช้ค่าใน date picker
+              exportOptions: {
+                modifier: {
+                  page: "all", // ส่งออกข้อมูลทั้งหมด
+                },
+              },
+            },
+          ],
+        });
+        dataTable.search(currentSearch).draw();
+      }
+
+      function updateSelectedDateTime(selectedDate) {
+        const dateKey = selectedDate.substring(0, 10);
+
+        // ค้นหาคีย์ที่ตรงกันใน inventoryData
+        const matchedKeys = Object.keys(inventoryData).filter((key) =>
+          key.startsWith(dateKey)
+        );
+
+        if (matchedKeys.length > 0) {
+          // ถ้ามีคีย์ที่ตรงกัน แสดงข้อมูลแรกที่พบ
+          document.getElementById(
+            "selectedDateTime"
+          ).innerText = `${matchedKeys[0]}`;
+        } else {
+          // ถ้าไม่มีคีย์ จะแสดงข้อความที่เหมาะสม
+          document.getElementById("selectedDateTime").innerText = `ไม่พบข้อมูล`;
+        }
+      }
+
+      window.onload = loadData;
+    </script>
+  </body>
+</html>
