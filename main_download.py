@@ -422,7 +422,7 @@ def process_data():
         "inventory": result_inventory
     }
     with open(json_filename, 'w', encoding='utf-8') as json_file:
-        json.dump(final_result, json_file, ensure_ascii=False, indent=4)
+        json.dump(final_result, json_file, ensure_ascii=False, separators=(',', ':'))
 
     logging.info(f"Inventory data exported to {json_filename}")
     
@@ -437,7 +437,7 @@ def process_data():
 
     # Write the inventory to the new JSON file
     with open(data_json_filename, 'w', encoding='utf-8') as json_file:
-        json.dump(final_result, json_file, ensure_ascii=False, indent=4)
+        json.dump(final_result, json_file, ensure_ascii=False, separators=(',', ':'))
 
     logging.info(f"Inventory data exported to {data_json_filename}")
     
@@ -492,7 +492,7 @@ def generate_file_list(data_directory='./data'):
 
     # Write the list of JSON files to file_list.json
     with open(file_list_path, 'w', encoding='utf-8') as file:
-        json.dump(json_files, file, ensure_ascii=False, indent=4)
+        json.dump(json_files, file, ensure_ascii=False, separators=(',', ':'))
 
     print(f"Generated {file_list_path} with {len(json_files)} JSON files.")
 

@@ -96,7 +96,7 @@ def add_only_skus(data):
 
 def save_to_json(data, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+        json.dump(data, f, ensure_ascii=False, separators=(',', ':'))
 
 def main():
     folder_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
