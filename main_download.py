@@ -202,50 +202,68 @@ def fetch_api_data():
     logging.info("ZORT API data fetched successfully.")
     return response.json()
 
-# ฟังก์ชันสำหรับดาวน์โหลดและเขียนทับไฟล์ vending machine
+# ฟังก์ชันสำหรับดาวน์โหลด vending machine
 @retry(max_retries=5, delay=5)
 def download_vending_data():
-    logging.info("Logging into Worldwide Vending...")
-    driver.get('https://www.worldwidevending-vms.com/sys/login.do')
-    wait_for_element(By.NAME, 'loginname').send_keys(vend_username)
-    wait_for_element(By.NAME, 'loginpwd').send_keys(vend_password)
-    wait_for_clickable(By.ID, 'loginsubmit').click()
+    global driver  # ใช้ global variable เพื่อให้สามารถ reset driver ได้
+    max_attempts = 3
+    attempt = 0
 
-    driver.get('https://www.worldwidevending-vms.com/page/multi_states.do')
-    logging.info("Downloading file for: Vending Machine...")
-    wait_for_clickable(By.XPATH, "//button[@onclick='export_inventory_list()']").click()
-    driver.switch_to.frame(0)
-    wait_for_clickable(By.ID, 'selAll').click()
-    wait_for_clickable(By.XPATH, "//button[@onclick='execute_export()']").click()
-
-    # Wait for the download to complete (ปรับเวลาตามความจำเป็น)
-    time.sleep(5)
-
-    # ค้นหาไฟล์ล่าสุดที่ดาวน์โหลดในโฟลเดอร์
-    downloaded_file = max(
-        [os.path.join(download_folder, f) for f in os.listdir(download_folder) if f.endswith('.xlsx')],
-        key=os.path.getctime
-    )
-
-    # ชื่อไฟล์ที่จะเขียนทับ
-    renamed_file = os.path.join(download_folder, 'vending_stock.xlsx')
-
-    # ถ้าไฟล์ vending_stock.xlsx มีอยู่แล้ว ให้ลบทิ้งก่อน
-    if os.path.exists(renamed_file):
+    while attempt < max_attempts:
         try:
-            os.remove(renamed_file)
-            logging.info(f"Deleted existing file: {renamed_file}")
-        except Exception as e:
-            logging.error(f"Failed to delete the existing file. Reason: {e}")
-            raise
+            if attempt > 0:
+                logging.info(f"Attempt {attempt + 1} to download vending data")
+            
+            # Reset WebDriver
+            if 'driver' in globals():
+                driver.quit()
+            driver = webdriver.Chrome(service=service, options=chrome_options)
 
-    # ย้ายไฟล์ที่ดาวน์โหลดมาและตั้งชื่อใหม่
-    try:
-        shutil.move(downloaded_file, renamed_file)
-        logging.info(f"Downloaded vending machine file renamed to: {renamed_file}")
-    except Exception as e:
-        logging.error(f"Failed to move the file. Reason: {e}")
-        raise
+            logging.info("Logging into Worldwide Vending...")
+            driver.get('https://www.worldwidevending-vms.com/sys/login.do')
+            wait_for_element(By.NAME, 'loginname').send_keys(vend_username)
+            wait_for_element(By.NAME, 'loginpwd').send_keys(vend_password)
+            wait_for_clickable(By.ID, 'loginsubmit').click()
+
+            driver.get('https://www.worldwidevending-vms.com/page/multi_states.do')
+            logging.info("Downloading file for: Vending Machine...")
+            wait_for_clickable(By.XPATH, "//button[@onclick='export_inventory_list()']").click()
+            driver.switch_to.frame(0)
+            wait_for_clickable(By.ID, 'selAll').click()
+            wait_for_clickable(By.XPATH, "//button[@onclick='execute_export()']").click()
+
+            # Wait for the download to complete (ปรับเวลาตามความจำเป็น)
+            time.sleep(10)  # เพิ่มเวลารอให้นานขึ้น
+
+            # ค้นหาไฟล์ล่าสุดที่ดาวน์โหลดในโฟลเดอร์
+            downloaded_file = max(
+                [os.path.join(download_folder, f) for f in os.listdir(download_folder) if f.endswith('.xlsx')],
+                key=os.path.getctime
+            )
+
+            # ชื่อไฟล์ที่จะเขียนทับ
+            renamed_file = os.path.join(download_folder, 'vending_stock.xlsx')
+
+            # ถ้าไฟล์ vending_stock.xlsx มีอยู่แล้ว ให้ลบทิ้งก่อน
+            if os.path.exists(renamed_file):
+                os.remove(renamed_file)
+                logging.info(f"Deleted existing file: {renamed_file}")
+
+            # ย้ายไฟล์ที่ดาวน์โหลดมาและตั้งชื่อใหม่
+            shutil.move(downloaded_file, renamed_file)
+            logging.info(f"Downloaded vending machine file renamed to: {renamed_file}")
+
+            return  # ถ้าทำงานสำเร็จให้ออกจาก loop
+
+        except Exception as e:
+            attempt += 1
+            if attempt < max_attempts:
+                logging.error(f"Attempt {attempt} failed: {e}")
+                time.sleep(5)  # รอสักครู่ก่อนลองใหม่
+            else:
+                raise  # ถ้าครบจำนวนครั้งที่ลองแล้ว ให้ raise exception
+
+    raise Exception("Failed to download vending data after multiple attempts")
 
 # ฟังก์ชันสำหรับดาวน์โหลด Google Sheets เป็น CSV
 @retry(max_retries=5, delay=5)
