@@ -22,6 +22,9 @@ def main():
         # Run main_database.py
         run_script('main_database.py')
         
+        # Run git_push.py
+        run_script('git_push.py')
+        
         logging.info("Data processing pipeline completed successfully")
     except Exception as e:
         logging.error(f"An error occurred in the data processing pipeline: {e}")
