@@ -160,7 +160,7 @@ def download_chococard_data():
                     for _, row in df.iterrows():
                         item = row['Item']
                         sku = row['SKU']
-                        qty = float(row['Qty'])  # Ensure quantity is a float
+                        qty = int(row['Qty'])  # Ensure quantity is a float
 
                         if item not in reorganized_inventory:
                             reorganized_inventory[item] = {
@@ -305,8 +305,8 @@ def process_google_sheet_data(reorganized_inventory):
     df = df.iloc[2:, [2, 3, 7]]  # เลือก rows และ columns ที่ต้องการ
     df.columns = ['SKU', 'Item', 'Qty']  # ตั้งชื่อ columns ใหม่
 
-    # แปลงค่า Qty เป็น float
-    df['Qty'] = df['Qty'].astype(float)
+    # แปลงค่า Qty เป็น int
+    df['Qty'] = df['Qty'].astype(int)
 
     # เพิ่มข้อมูลของ branch "HQ" ลงใน `reorganized_inventory`
     for _, row in df.iterrows():
@@ -378,7 +378,6 @@ def process_data():
 
     # Process Vending Machine data using the saved 'vending_stock.xlsx'
     logging.info("Processing Vending Machine data...")
-    sku_mapping_file = 'sku_mapping.csv'  # Specify the path to your SKU mapping CSV file
     vending_file = os.path.join(download_folder, 'vending_stock.xlsx')  # Use the renamed file
 
     if os.path.exists(vending_file):
@@ -387,23 +386,12 @@ def process_data():
         # Drop the first row (which doesn't contain headers)
         df = df.drop(index=0)
 
-        # Load SKU mapping CSV (this maps Goods Name to SKU)
-        sku_mapping_df = pd.read_csv(sku_mapping_file)
-
-        # Create a dictionary for quick SKU lookup
-        sku_mapping = dict(zip(sku_mapping_df['Goods Name'], sku_mapping_df['SKU']))
-
         # Iterate through the DataFrame
         for _, row in df.iterrows():
             item = row.iloc[4]
             branch = row.iloc[2]
-            qty = float(row.iloc[7])
-
-            # Retrieve SKU using the item name
-            sku = sku_mapping.get(item, None)
-            if not sku:
-                logging.warning(f"SKU not found for item: {item}")
-                continue
+            sku = row.iloc[3]
+            qty = int(row.iloc[7])
 
             # Organize data in the dictionary
             if item not in reorganized_inventory:
