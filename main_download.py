@@ -137,7 +137,7 @@ def download_chococard_data():
         while not success and retries < max_retries:
             try:
                 url = base_url.format(id_, template_id)
-                logging.info(f"Downloading file for: {branch}...")
+                # logging.info(f"Downloading file for: {branch}...")
                 driver.get(url)
 
                 # Wait for download to complete (adjust if necessary)
