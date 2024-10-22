@@ -232,8 +232,7 @@ def download_vending_data():
             wait_for_clickable(By.ID, 'selAll').click()
             wait_for_clickable(By.XPATH, "//button[@onclick='execute_export()']").click()
 
-            # Wait for the download to complete (ปรับเวลาตามความจำเป็น)
-            time.sleep(10)  # เพิ่มเวลารอให้นานขึ้น
+            time.sleep(5)
 
             # ค้นหาไฟล์ล่าสุดที่ดาวน์โหลดในโฟลเดอร์
             downloaded_file = max(
