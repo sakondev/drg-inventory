@@ -352,30 +352,30 @@ def process_data():
             reorganized_inventory[item]["Branch"]['On Time'] = qty
 
     # Process Vending Machine data
-    logging.info("Starting Vending Machine data download...")
-    try:
-        df = download_vending_data()  # This now returns a DataFrame
+    # logging.info("Starting Vending Machine data download...")
+    # try:
+    #     df = download_vending_data()  # This now returns a DataFrame
 
-        if df is not None and not df.empty:
-            # Iterate through the DataFrame
-            for _, row in df.iterrows():
-                item = row.iloc[4]
-                branch = row.iloc[2]
-                sku = row.iloc[3]
-                qty = int(row.iloc[7])
+    #     if df is not None and not df.empty:
+    #         # Iterate through the DataFrame
+    #         for _, row in df.iterrows():
+    #             item = row.iloc[4]
+    #             branch = row.iloc[2]
+    #             sku = row.iloc[3]
+    #             qty = int(row.iloc[7])
 
-                # Organize data in the dictionary
-                if item not in reorganized_inventory:
-                    reorganized_inventory[item] = {
-                        "SKU": sku,
-                        "Branch": OrderedDict()
-                    }
-                reorganized_inventory[item]["Branch"][branch] = qty
-            logging.info("Finished processing Vending Machine data")
-        else:
-            logging.error("Vending machine data is empty or None")
-    except Exception as e:
-        logging.error(f"Error processing Vending Machine data: {e}")
+    #             # Organize data in the dictionary
+    #             if item not in reorganized_inventory:
+    #                 reorganized_inventory[item] = {
+    #                     "SKU": sku,
+    #                     "Branch": OrderedDict()
+    #                 }
+    #             reorganized_inventory[item]["Branch"][branch] = qty
+    #         logging.info("Finished processing Vending Machine data")
+    #     else:
+    #         logging.error("Vending machine data is empty or None")
+    # except Exception as e:
+    #     logging.error(f"Error processing Vending Machine data: {e}")
 
     # Process Google Sheets data
     logging.info("Processing Google Sheets data...")
@@ -395,7 +395,7 @@ def process_data():
         })
 
     # Export Inventory Data
-    json_filename = 'inventory_data3.json'
+    json_filename = 'inventory_data.json'
     final_result = {
         "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "inventory": result_inventory
@@ -463,7 +463,7 @@ try:
     process_data()
 finally:
     # Generate JSON List in /data
-    # generate_file_list()
+    generate_file_list()
     
     # Close the browser
     logging.info("Closing the browser...")
