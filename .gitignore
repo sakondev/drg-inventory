@@ -14,3 +14,4 @@ line_notify.py
 git_push.py
 create_json_list.py
 .vscode
+json2sqlite.py

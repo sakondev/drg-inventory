@@ -1,11 +1,3 @@
-# VERSION 3.5
-
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 import os
 from datetime import datetime
@@ -13,10 +5,10 @@ from dotenv import load_dotenv
 import time
 import requests
 import json
-from collections import OrderedDict
 import logging
-import shutil  # ใช้สำหรับย้ายไฟล์
 import warnings
+from io import BytesIO
+from bs4 import BeautifulSoup
 
 warnings.simplefilter("ignore", UserWarning)
 
@@ -34,53 +26,6 @@ vend_password = os.getenv('VEND_PASSWORD')
 zort_storename = os.getenv('STORENAME')
 zort_apikey = os.getenv('APIKEY')
 zort_apisecret = os.getenv('APISECRET')
-
-# Set the path for the WebDriver
-driver_path = os.getenv('CHROMEDRIVER_PATH', r'D:\Coding\chromedriver-win64\chromedriver.exe')
-service = Service(driver_path)
-
-# Set the download folder path
-download_folder = os.path.join(os.path.expanduser('~'), 'Downloads', 'excel_temp')
-os.makedirs(download_folder, exist_ok=True)
-
-# Set up headless options
-chrome_options = Options()
-chrome_options.add_argument("--headless=new")  # ใช้ headless รุ่นใหม่ของ Chrome (เวอร์ชัน 109 ขึ้นไป)
-chrome_options.add_argument("--window-position=-10000,-10000")   # แก้บั๊ก Chrome 129
-chrome_options.add_argument("--no-sandbox")
-chrome_options.add_argument("--disable-dev-shm-usage")
-chrome_options.add_argument("--disable-gpu")  # ปิดการใช้ GPU
-chrome_options.add_argument("--disable-software-rasterizer")  # ปิดการใช้ software renderer
-chrome_options.add_argument("--disable-blink-features=AutomationControlled")  # ปิดการตรวจจับ selenium
-chrome_options.add_argument("--disable-extensions")  # ปิดส่วนขยายที่ไม่จำเป็น
-chrome_options.add_argument("--disable-infobars")  # ปิดแถบข้อมูลที่เกี่ยวกับ automation
-
-chrome_options.add_experimental_option("prefs", {
-    "download.default_directory": download_folder,
-    "download.prompt_for_download": False,
-    "download.directory_upgrade": True,
-    "safebrowsing.enabled": True
-})
-
-# Initialize the WebDriver as a background service
-driver = webdriver.Chrome(service=service, options=chrome_options)
-
-# Function to wait for an element to be clickable
-def wait_for_clickable(by, value, timeout=10):
-    return WebDriverWait(driver, timeout).until(EC.element_to_be_clickable((by, value)))
-
-# Function to wait for an element to be present
-def wait_for_element(by, value, timeout=10):
-    return WebDriverWait(driver, timeout).until(EC.presence_of_element_located((by, value)))
-
-# Function to clean up a specific file
-def delete_file(file_path):
-    try:
-        if os.path.isfile(file_path):
-            os.remove(file_path)
-            logging.info(f"Deleted file: {file_path}")
-    except Exception as e:
-        logging.error(f"Failed to delete {file_path}. Reason: {e}")
 
 # Retry decorator
 def retry(max_retries=5, delay=2):
@@ -102,89 +47,105 @@ def retry(max_retries=5, delay=2):
 # Download and process data from ChocoCard with retry logic for each branch
 def download_chococard_data():
     logging.info("Starting ChocoCard data download...")
+    
+    # Create a session to store cookies
+    session = requests.Session()
+    
+    # Fetch the login page
+    login_url = "https://mychococard.com/Account/Login"
+    response = session.get(login_url)
 
-    # Log in to ChocoCard
-    driver.get('https://mychococard.com/Account/Login')
-    wait_for_element(By.NAME, 'username').send_keys(choco_username)
-    wait_for_element(By.NAME, 'password').send_keys(choco_password)
-    wait_for_clickable(By.ID, 'loginBtn').click()
-
-    logging.info("Logged into ChocoCard")
-    wait_for_element(By.XPATH, "//h3[contains(text(), 'Group / Branch List')]")
-
-    # Base URL for downloading branch inventory
-    base_url = "https://mychococard.com/CRM/v2/Restaurant/{}/Inventory/DownloadTemplate/{}"
-    branches = {
-        "Samyan": (7485, 2209),
-        "Circle": (7487, 2207),
-        "Rama 9": (7484, 2206),
-        "Eastville": (7483, 2205),
-        "Mega": (7482, 2204),
-        "Embassy": (7481, 2203),
-        "EmQuartier": (7480, 2202)
+    # Use BeautifulSoup to parse HTML and find the token
+    soup = BeautifulSoup(response.text, 'html.parser')
+    token = soup.find('input', {'name': '__RequestVerificationToken'})['value']
+    
+    # Create login data
+    login_data = {
+        'username': choco_username,
+        'password': choco_password,
+        '__RequestVerificationToken': token
     }
 
-    # Initialize the reorganized inventory dictionary
-    reorganized_inventory = {}
+    # Perform login
+    response = session.post(login_url, data=login_data)
+    
+    # Check if login was successful
+    if response.status_code == 200:
+        logging.info("Login successful!")
+        
+        time.sleep(1)
 
-    # Download and process data for each branch with retry logic
-    for branch, (id_, template_id) in branches.items():
-        success = False
-        retries = 0
-        max_retries = 5
-        delay = 5
+        # Base URL for downloading inventory data for each branch
+        base_url = "https://mychococard.com/CRM/v2/Restaurant/{}/Inventory/DownloadTemplate/{}"
+        branches = {
+            "Samyan": (7485, 2209),
+            "Circle": (7487, 2207),
+            "Rama 9": (7484, 2206),
+            "Eastville": (7483, 2205),
+            "Mega": (7482, 2204),
+            "Embassy": (7481, 2203),
+            "EmQuartier": (7480, 2202)
+        }
 
-        while not success and retries < max_retries:
-            try:
-                url = base_url.format(id_, template_id)
-                # logging.info(f"Downloading file for: {branch}...")
-                driver.get(url)
+        # Prepare dictionary to store reorganized inventory data
+        reorganized_inventory = {}
 
-                # Wait for download to complete (adjust if necessary)
-                time.sleep(2)
+        # Download and process data for each branch
+        for branch_name, (id_, template_id) in branches.items():
+            success = False
+            retries = 0
+            max_retries = 5
+            delay = 5
 
-                # Find the latest downloaded file
-                downloaded_file = max(
-                    [os.path.join(download_folder, f) for f in os.listdir(download_folder)],
-                    key=os.path.getctime
-                )
+            while not success and retries < max_retries:
+                try:
+                    url = base_url.format(id_, template_id)
+                    
+                    # Send GET request
+                    response = session.get(url)
+                    
+                    # Check response status
+                    if response.status_code == 200:
+                        excel_file = BytesIO(response.content)
+                        
+                        # Read Excel file
+                        df = pd.read_excel(excel_file, engine='openpyxl')
+                        df = df[['Item', 'SKU', 'Available Qty.']]  # Select necessary columns
+                        df.columns = ['Item', 'SKU', 'Qty']  # Rename columns
 
-                # Check if the file is valid (e.g., check if it's a valid Excel file)
-                if downloaded_file.endswith('.xlsx'):
-                    # Read the downloaded Excel file
-                    df = pd.read_excel(downloaded_file, engine='openpyxl')
-                    df = df[['Item', 'SKU', 'Available Qty.']]  # Extract necessary columns
-                    df.columns = ['Item', 'SKU', 'Qty']  # Rename columns
+                        # Reorganize data and add to inventory
+                        for _, row in df.iterrows():
+                            item = row['Item']
+                            sku = row['SKU']
+                            qty = int(row['Qty'])  # Convert quantity to integer
 
-                    # Reorganize data and add it to the inventory
-                    for _, row in df.iterrows():
-                        item = row['Item']
-                        sku = row['SKU']
-                        qty = int(row['Qty'])  # Ensure quantity is a float
+                            if item not in reorganized_inventory:
+                                reorganized_inventory[item] = {
+                                    "SKU": sku,
+                                    "Branch": dict()  # เปลี่ยนจาก OrderedDict() เป็น dict()
+                                }
+                            reorganized_inventory[item]["Branch"][branch_name] = qty
 
-                        if item not in reorganized_inventory:
-                            reorganized_inventory[item] = {
-                                "SKU": sku,
-                                "Branch": OrderedDict()
-                            }
-                        reorganized_inventory[item]["Branch"][branch] = qty
+                        logging.info(f"Successfully processed data for branch {branch_name}")
+                        success = True  # Mark as successful to exit retry loop
 
-                    logging.info(f"Successfully processed data for: {branch}")
-                    success = True  # Mark success to exit the retry loop
+                    else:
+                        raise Exception(f"File download failed. Status: {response.status_code}")
 
-                else:
-                    raise Exception("Downloaded file is not a valid Excel file.")
+                except Exception as e:
+                    retries += 1
+                    logging.warning(f"Attempt {retries} for branch {branch_name} failed: {e}. Retrying in {delay} seconds...")
+                    time.sleep(delay)
 
-            except Exception as e:
-                retries += 1
-                logging.warning(f"Attempt {retries} failed for branch {branch}: {e}. Retrying in {delay} seconds...")
-                time.sleep(delay)
+            if not success:
+                logging.error(f"Unable to download and process data for branch {branch_name} after {max_retries} attempts")
 
-        if not success:
-            logging.error(f"Failed to download and process data for: {branch} after {max_retries} attempts.")
-
-    logging.info("ChocoCard data has been processed for all branches.")
-    return reorganized_inventory  # Return the organized data
+        logging.info("ChocoCard data processed for all branches")
+        return reorganized_inventory  # Return reorganized data
+    else:
+        logging.error(f"Login failed. Status code: {response.status_code}")
+        logging.info("Attempting to login again...")
+        return download_chococard_data()  # Try logging in again
 
 # Fetch data from the API
 @retry(max_retries=5, delay=5)
@@ -202,112 +163,90 @@ def fetch_api_data():
     logging.info("ZORT API data fetched successfully.")
     return response.json()
 
-# ฟังก์ชันสำหรับดาวน์โหลด vending machine
+# Function for downloading vending machine data
 @retry(max_retries=5, delay=5)
 def download_vending_data():
-    global driver  # ใช้ global variable เพื่อให้สามารถ reset driver ได้
-    max_attempts = 3
-    attempt = 0
+    # URLs for login and download
+    LOGIN_URL = 'https://www.worldwidevending-vms.com/sys/login.do'
+    DOWNLOAD_URL = 'https://www.worldwidevending-vms.com/op/export_inventory_batch.do'
 
-    while attempt < max_attempts:
-        try:
-            if attempt > 0:
-                logging.info(f"Attempt {attempt + 1} to download vending data")
-            
-            # Reset WebDriver
-            if 'driver' in globals():
-                driver.quit()
-            driver = webdriver.Chrome(service=service, options=chrome_options)
+    # Create session
+    session = requests.Session()
 
-            logging.info("Logging into Worldwide Vending...")
-            driver.get('https://www.worldwidevending-vms.com/sys/login.do')
-            wait_for_element(By.NAME, 'loginname').send_keys(vend_username)
-            wait_for_element(By.NAME, 'loginpwd').send_keys(vend_password)
-            wait_for_clickable(By.ID, 'loginsubmit').click()
+    # Perform login
+    login_data = {
+        'loginname': vend_username,
+        'loginpwd': vend_password
+    }
+    
+    login_response = session.post(LOGIN_URL, data=login_data)
 
-            driver.get('https://www.worldwidevending-vms.com/page/multi_states.do')
-            logging.info("Downloading file for: Vending Machine...")
-            wait_for_clickable(By.XPATH, "//button[@onclick='export_inventory_list()']").click()
-            driver.switch_to.frame(0)
-            wait_for_clickable(By.ID, 'selAll').click()
-            wait_for_clickable(By.XPATH, "//button[@onclick='execute_export()']").click()
+    if login_response.status_code != 200:
+        logging.error('Login failed')
+        return None
 
-            time.sleep(5)
+    logging.info('Login successful')
 
-            # ค้นหาไฟล์ล่าสุดที่ดาวน์โหลดในโฟลเดอร์
-            downloaded_file = max(
-                [os.path.join(download_folder, f) for f in os.listdir(download_folder) if f.endswith('.xlsx')],
-                key=os.path.getctime
-            )
+    time.sleep(1)
 
-            # ชื่อไฟล์ที่จะเขียนทับ
-            renamed_file = os.path.join(download_folder, 'vending_stock.xlsx')
+    # Fetch Excel data
+    payload = {
+        'selectRow': ['VCM350CKC20090003', 'VCM350CKC20120001']
+    }
 
-            # ถ้าไฟล์ vending_stock.xlsx มีอยู่แล้ว ให้ลบทิ้งก่อน
-            if os.path.exists(renamed_file):
-                os.remove(renamed_file)
-                logging.info(f"Deleted existing file: {renamed_file}")
+    download_response = session.post(DOWNLOAD_URL, data=payload)
 
-            # ย้ายไฟล์ที่ดาวน์โหลดมาและตั้งชื่อใหม่
-            shutil.move(downloaded_file, renamed_file)
-            logging.info(f"Downloaded vending machine file renamed to: {renamed_file}")
+    if download_response.status_code != 200:
+        logging.error(f'Error receiving Excel data: HTTP Status {download_response.status_code}')
+        logging.error(f'Response content: {download_response.text[:200]}...')
+        return None
 
-            return  # ถ้าทำงานสำเร็จให้ออกจาก loop
+    logging.info('Excel data received successfully')
+    try:
+        # Read Excel file without specifying encoding
+        df = pd.read_excel(BytesIO(download_response.content), engine='openpyxl', header=2)
+        df = df.dropna(how='all').reset_index(drop=True)
+        return df
+    except Exception as e:
+        logging.error(f"Error reading Excel file: {e}")
+        return None
 
-        except Exception as e:
-            attempt += 1
-            if attempt < max_attempts:
-                logging.error(f"Attempt {attempt} failed: {e}")
-                time.sleep(5)  # รอสักครู่ก่อนลองใหม่
-            else:
-                raise  # ถ้าครบจำนวนครั้งที่ลองแล้ว ให้ raise exception
-
-    raise Exception("Failed to download vending data after multiple attempts")
-
-# ฟังก์ชันสำหรับดาวน์โหลด Google Sheets เป็น CSV
+# Function for downloading Google Sheets as CSV
 @retry(max_retries=5, delay=5)
 def download_google_sheet():
     logging.info("Downloading data from HQ")
     
-    # Google Sheets URL และการตั้งค่าเพื่อดาวน์โหลดเป็น CSV
+    # Google Sheets URL and settings for CSV download
     sheet_url = "https://docs.google.com/spreadsheets/d/1jGJw7N9fYjFZtVtvGQc7dyeCdjQRXNzr/export?format=csv&gid=1922842361"
     
-    # ดาวน์โหลดไฟล์ CSV ไปยังโฟลเดอร์ที่กำหนด
-    csv_filename = os.path.join(download_folder, "google_sheet_data.csv")
-    
     try:
-        # ใช้ requests ในการดาวน์โหลดไฟล์ CSV
+        # Use requests to download CSV data
         response = requests.get(sheet_url)
-        response.raise_for_status()  # ตรวจสอบข้อผิดพลาด HTTP
+        response.raise_for_status()  # Check for HTTP errors
         
-        # เขียนข้อมูลที่ดาวน์โหลดมาเป็นไฟล์ CSV
-        with open(csv_filename, 'wb') as f:
-            f.write(response.content)
+        # Create DataFrame directly from CSV data
+        df = pd.read_csv(BytesIO(response.content))
         
-        logging.info(f"Google Sheets file downloaded successfully: {csv_filename}")
+        logging.info("Successfully downloaded Google Sheets data")
+        return df
     
     except requests.exceptions.RequestException as e:
-        logging.error(f"Failed to download Google Sheets file. Reason: {e}")
-        raise  # ส่งต่อข้อผิดพลาดเพื่อให้ `retry` ทำงาน
-    
-    return csv_filename
+        logging.error(f"Unable to download Google Sheets file. Reason: {e}")
+        raise  # Propagate the error for the `retry` decorator to handle
 
-# ฟังก์ชันสำหรับประมวลผลข้อมูลจาก Google Sheets CSV
+# Update process_google_sheet_data function to use the DataFrame from download_google_sheet
 def process_google_sheet_data(reorganized_inventory):
-    # ดาวน์โหลดไฟล์ CSV จาก Google Sheets
-    csv_file = download_google_sheet()
+    # Download data from Google Sheets
+    df = download_google_sheet()
 
-    # อ่านไฟล์ CSV
-    df = pd.read_csv(csv_file)
+    # We'll start reading data from row 4 and use columns C (SKU), D (Item), H (Qty)
+    df = df.iloc[2:, [2, 3, 7]]  # Select desired rows and columns
+    df.columns = ['SKU', 'Item', 'Qty']  # Rename columns
 
-    # เราจะเริ่มต้นการอ่านข้อมูลจาก row ที่ 4 และใช้ column C (SKU), D (Item), H (Qty)
-    df = df.iloc[2:, [2, 3, 7]]  # เลือก rows และ columns ที่ต้องการ
-    df.columns = ['SKU', 'Item', 'Qty']  # ตั้งชื่อ columns ใหม่
-
-    # แปลงค่า Qty เป็น int
+    # Convert Qty to int
     df['Qty'] = df['Qty'].astype(int)
 
-    # เพิ่มข้อมูลของ branch "HQ" ลงใน `reorganized_inventory`
+    # Add data for "HQ" branch to `reorganized_inventory`
     for _, row in df.iterrows():
         item = row['Item']
         sku = row['SKU']
@@ -316,39 +255,39 @@ def process_google_sheet_data(reorganized_inventory):
         if item not in reorganized_inventory:
             reorganized_inventory[item] = {
                 "SKU": sku,
-                "Branch": OrderedDict()
+                "Branch": dict()  # เปลี่ยนจาก OrderedDict() เป็น dict()
             }
         reorganized_inventory[item]["Branch"]['HQ'] = qty
 
-    logging.info("Processed data from Google Sheets and added to inventory.")
-    
+    logging.info("Processed Google Sheets data and added to inventory")
+
 # Process Data From Saimai.xlsx
 def process_saimai_data(reorganized_inventory):
-    # โหลดไฟล์ saimai.xlsx โดยข้ามแถวแรก
+    # Load saimai.xlsx file, skipping the first row
     saimai_file = 'saimai.xlsx'
     df_saimai = pd.read_excel(saimai_file, engine='openpyxl')
 
-    # โหลดไฟล์ sku_mapping.csv
+    # Load sku_mapping.csv file
     sku_mapping_file = 'sku_mapping.csv'
     sku_mapping_df = pd.read_csv(sku_mapping_file)
 
-    # สร้าง dictionary สำหรับ sku mapping
+    # Create dictionary for sku mapping
     sku_mapping = dict(zip(sku_mapping_df['Saimai'], sku_mapping_df['SKU']))
 
-    # ประมวลผลข้อมูลจาก saimai.xlsx
+    # Process data from saimai.xlsx
     for _, row in df_saimai.iterrows():
-        sku = row.iloc[0]  # SKU จาก Column A (index 0)
-        item = row.iloc[1]  # ชื่อสินค้า จาก Column B (index 1)
-        qty = float(row.iloc[4])  # จำนวน จาก Column E (index 4)
+        sku = row.iloc[0]  # SKU from Column A (index 0)
+        item = row.iloc[1]  # Item name from Column B (index 1)
+        qty = float(row.iloc[4])  # Quantity from Column E (index 4)
 
-        # ตรวจสอบ SKU และทำ mapping
+        # Check SKU and do mapping
         mapped_sku = sku_mapping.get(sku, sku)
 
-        # เพิ่มข้อมูลใน reorganized_inventory
+        # Add data to reorganized_inventory
         if item not in reorganized_inventory:
             reorganized_inventory[item] = {
                 "SKU": mapped_sku,
-                "Branch": OrderedDict()
+                "Branch": dict()  # เปลี่ยนจาก OrderedDict() เป็น dict()
             }
         reorganized_inventory[item]["Branch"]['Saimai'] = qty
 
@@ -371,37 +310,35 @@ def process_data():
             if item not in reorganized_inventory:
                 reorganized_inventory[item] = {
                     "SKU": sku,
-                    "Branch": OrderedDict()
+                    "Branch": dict()  # เปลี่ยนจาก OrderedDict() เป็น dict()
                 }
             reorganized_inventory[item]["Branch"]['On Time'] = qty
 
-    # Process Vending Machine data using the saved 'vending_stock.xlsx'
-    logging.info("Processing Vending Machine data...")
-    vending_file = os.path.join(download_folder, 'vending_stock.xlsx')  # Use the renamed file
+    # Process Vending Machine data
+    logging.info("Starting Vending Machine data download...")
+    try:
+        df = download_vending_data()  # This now returns a DataFrame
 
-    if os.path.exists(vending_file):
-        df = pd.read_excel(vending_file, engine='openpyxl')
+        if df is not None and not df.empty:
+            # Iterate through the DataFrame
+            for _, row in df.iterrows():
+                item = row.iloc[4]
+                branch = row.iloc[2]
+                sku = row.iloc[3]
+                qty = int(row.iloc[7])
 
-        # Drop the first row (which doesn't contain headers)
-        df = df.drop(index=0)
-
-        # Iterate through the DataFrame
-        for _, row in df.iterrows():
-            item = row.iloc[4]
-            branch = row.iloc[2]
-            sku = row.iloc[3]
-            qty = int(row.iloc[7])
-
-            # Organize data in the dictionary
-            if item not in reorganized_inventory:
-                reorganized_inventory[item] = {
-                    "SKU": sku,
-                    "Branch": OrderedDict()
-                }
-            reorganized_inventory[item]["Branch"][branch] = qty
-        logging.info(f"Finished processing Vending Machine data for vending_stock.xlsx")
-    else:
-        logging.error(f"Vending machine file 'vending_stock.xlsx' not found in: {download_folder}")
+                # Organize data in the dictionary
+                if item not in reorganized_inventory:
+                    reorganized_inventory[item] = {
+                        "SKU": sku,
+                        "Branch": dict()
+                    }
+                reorganized_inventory[item]["Branch"][branch] = qty
+            logging.info("Finished processing Vending Machine data")
+        else:
+            logging.error("Vending machine data is empty or None")
+    except Exception as e:
+        logging.error(f"Error processing Vending Machine data: {e}")
 
     # Process Google Sheets data
     logging.info("Processing Google Sheets data...")
@@ -446,32 +383,15 @@ def process_data():
 
     logging.info(f"Inventory data exported to {data_json_filename}")
     
-    # ส่งข้อความแจ้งเตือนเมื่อสร้างไฟล์เสร็จเรียบร้อย
+    # Send notification when file creation is complete
     timestamp = datetime.now().strftime('%d%m%y - %H:%M:%S')
-    message = f"สร้างไฟล์ข้อมูลจำนวนสินค้าวันที่ {timestamp} สำเร็จ"
+    message = f"Successfully created inventory data file on {timestamp}"
     send_line_notify(message)
     logging.info(message)
 
-# Function to clean up all files in the download folder
-def clean_download_folder(download_folder):
-    try:
-        logging.info(f"Cleaning up the download folder: {download_folder}")
-        # List all files in the folder
-        for filename in os.listdir(download_folder):
-            file_path = os.path.join(download_folder, filename)
-            try:
-                if os.path.isfile(file_path):
-                    os.remove(file_path)  # Remove the file
-                    logging.info(f"Deleted file: {file_path}")
-            except Exception as e:
-                logging.error(f"Failed to delete {file_path}. Reason: {e}")
-        logging.info(f"Download folder cleaned successfully.")
-    except Exception as e:
-        logging.error(f"Error during cleanup of download folder: {e}")
-        
-# ฟังก์ชันสำหรับส่งข้อความไปยัง Line Notify
+# Function to send message to Line Notify
 def send_line_notify(message):
-    line_notify_token = os.getenv('LINE_NOTIFY_TOKEN')  # ตั้งค่า Access Token ใน .env
+    line_notify_token = os.getenv('LINE_NOTIFY_TOKEN')  # Set Access Token in .env
     headers = {
         "Authorization": f"Bearer {line_notify_token}",
         "Content-Type": "application/x-www-form-urlencoded"
@@ -503,15 +423,7 @@ def generate_file_list(data_directory='./data'):
 
 # Run the functions
 try:
-    download_vending_data()
     process_data()
 finally:
-    # Clean up the download folder
-    clean_download_folder(download_folder)
-    
     # Generate JSON List in /data
     generate_file_list()
-    
-    # Close the browser
-    logging.info("Closing the browser...")
-    driver.quit()
