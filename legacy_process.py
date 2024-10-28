@@ -17,10 +17,10 @@ def main():
         logging.info("Starting the data processing pipeline")
         
         # Run main_download.py
-        run_script('D:\Coding\dragcura_stocks_data\main_download.py')
+        run_script('main_download.py')
         
         # Run git_push.py
-        run_script('D:\Coding\dragcura_stocks_data\git_push.py')
+        run_script('git_push.py')
         
         logging.info("Data processing pipeline completed successfully")
     except Exception as e:
