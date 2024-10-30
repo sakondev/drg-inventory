@@ -264,7 +264,7 @@ def process_google_sheet_data(reorganized_inventory):
 # Process Data From Saimai.xlsx
 def process_saimai_data(reorganized_inventory):
     # Load saimai.xlsx file, skipping the first row
-    saimai_file = 'saimai.xlsx'
+    saimai_file = "D:\Coding\dragcura_sales_data\saimai.xlsx"
     df_saimai = pd.read_excel(saimai_file, engine='openpyxl')
 
     # Load sku_mapping.csv file
