@@ -429,7 +429,7 @@ def process_data():
     # Send notification when file creation is complete
     timestamp = datetime.now().strftime('%d%m%y - %H:%M:%S')
     message = f"Successfully created inventory data file on {timestamp}"
-    # send_line_notify(message)
+    send_line_notify(message)
     logging.info(message)
 
 # Function to send message to Line Notify
