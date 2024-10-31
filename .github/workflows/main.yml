@@ -43,8 +43,16 @@ jobs:
           path: |
             inventory_data.json
             data/
+          retention-days: 5
 
       - name: Commit and push if changes
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add inventory_data.json data/
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto update inventory data"
+
+      - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ github.token }} # ใช้ GITHUB_TOKEN ที่มีมาให้
