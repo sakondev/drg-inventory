@@ -9,11 +9,15 @@ import logging
 import warnings
 from io import BytesIO
 from bs4 import BeautifulSoup
+import pytz  # Import pytz for timezone handling
 
 warnings.simplefilter("ignore", UserWarning)
 
+# Set timezone to Asia/Bangkok
+bangkok_tz = pytz.timezone('Asia/Bangkok')
+
 # Set up logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
 # Load environment variables from the .env file
 load_dotenv()
@@ -403,7 +407,7 @@ def process_data():
     # Export Inventory Data
     json_filename = 'inventory_data.json'
     final_result = {
-        "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "last_updated": datetime.now(bangkok_tz).strftime("%Y-%m-%d %H:%M:%S"),  # Use Bangkok timezone
         "inventory": result_inventory
     }
     with open(json_filename, 'w', encoding='utf-8') as json_file:
@@ -416,8 +420,8 @@ def process_data():
     os.makedirs(data_folder, exist_ok=True)
 
     # Generate filename with DDMMYY_Timestamp
-    timestamp = datetime.now().strftime("%H%M%S")
-    date_str = datetime.now().strftime("%d%m%y")
+    timestamp = datetime.now(bangkok_tz).strftime("%H%M%S")
+    date_str = datetime.now(bangkok_tz).strftime("%d%m%y")
     data_json_filename = os.path.join(data_folder, f"{date_str}_{timestamp}.json")
 
     # Write the inventory to the new JSON file
@@ -427,7 +431,7 @@ def process_data():
     logging.info(f"Inventory data exported to {data_json_filename}")
     
     # Send notification when file creation is complete
-    timestamp = datetime.now().strftime('%d%m%y - %H:%M:%S')
+    timestamp = datetime.now(bangkok_tz).strftime('%d%m%y - %H:%M:%S')
     message = f"Successfully created inventory data file on {timestamp}"
     send_line_notify(message)
     logging.info(message)
@@ -466,7 +470,7 @@ def generate_file_list(data_directory='./data'):
 
 # Run the functions
 try:
-    logging.info(f"Today's date is {datetime.now().strftime('%Y-%m-%d')}")
+    logging.info(f"Today's date is {datetime.now(bangkok_tz).strftime('%Y-%m-%d')}")
     process_data()
 finally:
     # Generate JSON List in /data
