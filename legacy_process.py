@@ -17,7 +17,7 @@ def main():
         logging.info("Starting the data processing pipeline")
         
         # Run main_download.py
-        run_script('main_download.py')
+        run_script('main.py')
         
         # Run git_push.py
         run_script('git_push.py')

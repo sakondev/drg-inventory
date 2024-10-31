@@ -213,11 +213,8 @@ def download_vending_data():
 
 # Function for downloading Google Sheets as CSV
 @retry(max_retries=5, delay=5)
-def download_google_sheet():
-    logging.info("Downloading data from HQ")
-    
-    # Google Sheets URL and settings for CSV download
-    sheet_url = "https://docs.google.com/spreadsheets/d/1jGJw7N9fYjFZtVtvGQc7dyeCdjQRXNzr/export?format=csv&gid=1922842361"
+def download_google_sheet(branch, sheet_url):
+    logging.info(f"Downloading data from {branch}")
     
     try:
         # Use requests to download CSV data
@@ -227,17 +224,17 @@ def download_google_sheet():
         # Create DataFrame directly from CSV data
         df = pd.read_csv(BytesIO(response.content))
         
-        logging.info("Successfully downloaded Google Sheets data")
+        logging.info(f"Successfully downloaded {branch} data")
         return df
     
     except requests.exceptions.RequestException as e:
-        logging.error(f"Unable to download Google Sheets file. Reason: {e}")
+        logging.error(f"Unable to download {branch} Google Sheets file. Reason: {e}")
         raise  # Propagate the error for the `retry` decorator to handle
 
-# Update process_google_sheet_data function to use the DataFrame from download_google_sheet
-def process_google_sheet_data(reorganized_inventory):
+# Download and Process Data From HQ
+def process_hq_data(reorganized_inventory):
     # Download data from Google Sheets
-    df = download_google_sheet()
+    df = download_google_sheet("HQ","https://docs.google.com/spreadsheets/d/1jGJw7N9fYjFZtVtvGQc7dyeCdjQRXNzr/export?format=csv&gid=1922842361")
 
     # We'll start reading data from row 4 and use columns C (SKU), D (Item), H (Qty)
     df = df.iloc[2:, [2, 3, 7]]  # Select desired rows and columns
@@ -259,81 +256,119 @@ def process_google_sheet_data(reorganized_inventory):
             }
         reorganized_inventory[item]["Branch"]['HQ'] = qty
 
-    logging.info("Processed Google Sheets data and added to inventory")
+    logging.info("Processed HQ data and added to inventory")
 
-# Process Data From Saimai.xlsx
+# Download and Process Data From Saimai
 def process_saimai_data(reorganized_inventory):
-    # Load saimai.xlsx file, skipping the first row
-    saimai_file = "D:\Coding\dragcura_sales_data\saimai.xlsx"
-    df_saimai = pd.read_excel(saimai_file, engine='openpyxl')
+    # SKU mapping dictionary
+    sku_mapping = {
+        "EW-VSD": "P_EW-US",
+        "EW-VD": "P_EW-INT",
+        "EW-ORTHO": "P_EW-PO",
+        "EW-WJ180": "PEW-WJ180",
+        "EW-GUM75": "P_EW-GUM75",
+        "EW-TW75": "P_EW-TW75",
+        "EW-PL70": "P_EW-FT70",
+        "EW-SG2A": "P_EW-Refill-DC",
+        "EW-SG2B": "P_EW-Refill-TF",
+        "EW-SG2W": "P_EW-Refill-WH",
+        "EW-VW": "P_EW-SE",
+        "EW-XF50": "P_EW-SF",
+        "EW-SG8": "P_EW-SG8",
+        "EW-GUM12": "P_F_EW_CRF12",
+        "EW-TW12": "P_F_EW_WHT12",
+        "EW-VSD2": "PEW-US-Duo",
+        "EW-SG8+": "EW-SG8PLUS",
+        "EW-PC70": "P_EW-FTGR",
+        "EW-SR75": "P_EW-SR75",
+        "EW-SR12": "P_F_EW_STS12",
+    }
 
-    # Load sku_mapping.csv file
-    sku_mapping_file = 'sku_mapping.csv'
-    sku_mapping_df = pd.read_csv(sku_mapping_file)
+    # Download data from Google Sheets
+    df = download_google_sheet("Saimai", "https://docs.google.com/spreadsheets/d/1E5RCU9ZwZurC0KhQ49YangnLDiE0qInP5EPusIxyTsI/export?format=csv&gid=1646174814")
+    
+    df = df.iloc[0:, [0, 1, 4]]  # Select desired rows and columns
+    df.columns = ['SKU', 'Item', 'Qty']  # Rename columns
+    df['Qty'] = df['Qty'].astype(int)  # Convert Qty to int
+    
+    # Add data to `reorganized_inventory`
+    for _, row in df.iterrows():
+        item = row['Item']
+        original_sku = row['SKU']
+        qty = row['Qty']
+        
+        # Map SKU if it exists in mapping, otherwise use original SKU
+        mapped_sku = sku_mapping.get(original_sku, original_sku)
 
-    # Create dictionary for sku mapping
-    sku_mapping = dict(zip(sku_mapping_df['Saimai'], sku_mapping_df['SKU']))
-
-    # Process data from saimai.xlsx
-    for _, row in df_saimai.iterrows():
-        sku = row.iloc[0]  # SKU from Column A (index 0)
-        item = row.iloc[1]  # Item name from Column B (index 1)
-        qty = float(row.iloc[4])  # Quantity from Column E (index 4)
-
-        # Check SKU and do mapping
-        mapped_sku = sku_mapping.get(sku, sku)
-
-        # Add data to reorganized_inventory
         if item not in reorganized_inventory:
             reorganized_inventory[item] = {
                 "SKU": mapped_sku,
-                "Branch": dict()  # เปลี่ยนจาก OrderedDict() เป็น dict()
+                "Branch": dict()
             }
         reorganized_inventory[item]["Branch"]['Saimai'] = qty
-
-    logging.info("Processed data from saimai.xlsx and added to inventory.")
+        
+    logging.info("Processed Saimai data and added to inventory")
 
 # Process all data
 def process_data():
     # Process ChocoCard data first
-    reorganized_inventory = download_chococard_data()  # Start with ChocoCard data
+    reorganized_inventory = download_chococard_data()
     
     # Process API data (ZORT)
     logging.info("Processing API data...")
     api_data = fetch_api_data()
     if 'list' in api_data:
         for product in api_data['list']:
-            item = product['name']
             sku = product['sku']
             qty = float(product['availablestock'])
 
-            if item not in reorganized_inventory:
-                reorganized_inventory[item] = {
-                    "SKU": sku,
-                    "Branch": dict()  # เปลี่ยนจาก OrderedDict() เป็น dict()
-                }
-            reorganized_inventory[item]["Branch"]['On Time'] = qty
+            # Check for SKU in reorganized inventory
+            sku_found = False
+            for item_key in list(reorganized_inventory.keys()):
+                if reorganized_inventory[item_key]["SKU"] == sku:
+                    reorganized_inventory[item_key]["Branch"]['On Time'] = qty
+                    sku_found = True
+                    break
+            
+            # If SKU not found, create new entry
+            if not sku_found:
+                new_key = next((k for k, v in reorganized_inventory.items() 
+                              if v["SKU"] == sku), sku)
+                if new_key not in reorganized_inventory:
+                    reorganized_inventory[new_key] = {
+                        "SKU": sku,
+                        "Branch": {'On Time': qty}
+                    }
 
     # Process Vending Machine data
     logging.info("Starting Vending Machine data download...")
     try:
-        df = download_vending_data()  # This now returns a DataFrame
+        df = download_vending_data()
 
         if df is not None and not df.empty:
-            # Iterate through the DataFrame
             for _, row in df.iterrows():
-                item = row.iloc[4]
                 branch = row.iloc[2]
                 sku = row.iloc[3]
                 qty = int(row.iloc[7])
 
-                # Organize data in the dictionary
-                if item not in reorganized_inventory:
-                    reorganized_inventory[item] = {
-                        "SKU": sku,
-                        "Branch": dict()
-                    }
-                reorganized_inventory[item]["Branch"][branch] = qty
+                # Check for SKU in reorganized inventory
+                sku_found = False
+                for item_key in list(reorganized_inventory.keys()):
+                    if reorganized_inventory[item_key]["SKU"] == sku:
+                        reorganized_inventory[item_key]["Branch"][branch] = qty
+                        sku_found = True
+                        break
+                
+                # If SKU not found, create new entry
+                if not sku_found:
+                    new_key = next((k for k, v in reorganized_inventory.items() 
+                                  if v["SKU"] == sku), sku)
+                    if new_key not in reorganized_inventory:
+                        reorganized_inventory[new_key] = {
+                            "SKU": sku,
+                            "Branch": {branch: qty}
+                        }
+
             logging.info("Finished processing Vending Machine data")
         else:
             logging.error("Vending machine data is empty or None")
@@ -341,21 +376,29 @@ def process_data():
         logging.error(f"Error processing Vending Machine data: {e}")
 
     # Process Google Sheets data
-    logging.info("Processing Google Sheets data...")
-    process_google_sheet_data(reorganized_inventory)
+    logging.info("Processing HQ data...")
+    process_hq_data(reorganized_inventory)
     
-    # Process saimai data
-    logging.info("Processing Saimai.xlsx data...")
+    # Process Saimai data
+    logging.info("Processing Saimai data...")
     process_saimai_data(reorganized_inventory)
 
-    # Convert to the desired structure
-    result_inventory = []
-    for item, details in reorganized_inventory.items():
-        result_inventory.append({
-            "Item": item,
-            "SKU": details["SKU"],
-            "Branch": details["Branch"]
-        })
+    # Merge entries with same SKU
+    merged_inventory = {}
+    for item_key, details in reorganized_inventory.items():
+        sku = details["SKU"]
+        if sku not in merged_inventory:
+            merged_inventory[sku] = {
+                "Item": item_key,
+                "SKU": sku,
+                "Branch": details["Branch"]
+            }
+        else:
+            # Merge branch data
+            merged_inventory[sku]["Branch"].update(details["Branch"])
+
+    # Convert to list format
+    result_inventory = list(merged_inventory.values())
 
     # Export Inventory Data
     json_filename = 'inventory_data.json'
@@ -423,6 +466,7 @@ def generate_file_list(data_directory='./data'):
 
 # Run the functions
 try:
+    logging.info(f"Today's date is {datetime.now().strftime('%Y-%m-%d')}")
     process_data()
 finally:
     # Generate JSON List in /data
