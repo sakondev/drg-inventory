@@ -29,14 +29,7 @@ jobs:
 
       - name: Create .env file
         run: |
-          echo "MY_USERNAME=${{ secrets.MY_USERNAME }}" >> .env
-          echo "MY_PASSWORD=${{ secrets.MY_PASSWORD }}" >> .env
-          echo "VEND_USERNAME=${{ secrets.VEND_USERNAME }}" >> .env
-          echo "VEND_PASSWORD=${{ secrets.VEND_PASSWORD }}" >> .env
-          echo "STORENAME=${{ secrets.STORENAME }}" >> .env
-          echo "APIKEY=${{ secrets.APIKEY }}" >> .env
-          echo "APISECRET=${{ secrets.APISECRET }}" >> .env
-          echo "LINE_NOTIFY_TOKEN=${{ secrets.LINE_NOTIFY_TOKEN }}" >> .env
+          echo "${{ secrets.ENV }}" > .env
 
       - name: Run inventory script
         run: python main.py
