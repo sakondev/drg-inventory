@@ -45,7 +45,7 @@ jobs:
       - name: Commit and push if changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           branch: test-workflow
 
       - name: Upload logs
