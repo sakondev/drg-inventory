@@ -16,8 +16,9 @@ warnings.simplefilter("ignore", UserWarning)
 # Set timezone to Asia/Bangkok
 bangkok_tz = pytz.timezone('Asia/Bangkok')
 
-# Set up logging
+# Set up logging with Bangkok timezone
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+logging.Formatter.converter = lambda x, y: bangkok_tz.localize(x, is_dst=None).astimezone(bangkok_tz)
 
 # Load environment variables from the .env file
 load_dotenv()

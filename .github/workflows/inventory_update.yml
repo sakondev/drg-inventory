@@ -4,11 +4,13 @@ on:
   schedule:
     # Run at 18:00 UTC (01:00 Bangkok time)
     - cron: "0 18 * * *"
-  workflow_dispatch: # Allows manual trigger
+  workflow_dispatch:
 
 jobs:
   update-inventory:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # เพิ่มสิทธิ์ในการเขียน repository
 
     steps:
       - name: Checkout repository
@@ -37,7 +39,6 @@ jobs:
       - name: Upload inventory data
         uses: actions/upload-artifact@v3
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
           name: inventory-data
           path: |
             inventory_data.json
@@ -46,14 +47,13 @@ jobs:
       - name: Commit and push if changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ github.token }} # ใช้ GITHUB_TOKEN ที่มีมาให้
           branch: test-workflow
 
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
           name: execution-logs
           path: |
             *.log
