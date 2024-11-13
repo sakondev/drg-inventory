@@ -432,19 +432,7 @@ def process_data():
     # Send notification when file creation is complete
     timestamp = datetime.now(bangkok_tz).strftime('%d%m%y - %H:%M:%S')
     message = f"Successfully created inventory data file on {timestamp}"
-    send_line_notify(message)
     logging.info(message)
-
-# Function to send message to Line Notify
-def send_line_notify(message):
-    line_notify_token = os.getenv('LINE_NOTIFY_TOKEN')  # Set Access Token in .env
-    headers = {
-        "Authorization": f"Bearer {line_notify_token}",
-        "Content-Type": "application/x-www-form-urlencoded"
-    }
-    payload = {'message': message}
-    response = requests.post("https://notify-api.line.me/api/notify", headers=headers, params=payload)
-    return response.status_code
 
 def generate_file_list(data_directory='./data'):
     # List to hold the names of JSON files
