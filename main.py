@@ -243,8 +243,8 @@ def process_hq_data(reorganized_inventory):
     df = df.iloc[2:, [2, 3, 7]]  # Select desired rows and columns
     df.columns = ['SKU', 'Item', 'Qty']  # Rename columns
 
-    # Convert Qty to int
-    df['Qty'] = df['Qty'].astype(int)
+    # Convert Qty to int, coercing errors to NaN
+    df['Qty'] = pd.to_numeric(df['Qty'], errors='coerce').fillna(0).astype(int)  # Handle non-numeric values
 
     # Add data for "HQ" branch to `reorganized_inventory`
     for _, row in df.iterrows():
