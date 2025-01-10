@@ -324,7 +324,7 @@ def process_data():
     api_data = fetch_api_data()
     if 'list' in api_data:
         for product in api_data['list']:
-            sku = product['sku']d
+            sku = product['sku']
             qty = float(product['availablestock'])
 
             # Check for SKU in reorganized inventory
