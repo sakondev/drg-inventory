@@ -252,12 +252,14 @@ def process_hq_data(reorganized_inventory):
         sku = row['SKU']
         qty = row['Qty']
 
-        if item not in reorganized_inventory:
-            reorganized_inventory[item] = {
-                "SKU": sku,
-                "Branch": dict()  # เปลี่ยนจาก OrderedDict() เป็น dict()
-            }
-        reorganized_inventory[item]["Branch"]['HQ'] = qty
+        # Check for NaN values before adding to reorganized_inventory
+        if pd.notna(item) and pd.notna(sku) and qty > 0:  # Ensure item and SKU are not NaN and qty is positive
+            if item not in reorganized_inventory:
+                reorganized_inventory[item] = {
+                    "SKU": sku,
+                    "Branch": dict()  # เปลี่ยนจาก OrderedDict() เป็น dict()
+                }
+            reorganized_inventory[item]["Branch"]['HQ'] = qty
 
     logging.info("Processed HQ data and added to inventory")
 
