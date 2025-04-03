@@ -292,7 +292,7 @@ def process_saimai_data(reorganized_inventory):
     # Download data from Google Sheets
     df = download_google_sheet("Saimai", "https://docs.google.com/spreadsheets/d/1E5RCU9ZwZurC0KhQ49YangnLDiE0qInP5EPusIxyTsI/export?format=csv&gid=1646174814")
     
-    df = df.iloc[0:, [1, 2, 5]]  # Select desired rows and columns
+    df = df.iloc[0:, [1, 2, 6]]  # Select desired rows and columns
     df.columns = ['SKU', 'Item', 'Qty']  # Rename columns
     df['Qty'] = df['Qty'].astype(int)  # Convert Qty to int
     
