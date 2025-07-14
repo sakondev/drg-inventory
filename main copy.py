@@ -87,8 +87,7 @@ def download_chococard_data():
             "Eastville": (7483, 2205),
             "Mega": (7482, 2204),
             "Embassy": (7481, 2203),
-            "EmQuartier": (7480, 2202),
-            "Gaysorn Centre": (7486, 2208)
+            "EmQuartier": (7480, 2202)
         }
 
         # Prepare dictionary to store reorganized inventory data
@@ -166,6 +165,54 @@ def fetch_api_data():
     response.raise_for_status()
     logging.info("ZORT API data fetched successfully.")
     return response.json()
+
+# Function for downloading vending machine data
+@retry(max_retries=5, delay=5)
+def download_vending_data():
+    # URLs for login and download
+    LOGIN_URL = 'https://www.worldwidevending-vms.com/sys/login.do'
+    DOWNLOAD_URL = 'https://www.worldwidevending-vms.com/op/export_inventory_batch.do'
+
+    # Create session
+    session = requests.Session()
+
+    # Perform login
+    login_data = {
+        'loginname': vend_username,
+        'loginpwd': vend_password
+    }
+    
+    login_response = session.post(LOGIN_URL, data=login_data)
+
+    if login_response.status_code != 200:
+        logging.error('Login failed')
+        return None
+
+    logging.info('Login successful')
+
+    time.sleep(1)
+
+    # Fetch Excel data
+    payload = {
+        'selectRow': ['VCM350CKC20090003', 'VCM350CKC20120001']
+    }
+
+    download_response = session.post(DOWNLOAD_URL, data=payload)
+
+    if download_response.status_code != 200:
+        logging.error(f'Error receiving Excel data: HTTP Status {download_response.status_code}')
+        logging.error(f'Response content: {download_response.text[:200]}...')
+        return None
+
+    logging.info('Excel data received successfully')
+    try:
+        # Read Excel file without specifying encoding
+        df = pd.read_excel(BytesIO(download_response.content), engine='openpyxl', header=2)
+        df = df.dropna(how='all').reset_index(drop=True)
+        return df
+    except Exception as e:
+        logging.error(f"Error reading Excel file: {e}")
+        return None
 
 # Function for downloading Google Sheets as CSV
 @retry(max_retries=5, delay=5)
@@ -297,6 +344,41 @@ def process_data():
                         "SKU": sku,
                         "Branch": {'On Time': qty}
                     }
+
+    # Process Vending Machine data
+    logging.info("Starting Vending Machine data download...")
+    try:
+        df = download_vending_data()
+
+        if df is not None and not df.empty:
+            for _, row in df.iterrows():
+                branch = row.iloc[2]
+                sku = row.iloc[3]
+                qty = int(row.iloc[7])
+
+                # Check for SKU in reorganized inventory
+                sku_found = False
+                for item_key in list(reorganized_inventory.keys()):
+                    if reorganized_inventory[item_key]["SKU"] == sku:
+                        reorganized_inventory[item_key]["Branch"][branch] = qty
+                        sku_found = True
+                        break
+                
+                # If SKU not found, create new entry
+                if not sku_found:
+                    new_key = next((k for k, v in reorganized_inventory.items() 
+                                  if v["SKU"] == sku), sku)
+                    if new_key not in reorganized_inventory:
+                        reorganized_inventory[new_key] = {
+                            "SKU": sku,
+                            "Branch": {branch: qty}
+                        }
+
+            logging.info("Finished processing Vending Machine data")
+        else:
+            logging.error("Vending machine data is empty or None")
+    except Exception as e:
+        logging.error(f"Error processing Vending Machine data: {e}")
 
     # Process Google Sheets data
     logging.info("Processing HQ data...")
